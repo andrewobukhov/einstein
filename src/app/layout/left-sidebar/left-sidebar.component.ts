@@ -2,41 +2,27 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-left-sidebar',
-  templateUrl: './left-sidebar.component.html',
-  styleUrls: ['./left-sidebar.component.css']
+  templateUrl: './left-sidebar.component.html'
 })
 export class LeftSidebarComponent implements OnInit {
 
   constructor() {
   }
 
-  public nodes = [
-    {
-      id: 1,
-      name: 'root1',
-      children: [
-        {id: 2, name: 'child1'},
-        {id: 3, name: 'child2'}
-      ]
-    },
-    {
-      id: 4,
-      name: 'root2',
-      children: [
-        {id: 5, name: 'child2.1'},
-        {
-          id: 6,
-          name: 'child2.2',
-          children: [
-            {id: 7, name: 'subsub'}
-          ]
-        }
-      ]
-    }
-  ];
+  public nodes: Node[] = [];
 
   public options = {};
 
   ngOnInit() {
+    const level1 = new Node('Example 1', [new Node('Example 1'), new Node('Example 2')]);
+    const level2 = new Node('Example 2', [new Node('Example 1'), new Node('Example 2'), new Node('Example 3'), new Node('Example 4')]);
+    this.nodes = [new Node('RC UPB ALL', [level1, level2]), new Node('Example 3'), new Node('Example 4')];
+  }
+}
+
+export class Node {
+  public id: number = Math.round(Math.random() * 1000);
+
+  constructor(public name: String, public children: Node[] = []) {
   }
 }

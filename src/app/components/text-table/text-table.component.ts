@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-text-table',
-  templateUrl: './text-table.component.html',
-  styleUrls: ['./text-table.component.css']
+  templateUrl: './text-table.component.html'
 })
 export class TextTableComponent implements OnInit {
 

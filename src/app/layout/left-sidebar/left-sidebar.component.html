@@ -1,4 +1,4 @@
-<div class="col-md-3 sidebar_left">
+<div class="col-md-3 col-sm-3 col-xs-3 col-xl-3 sidebar_left">
   <div class="filters">
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">search</a>
@@ -22,11 +22,9 @@
       </div>
     </div>
   </div>
-
-
   <div class="row controls">
     <div class="col-12">
-      <button type="button" class="btn-xs btn-default">Expand all</button>
+      <button type="button" class="btn-xs btn-default m-r-xs">Expand all</button>
       <button type="button" class="btn-xs btn-default">Collapse all</button>
 
       <div class="btn-group btn-group-xs pull-right" role="group" aria-label="...">
@@ -36,7 +34,7 @@
     </div>
   </div>
 
-  <div class="easy-tree">
+  <div class="easy-tree" style="height: 769px">
     <tree-root [nodes]="nodes" [options]="options"></tree-root>
   </div>
 

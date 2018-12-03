@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-custom-fields',
-  templateUrl: './custom-fields.component.html',
-  styleUrls: ['./custom-fields.component.css']
+  templateUrl: './custom-fields.component.html'
 })
 export class CustomFieldsComponent implements OnInit {
 
