@@ -1,0 +1,986 @@
+body {
+  min-width: 1440px;
+}
+
+hr {
+  height: 0px;
+  border: 1px solid $hr-color;
+  margin: 15px 0px;
+}
+
+h1.heading0 {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $heading0;
+}
+
+h4 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+}
+
+.text1 {
+  color: $text1;
+}
+
+.text2 {
+  color: $text2;
+}
+
+.dotted {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-position: under;
+}
+
+//
+// Buttons
+// --------------------------------------------------
+
+// Common styles
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+  text-shadow: none;
+  $shadow: none;
+  @include box-shadow($shadow);
+
+  // Reset the shadow
+  &:active,
+  &.active {
+    @include box-shadow(none);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    @include box-shadow(none);
+  }
+
+  .badge {
+    text-shadow: none;
+  }
+
+  &.dropdown-toggle {
+    min-width: auto;
+    background-color: $white;
+    border-left: none;
+  }
+}
+
+.btn-clear {
+  min-width: auto;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: $dark-blue;
+
+  .glyphicon {
+    margin-top: -4px;
+  }
+}
+
+// Mixin for generating new styles
+@mixin btn-styles($btn-color: $dark-blue) {
+
+  &:hover,
+  &:focus {
+    //background-color: darken($btn-color, 12%);
+    //background-position: 0 -15px;
+  }
+
+  &:active,
+  &.active {
+    //background-color: darken($btn-color, 12%);
+    //border-color: darken($btn-color, 14%);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      //background-color: darken($btn-color, 12%);
+      //background-image: none;
+    }
+  }
+}
+
+// Common styles
+.btn {
+  border-color: $dark-blue;
+  height: 32px;
+  min-width: 150px;
+
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+
+  text-shadow: none;
+
+  &.dropdown-toggle {
+    min-width: auto;
+    background-color: $white;
+    border-left: none;
+  }
+
+  // Remove the gradient for the pressed/active state
+  &:active,
+  &.active {
+    background-image: none;
+  }
+}
+
+.btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+.btn-default {
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    border-color: $btn-default-focused-color;
+  }
+
+  &:active:focus {
+    background-color: $btn-default-active-bg;
+    border-color: $btn-default-focused-color;
+  }
+
+  &:active,
+  &.active {
+    background-color: $btn-default-active-bg;
+    border-color: $btn-default-focused-color;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: $btn-default-active-bg;
+      border-color: $btn-default-focused-color;
+    }
+  }
+}
+
+.btn-primary {
+
+  &:hover,
+  &:focus {
+    background-color: $light-blue;
+    border-color: $light-blue;
+  }
+
+  &:active,
+  &.active {
+    background-color: $darkest-blue;
+    border-color: $darkest-blue;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: $darkest-blue;
+      border-color: $darkest-blue;
+    }
+  }
+}
+
+.btn-xs,
+.btn-group-xs>.btn {
+  background-color: $white;
+  border: 1px solid $btn-group-border;
+  font-size: 12px;
+  height: 24px;
+  min-width: 80px;
+  color: #000;
+
+  &.active {
+    background-color: $btn-group-border;
+    font-size: 12px;
+    font-weight: normal;
+  }
+}
+
+.btn-group-xs>.btn {
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+// Apply the mixin to the buttons
+.btn-default {
+  @include btn-styles($btn-default-bg);
+}
+
+.btn-primary {
+  @include btn-styles($btn-primary-bg);
+}
+
+.btn-success {
+  @include btn-styles($btn-success-bg);
+}
+
+.btn-info {
+  @include btn-styles($btn-info-bg);
+}
+
+.btn-warning {
+  @include btn-styles($btn-warning-bg);
+}
+
+.btn-danger {
+  @include btn-styles($btn-danger-bg);
+}
+
+
+//
+// Images
+// --------------------------------------------------
+
+.thumbnail,
+.img-thumbnail {
+  @include box-shadow(0 1px 2px rgba(0, 0, 0, .075));
+}
+
+
+//
+// Dropdowns
+// --------------------------------------------------
+
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+  @include gradient-vertical($start-color: $dropdown-link-hover-bg, $end-color: darken($dropdown-link-hover-bg, 5%));
+  background-color: darken($dropdown-link-hover-bg, 5%);
+}
+
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:hover,
+.dropdown-menu>.active>a:focus {
+  @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
+  background-color: darken($dropdown-link-active-bg, 5%);
+}
+
+
+//
+// Navbar
+// --------------------------------------------------
+
+// Default navbar
+.navbar-default {
+  border-radius: $navbar-border-radius;
+  $shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+  @include box-shadow($shadow);
+
+  .navbar-nav>.open>a,
+  .navbar-nav>.active>a {
+    //@include gradient-vertical($start-color: darken($navbar-default-link-active-bg, 5%), $end-color: darken($navbar-default-link-active-bg, 2%));
+    //@include box-shadow(inset 0 3px 9px rgba(0,0,0,.075));
+    font-weight: 500;
+    font-size: 16px;
+    font-style: normal;
+    font-stretch: normal;
+  }
+
+  .nav.navbar-nav.navbar-right {
+    margin-right: auto;
+
+    li>a {
+      font-weight: 300;
+      font-size: 13px;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      font-style: normal;
+    }
+
+    li.active>a {
+      font-weight: normal;
+    }
+  }
+}
+
+div.navbar-header>a.navbar-brand {
+  color: $navbar-barnd-color;
+  font-weight: 900;
+  font-size: 24px;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: -0.6px;
+}
+
+.navbar-nav>li>a {
+  //text-shadow: 0 1px 0 rgba(255,255,255,.25);
+  color: $navbar-active-color;
+  font-weight: 300;
+  font-size: 16px;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+// Undo rounded corners in static and fixed navbars
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  border-radius: 0;
+}
+
+// Fix active state of dropdown items in collapsed mode
+@media (max-width: $grid-float-breakpoint-max) {
+  .navbar .navbar-nav .open .dropdown-menu>.active>a {
+
+    &,
+    &:hover,
+    &:focus {
+      color: #fff;
+      @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
+    }
+  }
+}
+
+
+//
+// Alerts
+// --------------------------------------------------
+
+// Common styles
+.alert {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
+  $shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 2px rgba(0, 0, 0, .05);
+  @include box-shadow($shadow);
+}
+
+// Mixin for generating new styles
+@mixin alert-styles($color) {
+  @include gradient-vertical($start-color: $color, $end-color: darken($color, 7.5%));
+  border-color: darken($color, 15%);
+}
+
+// Apply the mixin to the alerts
+.alert-success {
+  @include alert-styles($alert-success-bg);
+}
+
+.alert-info {
+  @include alert-styles($alert-info-bg);
+}
+
+.alert-warning {
+  @include alert-styles($alert-warning-bg);
+}
+
+.alert-danger {
+  @include alert-styles($alert-danger-bg);
+}
+
+
+//
+// Progress bars
+// --------------------------------------------------
+
+// Give the progress background some depth
+.progress {
+  @include gradient-vertical($start-color: darken($progress-bg, 4%), $end-color: $progress-bg)
+}
+
+// Mixin for generating new styles
+@mixin progress-bar-styles($color) {
+  @include gradient-vertical($start-color: $color, $end-color: darken($color, 10%));
+}
+
+// Apply the mixin to the progress bars
+.progress-bar {
+  @include progress-bar-styles($progress-bar-bg);
+}
+
+.progress-bar-success {
+  @include progress-bar-styles($progress-bar-success-bg);
+}
+
+.progress-bar-info {
+  @include progress-bar-styles($progress-bar-info-bg);
+}
+
+.progress-bar-warning {
+  @include progress-bar-styles($progress-bar-warning-bg);
+}
+
+.progress-bar-danger {
+  @include progress-bar-styles($progress-bar-danger-bg);
+}
+
+// Reset the striped class because our mixins don't do multiple gradients and
+// the above custom styles override the new `.progress-bar-striped` in v3.2.0.
+.progress-bar-striped {
+  @include gradient-striped;
+}
+
+
+//
+// List groups
+// --------------------------------------------------
+
+.list-group {
+  border-radius: $border-radius-base;
+  @include box-shadow(0 1px 2px rgba(0, 0, 0, .075));
+}
+
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  text-shadow: 0 -1px 0 darken($list-group-active-bg, 10%);
+  @include gradient-vertical($start-color: $list-group-active-bg, $end-color: darken($list-group-active-bg, 7.5%));
+  border-color: darken($list-group-active-border, 7.5%);
+
+  .badge {
+    text-shadow: none;
+  }
+}
+
+
+//
+// Panels
+// --------------------------------------------------
+
+// Common styles
+.panel {
+  @include box-shadow(0 1px 2px rgba(0, 0, 0, .05));
+}
+
+// Mixin for generating new styles
+@mixin panel-heading-styles($color) {
+  @include gradient-vertical($start-color: $color, $end-color: darken($color, 5%));
+}
+
+// Apply the mixin to the panel headings only
+.panel-default>.panel-heading {
+  @include panel-heading-styles($panel-default-heading-bg);
+}
+
+.panel-primary>.panel-heading {
+  @include panel-heading-styles($panel-primary-heading-bg);
+}
+
+.panel-success>.panel-heading {
+  @include panel-heading-styles($panel-success-heading-bg);
+}
+
+.panel-info>.panel-heading {
+  @include panel-heading-styles($panel-info-heading-bg);
+}
+
+.panel-warning>.panel-heading {
+  @include panel-heading-styles($panel-warning-heading-bg);
+}
+
+.panel-danger>.panel-heading {
+  @include panel-heading-styles($panel-danger-heading-bg);
+}
+
+
+//
+// Wells
+// --------------------------------------------------
+
+.well {
+  @include gradient-vertical($start-color: darken($well-bg, 5%), $end-color: $well-bg);
+  border-color: darken($well-bg, 10%);
+  $shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1);
+  @include box-shadow($shadow);
+}
+
+//
+// Tabs
+// --------------------------------------------------
+
+.tab-content {
+  border-bottom: 1px solid $nav-tabs-border-color;
+  border-left: 1px solid $nav-tabs-border-color;
+  border-right: 1px solid $nav-tabs-border-color;
+  padding: 25px;
+}
+
+ul.nav-tabs {
+  height: 46px;
+
+  li {
+    height: 46px;
+    min-width: 160px;
+    text-align: center;
+
+    a {
+      color: $dark-blue !important;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.57;
+      text-transform: uppercase;
+    }
+  }
+
+  li.active {
+    a {
+      padding-top: 14px;
+      padding-bottom: 14px;
+      color: $nav-tabs-active-link-color;
+      font-size: 12px;
+      line-height: 1.33;
+      letter-spacing: 0.6px;
+    }
+  }
+}
+
+.filters {
+  margin-top: 8px;
+
+  .tab-content {
+    //border-bottom: 1px solid $filters-bg;
+    //border-left: 1px solid $filters-bg;
+    //border-right: 1px solid $filters-bg;
+    border: 1px solid $filters-bg;
+    padding: 5px;
+    background-color: $filters-bg;
+
+    input[type="text"] {
+      box-shadow: none;
+      background: $filters-bg;
+      border: none;
+      color: #000;
+
+      &::placeholder {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  ul.nav-tabs {
+    height: 36px;
+    border-bottom: none;
+
+    li {
+      text-align: center;
+      width: auto;
+      min-width: auto;
+      height: 36px;
+
+      a {
+        color: $filters-tabs-color;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.57;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        padding: 8px 10px;
+
+      }
+    }
+
+    li.active {
+      a {
+        background-color: $filters-bg;
+        color: $nav-tabs-active-link-color;
+        font-size: 12px;
+        border: 1px solid $filters-bg;
+      }
+    }
+  }
+}
+
+//
+// Tables
+// --------------------------------------------------
+
+table.table {
+  color: $table-color;
+  line-height: 1.57;
+
+  thead {
+    tr {
+      th {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+
+    color: $thead-color;
+    font-weight: bold;
+    background-color: $thead-bg;
+  }
+}
+
+//
+//  Left sidebar
+//
+.sidebar_left {
+  height: calc(100% - 58px);
+  min-height: calc(100% - 58px);
+  margin-top: -20px;
+  margin-left: -15px;
+  padding-left: 35px;
+  background-color: $sidebat-bg;
+  box-shadow: 1px 0 0 0 $sidebat-box-shadow;
+
+  .easy-tree {
+    max-height: 63%;
+    overflow-y: scroll;
+  }
+
+  .bottom_controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 74px;
+    padding: 20px;
+    padding-left: 35px;
+    box-shadow: -2px 0 10px 0 rgba(0, 0, 0, 0.05);
+
+    .btn {
+      min-width: 100px;
+    }
+
+    .pull-right {
+      span {
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+      }
+    }
+  }
+}
+
+//
+// Content
+//
+.content {
+  padding-right: 58px;
+  height: calc(100% - 76px);
+
+  .scroll-wrap{
+    display: block;
+    height: 100%;
+    overflow-y: scroll;
+  }
+}
+
+//
+//  Right sidebar
+//
+.sidebar_right {
+  height: calc(100% - 58px);
+  min-height: calc(100% - 58px);
+
+  width: 64px;
+  //float: right;
+  //margin-right: -99px;
+  //margin-top: -56px;
+  position: absolute;
+  top: 56px;
+  right: 0;
+  background-color: $sidebat-bg;
+  box-shadow: 0 0 0 1px $sidebat-box-shadow;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li.square {
+    display: block;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+
+    &.active {
+      background-color: rgba(216, 216, 216, .2);
+    }
+
+    span.glyphicon {
+      font-size: 24px;
+      color: $dark-blue;
+
+      &.inactive {
+        color: $grey;
+      }
+
+    }
+
+    .wrap {
+      position: relative;
+      margin: 5px;
+      width: 54px;
+      height: 54px;
+      background: $white;
+      padding-top: 6px;
+
+      >span.label {
+        font-family: Roboto;
+        font-size: 10px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 3;
+        letter-spacing: normal;
+        text-align: center;
+        color: $dark-blue;
+        padding: 0;
+        margin-bottom: -10px;
+      }
+
+      &.inactive {
+        >span.label {
+          color: $grey;
+        }
+
+        >span.glyphicon {
+          color: $grey;
+        }
+      }
+    }
+
+    .badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: $dark-blue;
+      padding: 4px 6px;
+      font-size: 11px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 0.91;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+
+      >span.glyphicon {
+        font-size: 9px;
+        color: $white;
+      }
+
+      &.inactive {
+        background-color: $grey;
+      }
+    }
+
+  }
+}
+
+//
+// Stuff
+//
+.controls {
+  margin-top: 20px;
+  margin-bottom: 15px;
+
+  .btn-group {
+    margin-right: 15px;
+  }
+}
+
+.content {
+  .btn {
+    min-width: 80px;
+  }
+
+  .content-header {
+    h4 {
+      margin-top: 0;
+    }
+  }
+
+  .settings-btn {
+    font-size: 24px;
+    color: $dark-blue;
+  }
+
+  .btn-group {
+    &.gray-border {
+      >.btn {
+        border-color: $sidebat-box-shadow;
+      }
+
+      >.dropdown-toggle {
+        border-color: $sidebat-box-shadow;
+      }
+    }
+
+    .btn {
+      min-width: 80px;
+
+      &.dropdown-toggle {
+        min-width: auto;
+      }
+    }
+  }
+}
+
+.table.text-table>thead>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>th,
+.table>tbody>tr>td,
+.table>tfoot>tr>th,
+.table>tfoot>tr>td {
+  border: none !important;
+}
+
+.text-table {
+  border: none;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.83;
+  letter-spacing: normal;
+  color: #000000;
+
+  margin-top: 20px;
+
+  \ tr {
+    td {
+      border: none !important;
+    }
+  }
+}
+
+
+.btn-group.gray-border.chips {
+  .btn {
+    min-width: auto !important;
+  }
+
+  .glyphicon {
+    color: $sidebat-box-shadow;
+  }
+}
+
+.steps {
+  margin-top: 10px;
+  margin-left: -25px;
+}
+
+.attachment {}
+
+.panel-default {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.steps-table {
+  thead {
+    background: transparent !important;
+    tr {
+      th {
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #ddd8d8;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        border-bottom: none;
+      }
+    }
+  }
+
+  tr {
+    th {
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ddd8d8;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      background: transparent !important;
+    }
+
+    td {
+      border-bottom: 1px solid $sidebat-box-shadow !important;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.29;
+      letter-spacing: normal;
+      color: #000000;
+      position: relative;
+      .glyphicon {
+        font-size: 12px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #ddd8d8;
+      }
+      .btn{
+        min-width: auto;
+        min-height: 14px;
+        height: 14px;
+        padding: 0;
+        padding-top: 3px;
+        margin:0;
+      }
+    }
+  }
+}
+
+//glyphicon-remove

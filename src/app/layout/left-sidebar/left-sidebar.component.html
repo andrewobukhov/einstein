@@ -1,0 +1,50 @@
+<div class="col-md-3 sidebar_left">
+  <div class="filters">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">search</a>
+      </li>
+      <li role="presentation"><a href="#filters" aria-controls="filters" role="tab" data-toggle="tab">filters</a></li>
+      <li role="presentation"><a href="#query" aria-controls="query" role="tab" data-toggle="tab">query</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="search">
+        <div class="input-group">
+          <input type="text" class="form-control" id="serachline" placeholder="serach">
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="filters">
+        <input type="text" class="form-control" id="filtersline" placeholder="filters">
+      </div>
+      <div role="tabpanel" class="tab-pane" id="query">
+        <input type="text" class="form-control" id="queryline" placeholder="query">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row controls">
+    <div class="col-12">
+      <button type="button" class="btn-xs btn-default">Expand all</button>
+      <button type="button" class="btn-xs btn-default">Collapse all</button>
+
+      <div class="btn-group btn-group-xs pull-right" role="group" aria-label="...">
+        <button type="button" class="btn btn-default active">Tree</button>
+        <button type="button" class="btn btn-default">Table</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="easy-tree">
+    <tree-root [nodes]="nodes" [options]="options"></tree-root>
+  </div>
+
+  <div class="bottom_controls">
+    <input class="btn btn-primary" type="button" value="Add Project">
+    <span class="pull-right">
+      <span class="">245 Test Cases</span>
+      <input class="btn btn-default" type="button" value="Bulk Update">
+    </span>
+  </div>
+</div>

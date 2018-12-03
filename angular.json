@@ -23,8 +23,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/scss/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["./src/scss"]
+            },
             "scripts": []
           },
           "configurations": {

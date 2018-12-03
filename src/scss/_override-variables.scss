@@ -1,0 +1,54 @@
+$white: #fff;
+$dark-blue: #0747a6;
+$darkest-blue: #043781;
+$light-blue: #1d62c9;
+$white-blue: #f0f6fe;
+$grey: #a9a9a9;
+$navbar-active-color: rgba(255, 255, 255, .7);
+$navbar-barnd-color: rgba(255, 255, 255, .25);
+$heading0: #7b7b7b;
+$hr-color: #ccc;
+$sidebat-bg: #fafafa;
+$sidebat-box-shadow: #e8e8e8;
+$filters-bg: rgb(244, 243, 243);
+$filters-tabs-color: #a2a2a2;
+$nav-tabs-border-color: #e4e4e4;
+$nav-tabs-active-link-color: #212121;
+$tree-view-line: #e0e0e0;
+$btn-group-border: #e7e5e5;
+
+$panel-default-border: $sidebat-box-shadow;
+
+$border1: #ebebeb;
+
+$text1: #8d8d8d;
+$text2: #000;
+
+$brand-primary: $dark-blue;
+
+$body-bg: $white !default;
+$border-radius-base: 2px;
+$border-radius-large: $border-radius-base;
+$border-radius-small: $border-radius-base;
+
+$font-family-base: 'Roboto',
+sans-serif;
+
+$navbar-height: 56px;
+$navbar-default-bg: $dark-blue !default;
+$navbar-default-color: $white;
+$navbar-default-link-color: $navbar-active-color;
+$navbar-default-link-active-color: $white;
+$navbar-default-link-active-bg: transparent;
+$navbar-default-link-hover-color: $white;
+
+$btn-default-bg: $white;
+$btn-default-color: $dark-blue;
+$btn-default-focused-color: #acacac;
+$btn-default-active-bg: #f5f5f5;
+$btn-default-border: $dark-blue;
+$btn-primary-border: $dark-blue;
+
+$thead-bg: #f0f6fe;
+$thead-color: $nav-tabs-active-link-color;
+$table-color: #404040;
