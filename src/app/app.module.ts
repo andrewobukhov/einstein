@@ -12,6 +12,7 @@ import {ContentOneComponent} from './components/content-one/content-one.componen
 import {CustomFieldsComponent} from './components/custom-fields/custom-fields.component';
 import {TextTableComponent} from './components/text-table/text-table.component';
 import {TreeModule} from 'angular-tree-component';
+import {BsDropdownModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {TreeModule} from 'angular-tree-component';
   ],
   imports: [
     BrowserModule,
-    TreeModule.forRoot()
+    TreeModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
