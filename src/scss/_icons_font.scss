@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icons/icomoon.eot?2yuqp4');
-  src:  url('../fonts/icons/icomoon.eot?2yuqp4#iefix') format('embedded-opentype'),
-    url('../fonts/icons/icomoon.ttf?2yuqp4') format('truetype'),
-    url('../fonts/icons/icomoon.woff?2yuqp4') format('woff'),
-    url('../fonts/icons/icomoon.svg?2yuqp4#icomoon') format('svg');
+  src:  url('./../fonts/icons/icomoon.eot?2yuqp4');
+  src:  url('./../fonts/icons/icomoon.eot?2yuqp4#iefix') format('embedded-opentype'),
+    url('./../fonts/icons/icomoon.ttf?2yuqp4') format('truetype'),
+    url('./../fonts/icons/icomoon.woff?2yuqp4') format('woff'),
+    url('./../fonts/icons/icomoon.svg?2yuqp4#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,43 +24,61 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-uE00A-ico-undo:before {
+.icon-ico-case-active:before {
   content: "\e900";
   color: #0747a6;
 }
-.icon-uE001-ico-case-active:before {
+.icon-ico-delete:before {
   content: "\e901";
-  color: #0747a6;
-}
-.icon-uE002-ico-delete:before {
-  content: "\e902";
   color: #e7e5e5;
 }
-.icon-uE003-ico-navpanel-attachms:before {
+.icon-ico-drag:before {
+  content: "\e902";
+  color: #d8d8d8;
+}
+.icon-ico-head-arrow:before {
   content: "\e903";
-  color: #0747a6;
+  color: #fff;
 }
-.icon-uE004-ico-navpanel-custfields:before {
+.icon-ico-ico-searchreset:before {
   content: "\e904";
-  color: #0747a6;
 }
-.icon-uE005-ico-navpanel-precond:before {
+.icon-ico-listopen:before {
   content: "\e905";
-  color: #0747a6;
 }
-.icon-uE006-ico-navpanel-steps:before {
+.icon-ico-navpanel-attachms:before {
   content: "\e906";
   color: #0747a6;
 }
-.icon-uE007-ico-navpanel-summary:before {
+.icon-ico-navpanel-custfields:before {
   content: "\e907";
   color: #0747a6;
 }
-.icon-uE008-ico-redo:before {
+.icon-ico-navpanel-precond:before {
   content: "\e908";
   color: #0747a6;
 }
-.icon-uE009-ico-settings:before {
+.icon-ico-navpanel-steps:before {
   content: "\e909";
+  color: #0747a6;
+}
+.icon-ico-navpanel-summary:before {
+  content: "\e90a";
+  color: #0747a6;
+}
+.icon-ico-redo:before {
+  content: "\e90b";
+  color: #0747a6;
+}
+.icon-ico-settings:before {
+  content: "\e90c";
+  color: #0747a6;
+}
+.icon-ico-tree-move:before {
+  content: "\e90d";
+  color: #d8d8d8;
+}
+.icon-ico-undo:before {
+  content: "\e90e";
   color: #0747a6;
 }
