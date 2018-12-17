@@ -1,11 +1,33 @@
-body {
-    //min-width: 1440px;
+html,
+body,
+container {
+    height: 100%;
 }
 
 hr {
-    height: 0px;
+    height: 0;
+    margin: 15px 0;
+
     border: 1px solid $hr-color;
-    margin: 15px 0px;
+}
+
+.btn:focus,
+.btn.focus,
+.btn:active:focus,
+.btn:active.focus,
+.btn.active:focus,
+.btn.active.focus {
+    outline: none;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.form-control:focus {
+    border-color: #0747a6;
+    outline: none;
+    box-shadow: none;
 }
 
 h1.heading0 {
@@ -13,7 +35,9 @@ h1.heading0 {
     font-weight: bold;
     font-style: normal;
     line-height: 1.5;
+
     letter-spacing: normal;
+
     color: $heading0;
 }
 
@@ -24,6 +48,7 @@ h4 {
     font-style: normal;
     font-stretch: normal;
     line-height: 1.17;
+
     letter-spacing: normal;
 }
 
@@ -37,8 +62,128 @@ h4 {
 
 .dotted {
     text-decoration: underline;
+
     text-decoration-style: dotted;
     text-underline-position: under;
+}
+
+.m-b-16 {
+    margin-bottom: 16px;
+}
+
+.m-b-17 {
+    margin-bottom: 17px;
+}
+
+.m-t-16 {
+    margin-top: 16px;
+}
+
+.m-t-19 {
+    margin-top: 19px;
+}
+
+.m-t-64 {
+    margin-top: 64px;
+}
+
+.glyphicon {
+    &.remove {
+        font-size: 24px;
+        font-weight: 300;
+
+        position: absolute;
+        z-index: 999;
+        top: 6;
+        right: -2px;
+
+        color: $text1;
+    }
+}
+
+.chbox-checked {
+    background-color: #f0f6fe;
+}
+
+.checkbox-container {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+
+    position: relative;
+
+    padding: 5px;
+    padding-left: 22px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    letter-spacing: normal;
+
+    color: #767676;
+}
+
+.checkbox-container input {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    cursor: pointer;
+
+    opacity: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+
+    width: 18px;
+    height: 18px;
+
+    border: 1px solid #e7e8ec;
+    background-color: $white;
+}
+
+.checkbox-container:hover input~.checkmark {
+    //background-color: #ccc;
+}
+
+.checkbox-container input:checked~.checkmark {
+    //background-color: #2196f3;
+}
+
+.checkmark:after {
+    position: absolute;
+
+    display: none;
+
+    content: '';
+}
+
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    top: 1px;
+    left: 3px;
+
+    width: 10px;
+    height: 10px;
+
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+    border: solid $dark-blue;
+    border-width: 0 1px 1px 0;
 }
 
 //
@@ -53,6 +198,7 @@ h4 {
 .btn-warning,
 .btn-danger {
     text-shadow: none;
+
     $shadow: none;
     @include box-shadow($shadow);
 
@@ -69,22 +215,26 @@ h4 {
     }
 
     .badge {
+        border-radius: 50%;
         text-shadow: none;
     }
 
     &.dropdown-toggle {
         min-width: auto;
-        background-color: $white;
+
         border-left: none;
+        background-color: $white;
     }
 }
 
 .btn-clear {
-    min-width: auto;
-    background-color: transparent;
-    border: none;
     font-size: 24px;
+
+    min-width: auto;
+
     color: $dark-blue;
+    border: none;
+    background-color: transparent;
 
     .glyphicon {
         margin-top: -4px;
@@ -124,23 +274,25 @@ h4 {
 
 // Common styles
 .btn {
-    border-color: $dark-blue;
-    height: 32px;
-    min-width: 150px;
-
     font-size: 14px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
+
+    min-width: 150px;
+    height: 32px;
+
     letter-spacing: normal;
 
+    border-color: $dark-blue;
     text-shadow: none;
 
     &.dropdown-toggle {
         min-width: auto;
-        background-color: $white;
+
         border-left: none;
+        background-color: $white;
     }
 
     // Remove the gradient for the pressed/active state
@@ -159,19 +311,19 @@ h4 {
 
     &:hover,
     &:focus {
-        background-color: $white;
         border-color: $btn-default-focused-color;
+        background-color: $white;
     }
 
     &:active:focus {
-        background-color: $btn-default-active-bg;
         border-color: $btn-default-focused-color;
+        background-color: $btn-default-active-bg;
     }
 
     &:active,
     &.active {
-        background-color: $btn-default-active-bg;
         border-color: $btn-default-focused-color;
+        background-color: $btn-default-active-bg;
     }
 
     &.disabled,
@@ -184,8 +336,8 @@ h4 {
         &.focus,
         &:active,
         &.active {
-            background-color: $btn-default-active-bg;
             border-color: $btn-default-focused-color;
+            background-color: $btn-default-active-bg;
         }
     }
 }
@@ -194,14 +346,14 @@ h4 {
 
     &:hover,
     &:focus {
-        background-color: $light-blue;
         border-color: $light-blue;
+        background-color: $light-blue;
     }
 
     &:active,
     &.active {
-        background-color: $darkest-blue;
         border-color: $darkest-blue;
+        background-color: $darkest-blue;
     }
 
     &.disabled,
@@ -214,32 +366,36 @@ h4 {
         &.focus,
         &:active,
         &.active {
-            background-color: $darkest-blue;
             border-color: $darkest-blue;
+            background-color: $darkest-blue;
         }
     }
 }
 
 .btn-xs,
 .btn-group-xs>.btn {
-    background-color: $white;
-    border: 1px solid $btn-group-border;
     font-size: 12px;
-    height: 24px;
+
     min-width: 80px;
+    height: 24px;
+
     color: #000;
+    border: 1px solid $btn-group-border;
+    background-color: $white;
 
     &.active {
-        background-color: $btn-group-border;
         font-size: 12px;
         font-weight: normal;
+
+        background-color: $btn-group-border;
     }
 }
 
 .btn-group-xs>.btn {
-    background-color: transparent;
     font-size: 14px;
     font-weight: 300;
+
+    background-color: transparent;
 }
 
 // Apply the mixin to the buttons
@@ -284,15 +440,17 @@ h4 {
 
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
-    @include gradient-vertical($start-color: $dropdown-link-hover-bg, $end-color: darken($dropdown-link-hover-bg, 5%));
     background-color: darken($dropdown-link-hover-bg, 5%);
+
+    @include gradient-vertical($start-color: $dropdown-link-hover-bg, $end-color: darken($dropdown-link-hover-bg, 5%));
 }
 
 .dropdown-menu>.active>a,
 .dropdown-menu>.active>a:hover,
 .dropdown-menu>.active>a:focus {
-    @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
     background-color: darken($dropdown-link-active-bg, 5%);
+
+    @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
 }
 
 
@@ -300,18 +458,40 @@ h4 {
 // Navbar
 // --------------------------------------------------
 
+.navbar-default .nav.navbar-nav.navbar-right li>a.user-name {
+    font-weight: 400;
+    font-style: 13px;
+    line-height: 24px;
+
+    color: $white;
+
+    .user-role {
+        font-weight: 300;
+
+        margin-left: 4px;
+    }
+
+    .icon-ico-head-arrow {
+        font-size: 24px;
+        line-height: normal;
+
+        vertical-align: middle;
+    }
+}
+
 // Default navbar
 .navbar-default {
     border-radius: $navbar-border-radius;
+
     $shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
     @include box-shadow($shadow);
 
     .navbar-nav>.open>a,
     .navbar-nav>.active>a {
+        font-size: 16px;
         //@include gradient-vertical($start-color: darken($navbar-default-link-active-bg, 5%), $end-color: darken($navbar-default-link-active-bg, 2%));
         //@include box-shadow(inset 0 3px 9px rgba(0,0,0,.075));
         font-weight: 500;
-        font-size: 16px;
         font-style: normal;
         font-stretch: normal;
     }
@@ -320,13 +500,14 @@ h4 {
         margin-right: auto;
 
         li>a {
-            font-weight: 300;
             font-size: 13px;
+            font-weight: 300;
+            font-style: normal;
             font-style: normal;
             font-stretch: normal;
-            letter-spacing: normal;
             line-height: normal;
-            font-style: normal;
+
+            letter-spacing: normal;
         }
 
         li.active>a {
@@ -336,31 +517,33 @@ h4 {
 }
 
 div.navbar-header>a.navbar-brand {
-    color: $navbar-barnd-color;
-    font-weight: 900;
     font-size: 24px;
+    font-weight: 900;
     font-style: normal;
     font-stretch: normal;
-    letter-spacing: -0.6px;
+
+    margin-right: 22px;
+
+    letter-spacing: -.6px;
+
+    color: $navbar-barnd-color;
 }
 
 .navbar-nav>li>a {
-    //text-shadow: 0 1px 0 rgba(255,255,255,.25);
-    color: $navbar-active-color;
-    font-weight: 300;
     font-size: 16px;
+    font-weight: 300;
     font-style: normal;
     font-stretch: normal;
+
+    color: $navbar-active-color;
 }
 
-// Undo rounded corners in static and fixed navbars
 .navbar-static-top,
 .navbar-fixed-top,
 .navbar-fixed-bottom {
     border-radius: 0;
 }
 
-// Fix active state of dropdown items in collapsed mode
 @media (max-width: $grid-float-breakpoint-max) {
     .navbar .navbar-nav .open .dropdown-menu>.active>a {
 
@@ -368,6 +551,7 @@ div.navbar-header>a.navbar-brand {
         &:hover,
         &:focus {
             color: #fff;
+
             @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
         }
     }
@@ -381,14 +565,16 @@ div.navbar-header>a.navbar-brand {
 // Common styles
 .alert {
     text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
+
     $shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 2px rgba(0, 0, 0, .05);
     @include box-shadow($shadow);
 }
 
 // Mixin for generating new styles
 @mixin alert-styles($color) {
-    @include gradient-vertical($start-color: $color, $end-color: darken($color, 7.5%));
     border-color: darken($color, 15%);
+
+    @include gradient-vertical($start-color: $color, $end-color: darken($color, 7.5%));
 }
 
 // Apply the mixin to the alerts
@@ -415,7 +601,7 @@ div.navbar-header>a.navbar-brand {
 
 // Give the progress background some depth
 .progress {
-    @include gradient-vertical($start-color: darken($progress-bg, 4%), $end-color: $progress-bg)
+    @include gradient-vertical($start-color: darken($progress-bg, 4%), $end-color: $progress-bg);
 }
 
 // Mixin for generating new styles
@@ -457,15 +643,17 @@ div.navbar-header>a.navbar-brand {
 
 .list-group {
     border-radius: $border-radius-base;
+
     @include box-shadow(0 1px 2px rgba(0, 0, 0, .075));
 }
 
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
-    text-shadow: 0 -1px 0 darken($list-group-active-bg, 10%);
-    @include gradient-vertical($start-color: $list-group-active-bg, $end-color: darken($list-group-active-bg, 7.5%));
     border-color: darken($list-group-active-border, 7.5%);
+    text-shadow: 0 -1px 0 darken($list-group-active-bg, 10%);
+
+    @include gradient-vertical($start-color: $list-group-active-bg, $end-color: darken($list-group-active-bg, 7.5%));
 
     .badge {
         text-shadow: none;
@@ -518,8 +706,9 @@ div.navbar-header>a.navbar-brand {
 // --------------------------------------------------
 
 .well {
-    @include gradient-vertical($start-color: darken($well-bg, 5%), $end-color: $well-bg);
     border-color: darken($well-bg, 10%);
+
+    @include gradient-vertical($start-color: darken($well-bg, 5%), $end-color: $well-bg);
     $shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1);
     @include box-shadow($shadow);
 }
@@ -529,37 +718,44 @@ div.navbar-header>a.navbar-brand {
 // --------------------------------------------------
 
 .tab-content {
+    padding: 25px;
+
+    border-right: 1px solid $nav-tabs-border-color;
     border-bottom: 1px solid $nav-tabs-border-color;
     border-left: 1px solid $nav-tabs-border-color;
-    border-right: 1px solid $nav-tabs-border-color;
-    padding: 25px;
 }
 
 ul.nav-tabs {
     height: 46px;
 
     li {
-        height: 46px;
         min-width: 160px;
+        height: 46px;
+
         text-align: center;
 
         a {
-            color: $dark-blue;
             font-size: 14px;
             font-weight: 500;
             line-height: 1.57;
+
             text-transform: uppercase;
+
+            color: $dark-blue;
         }
     }
 
     li.active {
         a {
-            padding-top: 14px;
-            padding-bottom: 14px;
-            color: $nav-tabs-active-link-color;
             font-size: 12px;
             line-height: 1.33;
-            letter-spacing: 0.6px;
+
+            padding-top: 14px;
+            padding-bottom: 14px;
+
+            letter-spacing: .6px;
+
+            color: $nav-tabs-active-link-color;
         }
     }
 }
@@ -568,53 +764,65 @@ ul.nav-tabs {
     margin-top: 8px;
 
     .tab-content {
+        padding: 5px;
         //border-bottom: 1px solid $filters-bg;
         //border-left: 1px solid $filters-bg;
         //border-right: 1px solid $filters-bg;
+
         border: 1px solid $filters-bg;
-        padding: 5px;
         background-color: $filters-bg;
 
-        input[type="text"] {
-            box-shadow: none;
-            background: $filters-bg;
-            border: none;
+        >.tab-pane {
+            >.input-group {
+                width: 100%;
+            }
+        }
+
+        input[type='text'] {
             color: #000;
+            border: none;
+            background: $filters-bg;
+            box-shadow: none;
 
             &::placeholder {
-                text-transform: uppercase;
+                text-transform: none;
             }
         }
     }
 
     ul.nav-tabs {
         height: 36px;
+
         border-bottom: none;
 
         li {
-            text-align: center;
             width: auto;
             min-width: auto;
             height: 36px;
 
+            text-align: center;
+
             a {
-                color: $filters-tabs-color;
                 font-size: 12px;
                 font-weight: 500;
                 line-height: 1.57;
-                text-transform: uppercase;
-                letter-spacing: 0.6px;
+
                 padding: 8px 10px;
 
+                letter-spacing: .6px;
+                text-transform: uppercase;
+
+                color: $filters-tabs-color;
             }
         }
 
         li.active {
             a {
-                background-color: $filters-bg;
-                color: $nav-tabs-active-link-color;
                 font-size: 12px;
+
+                color: $nav-tabs-active-link-color;
                 border: 1px solid $filters-bg;
+                background-color: $filters-bg;
             }
         }
     }
@@ -625,49 +833,68 @@ ul.nav-tabs {
 // --------------------------------------------------
 
 table.table {
-    color: $table-color;
     line-height: 1.57;
 
+    color: $table-color;
+
     thead {
+        font-weight: bold;
+
+        color: $thead-color;
+        background-color: $thead-bg;
+
         tr {
             th {
                 padding-top: 20px;
                 padding-bottom: 20px;
             }
         }
-
-        color: $thead-color;
-        font-weight: bold;
-        background-color: $thead-bg;
     }
+}
+
+
+.content-container {
+    display: table;
+
+    width: 100%;
+    height: 100%;
+    padding-top: 58px;
 }
 
 //
 //  Left sidebar
 //
 .sidebar_left {
-    height: calc(100% - 58px);
-    min-height: calc(100% - 58px);
-    margin-top: -20px;
+    display: table-cell;
+
+    height: 100%;
+    min-height: 100%;
+    //height: calc(100% - 58px);
+    //min-height: calc(100% - 58px);
+    //margin-top: -20px;
     margin-left: -15px;
-    padding-left: 35px;
+    //padding-left: 35px;
+
     background-color: $sidebat-bg;
     box-shadow: 1px 0 0 0 $sidebat-box-shadow;
 
+
     .easy-tree {
-        max-height: calc(100% - 230px);
-        overflow-y: scroll;
+        //overflow-y: scroll;
+
+        //max-height: calc(100% - 230px);
     }
 
     .bottom_controls {
         position: absolute;
         bottom: 0;
         left: 0;
+
         width: 100%;
         height: 74px;
-        padding: 20px;
-        padding-left: 35px;
-        box-shadow: -2px 0 10px 0 rgba(0, 0, 0, 0.05);
+        padding: 20px 15px;
+
+        box-shadow: -2px 0 10px 0 rgba(0, 0, 0, .05);
 
         .btn {
             min-width: 100px;
@@ -680,8 +907,10 @@ table.table {
                 font-style: normal;
                 font-stretch: normal;
                 line-height: normal;
+
                 letter-spacing: normal;
-                color: #000000;
+
+                color: #000;
             }
         }
     }
@@ -690,31 +919,44 @@ table.table {
 //
 // Content
 //
-.content {
-    padding-right: 58px;
-    height: calc(100% - 80px);
+.page-row {
+    display: table-row;
 
-    .scroll-wrap{
-      display: block;
-      height: 100%;
-      overflow-y: scroll;
+    height: 1px;
+}
+
+.content {
+    //height: calc(100% - 80px);
+    height: 100%;
+    padding-right: 58px;
+
+    .scroll-wrap {
+        //overflow-y: scroll;
+        position: relative;
+
+        display: block;
+
+        height: 100%;
     }
 }
 
 //
 //  Right sidebar
 //
-.sidebar_right {
-    height: calc(100% - 58px);
-    min-height: calc(100% - 58px);
-
-    width: 64px;
+.sidebar-right {
     //float: right;
     //margin-right: -99px;
     //margin-top: -56px;
-    position: absolute;
-    top: 56px;
+    position: fixed;
+    top: 57px;
     right: 0;
+    //display:table-cell;
+    //height:100%;
+
+    width: 64px;
+    height: calc(100% - 58px);
+    min-height: calc(100% - 58px);
+
     background-color: $sidebat-bg;
     box-shadow: 0 0 0 1px $sidebat-box-shadow;
 
@@ -725,16 +967,36 @@ table.table {
 
     li.square {
         display: block;
+        display: flex;
+
         width: 64px;
         height: 64px;
-        display: flex;
+
+        cursor: pointer;
+        text-align: center;
+
         align-items: center;
         justify-content: center;
-        text-align: center;
-        cursor: pointer;
 
-        &.active {
-            background-color: rgba(216, 216, 216, .2);
+        //&.active {
+        //background-color: rgba(216, 216, 216, .2);
+        //background-color: $right-sidebar-active-item;
+        //}
+
+        &.toggle-view {
+            color: $dark-blue;
+            box-shadow: 0 1px 15px 0 rgba(0, 0, 0, .08);
+        }
+
+
+        &:hover {
+            -webkit-transition: all .5s ease-in-out;
+            -moz-transition: all .5s ease-in-out;
+            -ms-transition: all .5s ease-in-out;
+            -o-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+
+            background-color: $right-sidebar-active-item;
         }
 
         .ring-icon {
@@ -743,21 +1005,23 @@ table.table {
 
         span.glyphicon {
             font-size: 24px;
+
             color: $dark-blue;
 
             &.inactive {
                 color: $grey;
             }
-
         }
 
         .wrap {
             position: relative;
-            margin: 5px;
+
             width: 54px;
             height: 54px;
-            background: $white;
+            margin: 5px;
             padding-top: 6px;
+
+            background: $white;
 
             >span.label {
                 font-family: Roboto;
@@ -766,11 +1030,14 @@ table.table {
                 font-style: normal;
                 font-stretch: normal;
                 line-height: 3;
-                letter-spacing: normal;
-                text-align: center;
-                color: $dark-blue;
-                padding: 0;
+
                 margin-bottom: -10px;
+                padding: 0;
+
+                text-align: center;
+                letter-spacing: normal;
+
+                color: $dark-blue;
             }
 
             &.inactive {
@@ -785,22 +1052,30 @@ table.table {
         }
 
         .badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: $dark-blue;
-            padding: 4px 6px;
             font-size: 11px;
-            font-weight: normal;
+            font-weight: 200;
             font-style: normal;
             font-stretch: normal;
-            line-height: 0.91;
-            letter-spacing: normal;
+            line-height: .91;
+
+            position: absolute;
+            top: -4px;
+            right: -4px;
+
+            min-width: 20px;
+            min-height: 20px;
+            padding: 6px 5px;
+
             text-align: center;
-            color: #ffffff;
+            letter-spacing: normal;
+
+            color: #fff;
+            border-radius: 50%;
+            background-color: $dark-blue;
 
             >span.glyphicon {
                 font-size: 9px;
+
                 color: $white;
             }
 
@@ -808,7 +1083,6 @@ table.table {
                 background-color: $grey;
             }
         }
-
     }
 }
 
@@ -829,6 +1103,20 @@ table.table {
         min-width: 80px;
     }
 
+    .sticky-content-header {
+        position: fixed;
+        z-index: 999;
+
+        width: calc(75% - 59px);
+        height: 64px;
+        margin-left: -29px;
+        margin-top: -1px;
+        padding: 16px;
+
+        background-color: $white;
+        box-shadow: 0 1px 15px 0 rgba(0, 0, 0, .08);
+    }
+
     .content-header {
         h4 {
             margin-top: 0;
@@ -837,6 +1125,7 @@ table.table {
 
     .settings-btn {
         font-size: 24px;
+
         color: $dark-blue;
     }
 
@@ -871,18 +1160,22 @@ table.table {
 }
 
 .text-table {
-    border: none;
     font-family: 'Roboto Mono', monospace;
     font-size: 12px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.83;
-    letter-spacing: normal;
-    color: #000000;
-    padding-right: 40px;
-    margin-top: 20px;
+
     width: calc(100% - 20px);
+    margin-top: 20px;
+    padding-right: 40px;
+
+    letter-spacing: normal;
+
+    color: #000;
+    border: none;
+
     tr {
         td {
             border: none !important;
@@ -906,7 +1199,7 @@ table.table {
     margin-left: -25px;
 }
 
-.attachment {}
+
 
 .panel-default {
     font-family: Roboto;
@@ -915,13 +1208,16 @@ table.table {
     font-style: normal;
     font-stretch: normal;
     line-height: 1.43;
+
     letter-spacing: normal;
-    color: #000000;
+
+    color: #000;
 }
 
 .steps-table {
     thead {
         background: transparent !important;
+
         tr {
             th {
                 font-family: Roboto;
@@ -930,10 +1226,13 @@ table.table {
                 font-style: normal;
                 font-stretch: normal;
                 line-height: normal;
-                letter-spacing: normal;
-                color: #ddd8d8;
+
                 padding-top: 5px !important;
                 padding-bottom: 5px !important;
+
+                letter-spacing: normal;
+
+                color: #ddd8d8;
                 border-bottom: none;
             }
         }
@@ -947,95 +1246,257 @@ table.table {
             font-style: normal;
             font-stretch: normal;
             line-height: normal;
-            letter-spacing: normal;
-            color: #ddd8d8;
+
             padding-top: 5px;
             padding-bottom: 5px;
+
+            letter-spacing: normal;
+
+            color: #ddd8d8;
             background: transparent !important;
         }
 
         td {
-            border-bottom: 1px solid $sidebat-box-shadow !important;
             font-family: Roboto;
             font-size: 14px;
             font-weight: normal;
             font-style: normal;
             font-stretch: normal;
             line-height: 1.29;
-            letter-spacing: normal;
-            color: #000000;
+
             position: relative;
+
+            letter-spacing: normal;
+
+            color: #000;
+            border-bottom: 1px solid $sidebat-box-shadow !important;
+
             .glyphicon {
                 font-size: 12px;
                 font-weight: 500;
                 font-style: normal;
                 font-stretch: normal;
                 line-height: normal;
+
                 letter-spacing: normal;
+
                 color: #ddd8d8;
             }
-            .btn{
+
+            .icon-ico-drag {
+                font-size: 24px;
+            }
+
+            .btn {
                 min-width: auto;
-                min-height: 14px;
-                height: 14px;
+                height: 24px;
+                margin: 0;
+                //padding-top: 3px;
+                margin-top: -3px;
                 padding: 0;
-                padding-top: 3px;
-                margin:0;
             }
         }
     }
 }
 
-.content .btn-group.gray-border.open > .btn {
-  border-color: $border2;
-  border-bottom-color: $white;
-  margin-bottom: -1px;
-  z-index: 9909;
-}
-.content{
-  .open > .dropdown-menu {
-      display: block;
-      top: calc(100% - 3px);
-      border-color: $border2;
-  }
+.content .btn-group.gray-border.open>.btn {
+    z-index: 9909;
+
+    margin-bottom: -1px;
+
+    border-color: $border2;
+    border-bottom-color: $white;
 }
 
-/* small screen lanscape */
+.content {
+    .open>.dropdown-menu {
+        top: calc(100% - 3px);
 
-@media (max-width: 1440px) {
+        display: block;
 
-  .pull-right {
-    float: none!important;
-    width: 100%;
-
-  }
-  .controls{
-    .btn-xs {
-      min-width: auto;
-      width: calc(100% - 6px);
-      margin-top: 2px;
+        border-color: $border2;
     }
-  }
-  .btn-xs, .btn-group-xs > .btn, .btn-group-xs > .btn {
-    min-width: auto;
-    width: calc(50% - 3px);
-    margin-top: 2px;
-  }
-  .sidebar_left {
-    .easy-tree {
-        max-height: calc(100% - 330px);
-        overflow-y: scroll;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+    padding: 8px 3px;
+
+    list-style: none;
+
+    border-radius: 2px;
+    background-color: $white;
+
+    li {
+        a {
+            text-decoration: underline;
+
+            text-decoration-color: $dark-blue;
+            text-underline-position: under;
+        }
     }
-    .bottom_controls {
-      padding: 0;
-      height: 100px;
-      .btn {
+}
+
+.dropdown-menu.dropdown-1>li>a {
+    padding: 17px;
+}
+
+.dropdown-menu.dropdown-2>li>a {
+    padding: 15px;
+}
+
+.dropdown-menu.dropdown-3 {
+    min-width: 334px;
+    height: 352px;
+}
+
+.dropdown-menu.dropdown-3>li.list {
+    overflow-y: scroll;
+
+    max-height: 300px;
+    >.list-group{
+        &:first-child{
+            border-top: none;
+        }
+    }
+}
+
+.dropdown-menu.dropdown-3>li.last {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 52px;
+
+    border-top: 1px solid #e8e8e8;
+}
+
+.dropdown-menu.dropdown-3>li>a {
+    padding: 15px;
+}
+
+
+
+.radio-container {
+  position: relative;
+}
+.radio-container:hover > .label {
+  //color: $dark-blue;
+}
+.radio-container:hover > .label::before {
+  border: 1rem solid $dark-blue;
+  //margin-right: 2rem;
+}
+
+.radio-btn {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+.radio-btn:checked + .label {
+  color: $dark-blue;
+}
+.radio-btn:checked + .label::before {
+  //margin-right: 2rem;
+  border: 0.6rem solid $dark-blue;
+  background: #fff;
+}
+
+.label.lb1 {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  >p.list-group-item-text{
+    text-align: left;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.83;
+      letter-spacing: normal;
+      color: rgba(64, 64, 64, 0.35);
+        >span.list-group-item-heading{
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.57;
+      letter-spacing: normal;
+      color: #404040;
+  }
+  }
+}
+
+.label.lb1::before {
+  display: inline-block;
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  border: 0.2rem solid $dark-blue;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+@media (max-width: 1439px) {
+    .pull-right {
+        float: none !important;
+
+        width: 100%;
+    }
+
+    .controls {
+        .btn-xs {
+            width: calc(100% - 6px);
+            min-width: auto;
+            margin-top: 2px;
+        }
+    }
+
+    .btn-xs,
+    .btn-group-xs>.btn,
+    .btn-group-xs>.btn {
+        width: calc(50% - 3px);
         min-width: auto;
-        width: calc(100% - 6px);
         margin-top: 2px;
-      }
     }
-  }
 
+    .sidebar_left {
+        display: table-cell;
 
+        height: 100%;
+
+        .easy-tree ul>li>span>a span.items-count {}
+
+        .easy-tree {
+            overflow-y: scroll;
+
+            max-height: calc(100% - 330px);
+        }
+
+        .bottom_controls {
+            height: 100px;
+            padding: 0;
+
+            .btn {
+                width: calc(100% - 6px);
+                min-width: auto;
+                margin-top: 2px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-nav>li>a.user-name {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 }
