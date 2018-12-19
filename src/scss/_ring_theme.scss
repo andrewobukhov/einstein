@@ -1,10 +1,12 @@
 html,
 body,
-container {
+container
+{
     height: 100%;
 }
 
-hr {
+hr
+{
     height: 0;
     margin: 15px 0;
 
@@ -16,21 +18,25 @@ hr {
 .btn:active:focus,
 .btn:active.focus,
 .btn.active:focus,
-.btn.active.focus {
+.btn.active.focus
+{
     outline: none;
 }
 
-.form-control {
+.form-control
+{
     border-radius: 0;
 }
 
-.form-control:focus {
+.form-control:focus
+{
     border-color: #0747a6;
     outline: none;
     box-shadow: none;
 }
 
-h1.heading0 {
+h1.heading0
+{
     font-size: 30px;
     font-weight: bold;
     font-style: normal;
@@ -41,7 +47,8 @@ h1.heading0 {
     color: $heading0;
 }
 
-h4 {
+h4
+{
     font-family: Roboto;
     font-size: 18px;
     font-weight: 300;
@@ -52,43 +59,75 @@ h4 {
     letter-spacing: normal;
 }
 
-.text1 {
+.text1
+{
     color: $text1;
 }
 
-.text2 {
+.text2
+{
     color: $text2;
 }
 
-.dotted {
+.no-wrap
+{
+    overflow: hidden;
+
+    width: 100%;
+
+    white-space: nowrap;
+}
+.small-row
+{
+    margin-left: -15px;
+    &.bcrumb
+    {
+        margin-top: -14px;
+    }
+}
+
+.shift-left
+{
+    margin-left: -12px !important;
+}
+
+.dotted
+{
     text-decoration: underline;
 
     text-decoration-style: dotted;
     text-underline-position: under;
 }
 
-.m-b-16 {
+.m-b-16
+{
     margin-bottom: 16px;
 }
 
-.m-b-17 {
+.m-b-17
+{
     margin-bottom: 17px;
 }
 
-.m-t-16 {
+.m-t-16
+{
     margin-top: 16px;
 }
 
-.m-t-19 {
+.m-t-19
+{
     margin-top: 19px;
 }
 
-.m-t-64 {
+.m-t-64
+{
     margin-top: 64px;
 }
 
-.glyphicon {
-    &.remove {
+.glyphicon
+{
+    &.remove
+    {
         font-size: 24px;
         font-weight: 300;
 
@@ -101,11 +140,13 @@ h4 {
     }
 }
 
-.chbox-checked {
+.chbox-checked
+{
     background-color: #f0f6fe;
 }
 
-.checkbox-container {
+.checkbox-container
+{
     font-family: Roboto;
     font-size: 13px;
     font-weight: normal;
@@ -120,15 +161,16 @@ h4 {
 
     cursor: pointer;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     letter-spacing: normal;
 
     color: #767676;
 }
 
-.checkbox-container input {
+.checkbox-container input
+{
     position: absolute;
 
     width: 0;
@@ -139,7 +181,8 @@ h4 {
     opacity: 0;
 }
 
-.checkmark {
+.checkmark
+{
     position: absolute;
     top: 3px;
     left: 0;
@@ -151,15 +194,12 @@ h4 {
     background-color: $white;
 }
 
-.checkbox-container:hover input~.checkmark {
-    //background-color: #ccc;
-}
 
-.checkbox-container input:checked~.checkmark {
-    //background-color: #2196f3;
-}
 
-.checkmark:after {
+
+
+.checkmark:after
+{
     position: absolute;
 
     display: none;
@@ -167,11 +207,13 @@ h4 {
     content: '';
 }
 
-.checkbox-container input:checked~.checkmark:after {
+.checkbox-container input:checked ~ .checkmark:after
+{
     display: block;
 }
 
-.checkbox-container .checkmark:after {
+.checkbox-container .checkmark:after
+{
     top: 1px;
     left: 3px;
 
@@ -179,8 +221,8 @@ h4 {
     height: 10px;
 
     -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
 
     border: solid $dark-blue;
     border-width: 0 1px 1px 0;
@@ -196,7 +238,8 @@ h4 {
 .btn-success,
 .btn-info,
 .btn-warning,
-.btn-danger {
+.btn-danger
+{
     text-shadow: none;
 
     $shadow: none;
@@ -204,22 +247,26 @@ h4 {
 
     // Reset the shadow
     &:active,
-    &.active {
+    &.active
+    {
         @include box-shadow(none);
     }
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
+    fieldset[disabled] &
+    {
         @include box-shadow(none);
     }
 
-    .badge {
+    .badge
+    {
         border-radius: 50%;
         text-shadow: none;
     }
 
-    &.dropdown-toggle {
+    &.dropdown-toggle
+    {
         min-width: auto;
 
         border-left: none;
@@ -227,7 +274,8 @@ h4 {
     }
 }
 
-.btn-clear {
+.btn-clear
+{
     font-size: 24px;
 
     min-width: auto;
@@ -236,36 +284,40 @@ h4 {
     border: none;
     background-color: transparent;
 
-    .glyphicon {
+    .glyphicon
+    {
         margin-top: -4px;
     }
 }
 
 // Mixin for generating new styles
-@mixin btn-styles($btn-color: $dark-blue) {
-
+@mixin btn-styles($btn-color: $dark-blue)
+{
     &:hover,
-    &:focus {
+    &:focus
+    {
         //background-color: darken($btn-color, 12%);
         //background-position: 0 -15px;
     }
 
     &:active,
-    &.active {
+    &.active
+    {
         //background-color: darken($btn-color, 12%);
         //border-color: darken($btn-color, 14%);
     }
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-
+    fieldset[disabled] &
+    {
         &,
         &:hover,
         &:focus,
         &.focus,
         &:active,
-        &.active {
+        &.active
+        {
             //background-color: darken($btn-color, 12%);
             //background-image: none;
         }
@@ -273,7 +325,8 @@ h4 {
 }
 
 // Common styles
-.btn {
+.btn
+{
     font-size: 14px;
     font-weight: 500;
     font-style: normal;
@@ -288,8 +341,12 @@ h4 {
     border-color: $dark-blue;
     text-shadow: none;
 
-    &.dropdown-toggle {
+    //margin: 3.4px;
+
+    &.dropdown-toggle
+    {
         min-width: auto;
+        margin-left: -1px;
 
         border-left: none;
         background-color: $white;
@@ -297,75 +354,84 @@ h4 {
 
     // Remove the gradient for the pressed/active state
     &:active,
-    &.active {
+    &.active
+    {
         background-image: none;
     }
 }
 
-.btn-group.open .dropdown-toggle {
+.btn-group.open .dropdown-toggle
+{
     -webkit-box-shadow: none;
-    box-shadow: none;
+            box-shadow: none;
 }
 
-.btn-default {
-
+.btn-default
+{
     &:hover,
-    &:focus {
+    &:focus
+    {
         border-color: $btn-default-focused-color;
         background-color: $white;
     }
 
-    &:active:focus {
+    &:active:focus
+    {
         border-color: $btn-default-focused-color;
         background-color: $btn-default-active-bg;
     }
 
     &:active,
-    &.active {
+    &.active
+    {
         border-color: $btn-default-focused-color;
         background-color: $btn-default-active-bg;
     }
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-
+    fieldset[disabled] &
+    {
         &,
         &:hover,
         &:focus,
         &.focus,
         &:active,
-        &.active {
+        &.active
+        {
             border-color: $btn-default-focused-color;
             background-color: $btn-default-active-bg;
         }
     }
 }
 
-.btn-primary {
-
+.btn-primary
+{
     &:hover,
-    &:focus {
+    &:focus
+    {
         border-color: $light-blue;
         background-color: $light-blue;
     }
 
     &:active,
-    &.active {
+    &.active
+    {
         border-color: $darkest-blue;
         background-color: $darkest-blue;
     }
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-
+    fieldset[disabled] &
+    {
         &,
         &:hover,
         &:focus,
         &.focus,
         &:active,
-        &.active {
+        &.active
+        {
             border-color: $darkest-blue;
             background-color: $darkest-blue;
         }
@@ -373,7 +439,8 @@ h4 {
 }
 
 .btn-xs,
-.btn-group-xs>.btn {
+.btn-group-xs > .btn
+{
     font-size: 12px;
 
     min-width: 80px;
@@ -383,7 +450,8 @@ h4 {
     border: 1px solid $btn-group-border;
     background-color: $white;
 
-    &.active {
+    &.active
+    {
         font-size: 12px;
         font-weight: normal;
 
@@ -391,7 +459,8 @@ h4 {
     }
 }
 
-.btn-group-xs>.btn {
+.btn-group-xs > .btn
+{
     font-size: 14px;
     font-weight: 300;
 
@@ -399,27 +468,33 @@ h4 {
 }
 
 // Apply the mixin to the buttons
-.btn-default {
+.btn-default
+{
     @include btn-styles($btn-default-bg);
 }
 
-.btn-primary {
+.btn-primary
+{
     @include btn-styles($btn-primary-bg);
 }
 
-.btn-success {
+.btn-success
+{
     @include btn-styles($btn-success-bg);
 }
 
-.btn-info {
+.btn-info
+{
     @include btn-styles($btn-info-bg);
 }
 
-.btn-warning {
+.btn-warning
+{
     @include btn-styles($btn-warning-bg);
 }
 
-.btn-danger {
+.btn-danger
+{
     @include btn-styles($btn-danger-bg);
 }
 
@@ -429,7 +504,8 @@ h4 {
 // --------------------------------------------------
 
 .thumbnail,
-.img-thumbnail {
+.img-thumbnail
+{
     @include box-shadow(0 1px 2px rgba(0, 0, 0, .075));
 }
 
@@ -438,16 +514,18 @@ h4 {
 // Dropdowns
 // --------------------------------------------------
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus {
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus
+{
     background-color: darken($dropdown-link-hover-bg, 5%);
 
     @include gradient-vertical($start-color: $dropdown-link-hover-bg, $end-color: darken($dropdown-link-hover-bg, 5%));
 }
 
-.dropdown-menu>.active>a,
-.dropdown-menu>.active>a:hover,
-.dropdown-menu>.active>a:focus {
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus
+{
     background-color: darken($dropdown-link-active-bg, 5%);
 
     @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
@@ -458,20 +536,23 @@ h4 {
 // Navbar
 // --------------------------------------------------
 
-.navbar-default .nav.navbar-nav.navbar-right li>a.user-name {
+.navbar-default .nav.navbar-nav.navbar-right li > a.user-name
+{
     font-weight: 400;
     font-style: 13px;
     line-height: 24px;
 
     color: $white;
 
-    .user-role {
+    .user-role
+    {
         font-weight: 300;
 
         margin-left: 4px;
     }
 
-    .icon-ico-head-arrow {
+    .icon-ico-head-arrow
+    {
         font-size: 24px;
         line-height: normal;
 
@@ -480,26 +561,28 @@ h4 {
 }
 
 // Default navbar
-.navbar-default {
+.navbar-default
+{
     border-radius: $navbar-border-radius;
 
     $shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
     @include box-shadow($shadow);
 
-    .navbar-nav>.open>a,
-    .navbar-nav>.active>a {
+    .navbar-nav > .open > a,
+    .navbar-nav > .active > a
+    {
         font-size: 16px;
-        //@include gradient-vertical($start-color: darken($navbar-default-link-active-bg, 5%), $end-color: darken($navbar-default-link-active-bg, 2%));
-        //@include box-shadow(inset 0 3px 9px rgba(0,0,0,.075));
         font-weight: 500;
         font-style: normal;
         font-stretch: normal;
     }
 
-    .nav.navbar-nav.navbar-right {
+    .nav.navbar-nav.navbar-right
+    {
         margin-right: auto;
 
-        li>a {
+        li > a
+        {
             font-size: 13px;
             font-weight: 300;
             font-style: normal;
@@ -510,13 +593,15 @@ h4 {
             letter-spacing: normal;
         }
 
-        li.active>a {
+        li.active > a
+        {
             font-weight: normal;
         }
     }
 }
 
-div.navbar-header>a.navbar-brand {
+div.navbar-header > a.navbar-brand
+{
     font-size: 24px;
     font-weight: 900;
     font-style: normal;
@@ -529,7 +614,8 @@ div.navbar-header>a.navbar-brand {
     color: $navbar-barnd-color;
 }
 
-.navbar-nav>li>a {
+.navbar-nav > li > a
+{
     font-size: 16px;
     font-weight: 300;
     font-style: normal;
@@ -540,16 +626,19 @@ div.navbar-header>a.navbar-brand {
 
 .navbar-static-top,
 .navbar-fixed-top,
-.navbar-fixed-bottom {
+.navbar-fixed-bottom
+{
     border-radius: 0;
 }
 
-@media (max-width: $grid-float-breakpoint-max) {
-    .navbar .navbar-nav .open .dropdown-menu>.active>a {
-
+@media (max-width: $grid-float-breakpoint-max)
+{
+    .navbar .navbar-nav .open .dropdown-menu > .active > a
+    {
         &,
         &:hover,
-        &:focus {
+        &:focus
+        {
             color: #fff;
 
             @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
@@ -563,7 +652,8 @@ div.navbar-header>a.navbar-brand {
 // --------------------------------------------------
 
 // Common styles
-.alert {
+.alert
+{
     text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
 
     $shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 2px rgba(0, 0, 0, .05);
@@ -571,26 +661,31 @@ div.navbar-header>a.navbar-brand {
 }
 
 // Mixin for generating new styles
-@mixin alert-styles($color) {
+@mixin alert-styles($color)
+{
     border-color: darken($color, 15%);
 
     @include gradient-vertical($start-color: $color, $end-color: darken($color, 7.5%));
 }
 
 // Apply the mixin to the alerts
-.alert-success {
+.alert-success
+{
     @include alert-styles($alert-success-bg);
 }
 
-.alert-info {
+.alert-info
+{
     @include alert-styles($alert-info-bg);
 }
 
-.alert-warning {
+.alert-warning
+{
     @include alert-styles($alert-warning-bg);
 }
 
-.alert-danger {
+.alert-danger
+{
     @include alert-styles($alert-danger-bg);
 }
 
@@ -600,39 +695,47 @@ div.navbar-header>a.navbar-brand {
 // --------------------------------------------------
 
 // Give the progress background some depth
-.progress {
+.progress
+{
     @include gradient-vertical($start-color: darken($progress-bg, 4%), $end-color: $progress-bg);
 }
 
 // Mixin for generating new styles
-@mixin progress-bar-styles($color) {
+@mixin progress-bar-styles($color)
+{
     @include gradient-vertical($start-color: $color, $end-color: darken($color, 10%));
 }
 
 // Apply the mixin to the progress bars
-.progress-bar {
+.progress-bar
+{
     @include progress-bar-styles($progress-bar-bg);
 }
 
-.progress-bar-success {
+.progress-bar-success
+{
     @include progress-bar-styles($progress-bar-success-bg);
 }
 
-.progress-bar-info {
+.progress-bar-info
+{
     @include progress-bar-styles($progress-bar-info-bg);
 }
 
-.progress-bar-warning {
+.progress-bar-warning
+{
     @include progress-bar-styles($progress-bar-warning-bg);
 }
 
-.progress-bar-danger {
+.progress-bar-danger
+{
     @include progress-bar-styles($progress-bar-danger-bg);
 }
 
 // Reset the striped class because our mixins don't do multiple gradients and
 // the above custom styles override the new `.progress-bar-striped` in v3.2.0.
-.progress-bar-striped {
+.progress-bar-striped
+{
     @include gradient-striped;
 }
 
@@ -641,7 +744,8 @@ div.navbar-header>a.navbar-brand {
 // List groups
 // --------------------------------------------------
 
-.list-group {
+.list-group
+{
     border-radius: $border-radius-base;
 
     @include box-shadow(0 1px 2px rgba(0, 0, 0, .075));
@@ -649,13 +753,15 @@ div.navbar-header>a.navbar-brand {
 
 .list-group-item.active,
 .list-group-item.active:hover,
-.list-group-item.active:focus {
+.list-group-item.active:focus
+{
     border-color: darken($list-group-active-border, 7.5%);
     text-shadow: 0 -1px 0 darken($list-group-active-bg, 10%);
 
     @include gradient-vertical($start-color: $list-group-active-bg, $end-color: darken($list-group-active-bg, 7.5%));
 
-    .badge {
+    .badge
+    {
         text-shadow: none;
     }
 }
@@ -666,37 +772,45 @@ div.navbar-header>a.navbar-brand {
 // --------------------------------------------------
 
 // Common styles
-.panel {
+.panel
+{
     @include box-shadow(0 1px 2px rgba(0, 0, 0, .05));
 }
 
 // Mixin for generating new styles
-@mixin panel-heading-styles($color) {
+@mixin panel-heading-styles($color)
+{
     @include gradient-vertical($start-color: $color, $end-color: darken($color, 5%));
 }
 
 // Apply the mixin to the panel headings only
-.panel-default>.panel-heading {
+.panel-default > .panel-heading
+{
     @include panel-heading-styles($panel-default-heading-bg);
 }
 
-.panel-primary>.panel-heading {
+.panel-primary > .panel-heading
+{
     @include panel-heading-styles($panel-primary-heading-bg);
 }
 
-.panel-success>.panel-heading {
+.panel-success > .panel-heading
+{
     @include panel-heading-styles($panel-success-heading-bg);
 }
 
-.panel-info>.panel-heading {
+.panel-info > .panel-heading
+{
     @include panel-heading-styles($panel-info-heading-bg);
 }
 
-.panel-warning>.panel-heading {
+.panel-warning > .panel-heading
+{
     @include panel-heading-styles($panel-warning-heading-bg);
 }
 
-.panel-danger>.panel-heading {
+.panel-danger > .panel-heading
+{
     @include panel-heading-styles($panel-danger-heading-bg);
 }
 
@@ -705,7 +819,8 @@ div.navbar-header>a.navbar-brand {
 // Wells
 // --------------------------------------------------
 
-.well {
+.well
+{
     border-color: darken($well-bg, 10%);
 
     @include gradient-vertical($start-color: darken($well-bg, 5%), $end-color: $well-bg);
@@ -717,7 +832,8 @@ div.navbar-header>a.navbar-brand {
 // Tabs
 // --------------------------------------------------
 
-.tab-content {
+.tab-content
+{
     padding: 25px;
 
     border-right: 1px solid $nav-tabs-border-color;
@@ -725,16 +841,19 @@ div.navbar-header>a.navbar-brand {
     border-left: 1px solid $nav-tabs-border-color;
 }
 
-ul.nav-tabs {
+ul.nav-tabs
+{
     height: 46px;
 
-    li {
+    li
+    {
         min-width: 160px;
         height: 46px;
 
         text-align: center;
 
-        a {
+        a
+        {
             font-size: 14px;
             font-weight: 500;
             line-height: 1.57;
@@ -745,8 +864,10 @@ ul.nav-tabs {
         }
     }
 
-    li.active {
-        a {
+    li.active
+    {
+        a
+        {
             font-size: 12px;
             line-height: 1.33;
 
@@ -760,49 +881,55 @@ ul.nav-tabs {
     }
 }
 
-.filters {
+.filters
+{
     margin-top: 8px;
 
-    .tab-content {
+    .tab-content
+    {
         padding: 5px;
-        //border-bottom: 1px solid $filters-bg;
-        //border-left: 1px solid $filters-bg;
-        //border-right: 1px solid $filters-bg;
 
         border: 1px solid $filters-bg;
         background-color: $filters-bg;
 
-        >.tab-pane {
-            >.input-group {
+         > .tab-pane
+        {
+             > .input-group
+            {
                 width: 100%;
             }
         }
 
-        input[type='text'] {
+        input[type='text']
+        {
             color: #000;
             border: none;
             background: $filters-bg;
             box-shadow: none;
 
-            &::placeholder {
+            &::placeholder
+            {
                 text-transform: none;
             }
         }
     }
 
-    ul.nav-tabs {
+    ul.nav-tabs
+    {
         height: 36px;
 
         border-bottom: none;
 
-        li {
+        li
+        {
             width: auto;
             min-width: auto;
             height: 36px;
 
             text-align: center;
 
-            a {
+            a
+            {
                 font-size: 12px;
                 font-weight: 500;
                 line-height: 1.57;
@@ -816,8 +943,10 @@ ul.nav-tabs {
             }
         }
 
-        li.active {
-            a {
+        li.active
+        {
+            a
+            {
                 font-size: 12px;
 
                 color: $nav-tabs-active-link-color;
@@ -832,19 +961,23 @@ ul.nav-tabs {
 // Tables
 // --------------------------------------------------
 
-table.table {
+table.table
+{
     line-height: 1.57;
 
     color: $table-color;
 
-    thead {
+    thead
+    {
         font-weight: bold;
 
         color: $thead-color;
         background-color: $thead-bg;
 
-        tr {
-            th {
+        tr
+        {
+            th
+            {
                 padding-top: 20px;
                 padding-bottom: 20px;
             }
@@ -853,7 +986,8 @@ table.table {
 }
 
 
-.content-container {
+.content-container
+{
     display: table;
 
     width: 100%;
@@ -861,47 +995,44 @@ table.table {
     padding-top: 58px;
 }
 
-//
-//  Left sidebar
-//
-.sidebar_left {
-    display: table-cell;
+.sidebar-left
+{
+    display: block;
 
     height: 100%;
     min-height: 100%;
-    //height: calc(100% - 58px);
-    //min-height: calc(100% - 58px);
-    //margin-top: -20px;
-    margin-left: -15px;
-    //padding-left: 35px;
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+    padding-left: 15px;
 
     background-color: $sidebat-bg;
     box-shadow: 1px 0 0 0 $sidebat-box-shadow;
 
 
-    .easy-tree {
-        //overflow-y: scroll;
 
-        //max-height: calc(100% - 230px);
-    }
 
-    .bottom_controls {
-        position: absolute;
+    .bottom-controls
+    {
+        position: fixed;
         bottom: 0;
         left: 0;
 
-        width: 100%;
+        width: 25%;
         height: 74px;
         padding: 20px 15px;
 
+        background-color: $sidebat-bg;
         box-shadow: -2px 0 10px 0 rgba(0, 0, 0, .05);
 
-        .btn {
+        .btn
+        {
             min-width: 100px;
         }
 
-        .pull-right {
-            span {
+        .pull-right
+        {
+            span
+            {
                 font-size: 14px;
                 font-weight: normal;
                 font-style: normal;
@@ -919,18 +1050,21 @@ table.table {
 //
 // Content
 //
-.page-row {
-    display: table-row;
+.page-row
+{
+    overflow: hidden;
 
-    height: 1px;
+    min-height: 100%;
 }
 
-.content {
+.content
+{
     //height: calc(100% - 80px);
     height: 100%;
-    padding-right: 58px;
+    padding-right: 64px;
 
-    .scroll-wrap {
+    .scroll-wrap
+    {
         //overflow-y: scroll;
         position: relative;
 
@@ -943,15 +1077,11 @@ table.table {
 //
 //  Right sidebar
 //
-.sidebar-right {
-    //float: right;
-    //margin-right: -99px;
-    //margin-top: -56px;
+.sidebar-right
+{
     position: fixed;
     top: 57px;
     right: 0;
-    //display:table-cell;
-    //height:100%;
 
     width: 64px;
     height: calc(100% - 58px);
@@ -960,12 +1090,14 @@ table.table {
     background-color: $sidebat-bg;
     box-shadow: 0 0 0 1px $sidebat-box-shadow;
 
-    ul {
+    ul
+    {
         margin: 0;
         padding: 0;
     }
 
-    li.square {
+    li.square
+    {
         display: block;
         display: flex;
 
@@ -978,42 +1110,42 @@ table.table {
         align-items: center;
         justify-content: center;
 
-        //&.active {
-        //background-color: rgba(216, 216, 216, .2);
-        //background-color: $right-sidebar-active-item;
-        //}
-
-        &.toggle-view {
+        &.toggle-view
+        {
             color: $dark-blue;
             box-shadow: 0 1px 15px 0 rgba(0, 0, 0, .08);
         }
 
-
-        &:hover {
+        &:hover
+        {
             -webkit-transition: all .5s ease-in-out;
-            -moz-transition: all .5s ease-in-out;
-            -ms-transition: all .5s ease-in-out;
-            -o-transition: all .5s ease-in-out;
-            transition: all .5s ease-in-out;
+               -moz-transition: all .5s ease-in-out;
+                -ms-transition: all .5s ease-in-out;
+                 -o-transition: all .5s ease-in-out;
+                    transition: all .5s ease-in-out;
 
             background-color: $right-sidebar-active-item;
         }
 
-        .ring-icon {
+        .ring-icon
+        {
             font-size: 24px;
         }
 
-        span.glyphicon {
+        span.glyphicon
+        {
             font-size: 24px;
 
             color: $dark-blue;
 
-            &.inactive {
+            &.inactive
+            {
                 color: $grey;
             }
         }
 
-        .wrap {
+        .wrap
+        {
             position: relative;
 
             width: 54px;
@@ -1023,7 +1155,8 @@ table.table {
 
             background: $white;
 
-            >span.label {
+             > span.label
+            {
                 font-family: Roboto;
                 font-size: 10px;
                 font-weight: 300;
@@ -1040,18 +1173,22 @@ table.table {
                 color: $dark-blue;
             }
 
-            &.inactive {
-                >span.label {
+            &.inactive
+            {
+                 > span.label
+                {
                     color: $grey;
                 }
 
-                >span.glyphicon {
+                 > span.glyphicon
+                {
                     color: $grey;
                 }
             }
         }
 
-        .badge {
+        .badge
+        {
             font-size: 11px;
             font-weight: 200;
             font-style: normal;
@@ -1073,13 +1210,15 @@ table.table {
             border-radius: 50%;
             background-color: $dark-blue;
 
-            >span.glyphicon {
+             > span.glyphicon
+            {
                 font-size: 9px;
 
                 color: $white;
             }
 
-            &.inactive {
+            &.inactive
+            {
                 background-color: $grey;
             }
         }
@@ -1089,77 +1228,93 @@ table.table {
 //
 // Stuff
 //
-.controls {
+.controls
+{
     margin-top: 20px;
     margin-bottom: 15px;
 
-    .btn-group {
+    .btn-group
+    {
         margin-right: 15px;
     }
 }
 
-.content {
-    .btn {
+.content
+{
+    .btn
+    {
         min-width: 80px;
     }
 
-    .sticky-content-header {
+    .sticky-content-header
+    {
         position: fixed;
         z-index: 999;
 
-        width: calc(75% - 59px);
+        width: calc(75% - 66px);
         height: 64px;
-        margin-left: -29px;
         margin-top: -1px;
+        margin-left: -29px;
         padding: 16px;
 
         background-color: $white;
         box-shadow: 0 1px 15px 0 rgba(0, 0, 0, .08);
     }
 
-    .content-header {
-        h4 {
+    .content-header
+    {
+        h4
+        {
             margin-top: 0;
         }
     }
 
-    .settings-btn {
+    .settings-btn
+    {
         font-size: 24px;
 
         color: $dark-blue;
     }
 
-    .btn-group {
-        &.gray-border {
-            >.btn {
+    .btn-group
+    {
+        &.gray-border
+        {
+             > .btn
+            {
                 border-color: $sidebat-box-shadow;
             }
 
-            >.dropdown-toggle {
+             > .dropdown-toggle
+            {
                 border-color: $sidebat-box-shadow;
             }
         }
 
-        .btn {
+        .btn
+        {
             min-width: 80px;
-
-            &.dropdown-toggle {
+            &.dropdown-toggle
+            {
                 min-width: auto;
+                margin-left: -1px;
             }
         }
     }
 }
 
-.table.text-table>thead>tr>th,
-.table>thead>tr>td,
-.table>tbody>tr>th,
-.table>tbody>tr>td,
-.table>tfoot>tr>th,
-.table>tfoot>tr>td {
+.table.text-table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td
+{
     border: none !important;
 }
 
-.text-table {
+.text-table
+{
     font-family: 'Roboto Mono', monospace;
     font-size: 12px;
     font-weight: normal;
@@ -1176,32 +1331,39 @@ table.table {
     color: #000;
     border: none;
 
-    tr {
-        td {
+    tr
+    {
+        td
+        {
             border: none !important;
         }
     }
 }
 
 
-.btn-group.gray-border.chips {
-    .btn {
+.btn-group.gray-border.chips
+{
+    .btn
+    {
         min-width: auto !important;
     }
 
-    .glyphicon {
+    .glyphicon
+    {
         color: $sidebat-box-shadow;
     }
 }
 
-.steps {
+.steps
+{
     margin-top: 10px;
     margin-left: -25px;
 }
 
 
 
-.panel-default {
+.panel-default
+{
     font-family: Roboto;
     font-size: 14px;
     font-weight: normal;
@@ -1214,12 +1376,16 @@ table.table {
     color: #000;
 }
 
-.steps-table {
-    thead {
+.steps-table
+{
+    thead
+    {
         background: transparent !important;
 
-        tr {
-            th {
+        tr
+        {
+            th
+            {
                 font-family: Roboto;
                 font-size: 12px;
                 font-weight: 500;
@@ -1238,8 +1404,10 @@ table.table {
         }
     }
 
-    tr {
-        th {
+    tr
+    {
+        th
+        {
             font-family: Roboto;
             font-size: 12px;
             font-weight: 500;
@@ -1256,7 +1424,8 @@ table.table {
             background: transparent !important;
         }
 
-        td {
+        td
+        {
             font-family: Roboto;
             font-size: 14px;
             font-weight: normal;
@@ -1271,7 +1440,8 @@ table.table {
             color: #000;
             border-bottom: 1px solid $sidebat-box-shadow !important;
 
-            .glyphicon {
+            .glyphicon
+            {
                 font-size: 12px;
                 font-weight: 500;
                 font-style: normal;
@@ -1283,15 +1453,16 @@ table.table {
                 color: #ddd8d8;
             }
 
-            .icon-ico-drag {
+            .icon-ico-drag
+            {
                 font-size: 24px;
             }
 
-            .btn {
+            .btn
+            {
                 min-width: auto;
                 height: 24px;
                 margin: 0;
-                //padding-top: 3px;
                 margin-top: -3px;
                 padding: 0;
             }
@@ -1299,7 +1470,8 @@ table.table {
     }
 }
 
-.content .btn-group.gray-border.open>.btn {
+.content .btn-group.gray-border.open > .btn
+{
     z-index: 9909;
 
     margin-bottom: -1px;
@@ -1308,8 +1480,10 @@ table.table {
     border-bottom-color: $white;
 }
 
-.content {
-    .open>.dropdown-menu {
+.content
+{
+    .open > .dropdown-menu
+    {
         top: calc(100% - 3px);
 
         display: block;
@@ -1318,11 +1492,13 @@ table.table {
     }
 }
 
-.no-border {
+.no-border
+{
     border: none !important;
 }
 
-.breadcrumb {
+.breadcrumb
+{
     margin-bottom: 0;
     padding: 8px 3px;
 
@@ -1331,8 +1507,10 @@ table.table {
     border-radius: 2px;
     background-color: $white;
 
-    li {
-        a {
+    li
+    {
+        a
+        {
             text-decoration: underline;
 
             text-decoration-color: $dark-blue;
@@ -1341,31 +1519,38 @@ table.table {
     }
 }
 
-.dropdown-menu.dropdown-1>li>a {
+.dropdown-menu.dropdown-1 > li > a
+{
     padding: 17px;
 }
 
-.dropdown-menu.dropdown-2>li>a {
+.dropdown-menu.dropdown-2 > li > a
+{
     padding: 15px;
 }
 
-.dropdown-menu.dropdown-3 {
+.dropdown-menu.dropdown-3
+{
     min-width: 334px;
     height: 352px;
 }
 
-.dropdown-menu.dropdown-3>li.list {
+.dropdown-menu.dropdown-3 > li.list
+{
     overflow-y: scroll;
 
     max-height: 300px;
-    >.list-group{
-        &:first-child{
+     > .list-group
+    {
+        &:first-child
+        {
             border-top: none;
         }
     }
 }
 
-.dropdown-menu.dropdown-3>li.last {
+.dropdown-menu.dropdown-3 > li.last
+{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -1376,84 +1561,106 @@ table.table {
     border-top: 1px solid #e8e8e8;
 }
 
-.dropdown-menu.dropdown-3>li>a {
+.dropdown-menu.dropdown-3 > li > a
+{
     padding: 15px;
 }
 
 
 
-.radio-container {
-  position: relative;
-}
-.radio-container:hover > .label {
-  //color: $dark-blue;
-}
-.radio-container:hover > .label::before {
-  border: 1rem solid $dark-blue;
-  //margin-right: 2rem;
+.radio-container
+{
+    position: relative;
 }
 
-.radio-btn {
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-}
-.radio-btn:checked + .label {
-  color: $dark-blue;
-}
-.radio-btn:checked + .label::before {
-  //margin-right: 2rem;
-  border: 0.6rem solid $dark-blue;
-  background: #fff;
+.radio-container:hover > .label::before
+{
+    border: 1rem solid $dark-blue;
 }
 
-.label.lb1 {
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 0;
-  cursor: pointer;
-  >p.list-group-item-text{
-    text-align: left;
-      font-family: Roboto;
-      font-size: 12px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.83;
-      letter-spacing: normal;
-      color: rgba(64, 64, 64, 0.35);
-        >span.list-group-item-heading{
-      font-family: Roboto;
-      font-size: 14px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.57;
-      letter-spacing: normal;
-      color: #404040;
-  }
-  }
+.radio-btn
+{
+    position: absolute;
+
+    visibility: hidden;
+
+    opacity: 0;
+}
+.radio-btn:checked + .label
+{
+    color: $dark-blue;
+}
+.radio-btn:checked + .label::before
+{
+    border: .6rem solid $dark-blue;
+    background: #fff;
 }
 
-.label.lb1::before {
-  display: inline-block;
-  content: "";
-  height: 2rem;
-  width: 2rem;
-  border: 0.2rem solid $dark-blue;
-  border-radius: 50%;
-  margin-right: 8px;
+.label.lb1
+{
+    display: flex;
+
+    padding: .75rem 0;
+
+    cursor: pointer;
+
+    align-items: center;
+     > p.list-group-item-text
+    {
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.83;
+
+        text-align: left;
+        letter-spacing: normal;
+
+        color: rgba(64, 64, 64, .35);
+         > span.list-group-item-heading
+        {
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.57;
+
+            letter-spacing: normal;
+
+            color: #404040;
+        }
+    }
 }
 
-@media (max-width: 1439px) {
-    .pull-right {
+.label.lb1::before
+{
+    display: inline-block;
+
+    width: 2rem;
+    height: 2rem;
+    margin-right: 8px;
+
+    content: '';
+
+    border: .2rem solid $dark-blue;
+    border-radius: 50%;
+}
+
+@media (max-width: 1439px)
+{
+    .pull-right
+    {
         float: none !important;
 
         width: 100%;
     }
 
-    .controls {
-        .btn-xs {
+    .controls
+    {
+        .btn-xs
+        {
             width: calc(100% - 6px);
             min-width: auto;
             margin-top: 2px;
@@ -1461,31 +1668,38 @@ table.table {
     }
 
     .btn-xs,
-    .btn-group-xs>.btn,
-    .btn-group-xs>.btn {
+    .btn-group-xs > .btn,
+    .btn-group-xs > .btn
+    {
         width: calc(50% - 3px);
         min-width: auto;
         margin-top: 2px;
     }
 
-    .sidebar_left {
+    .sidebar-left
+    {
         display: table-cell;
 
         height: 100%;
 
-        .easy-tree ul>li>span>a span.items-count {}
+        .easy-tree ul > li > span > a span.items-count
+        {
+        }
 
-        .easy-tree {
+        .easy-tree
+        {
             overflow-y: scroll;
 
             max-height: calc(100% - 330px);
         }
 
-        .bottom_controls {
+        .bottom-controls
+        {
             height: 100px;
             padding: 0;
 
-            .btn {
+            .btn
+            {
                 width: calc(100% - 6px);
                 min-width: auto;
                 margin-top: 2px;
@@ -1494,8 +1708,10 @@ table.table {
     }
 }
 
-@media (min-width: 768px) {
-    .navbar-nav>li>a.user-name {
+@media (min-width: 768px)
+{
+    .navbar-nav > li > a.user-name
+    {
         padding-top: 15px;
         padding-bottom: 15px;
     }

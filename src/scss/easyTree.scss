@@ -1,38 +1,49 @@
 .easy-tree {
   .tree-children {
-    border-left: 1px solid #dfe0df;
+    margin-left: 6px;
     padding-right: 0;
     padding-left: 11px;
-    margin-left: 6px;
+
+    border-left: 1px solid #dfe0df;
   }
 
-  .toggle-children-placeholder, .toggle-children {
+  .toggle-children-placeholder,
+  .toggle-children {
+    font-family: 'Glyphicons Halflings';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+
     position: relative;
     top: 1px;
+
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
+
     -webkit-font-smoothing: antialiased;
   }
 
   .toggle-children {
-    background-image: none;
     color: $dark-blue;
+    background-image: none;
 
     &:before {
-      content: "\e114";
+      content: '\e114';
     }
   }
 
   .toggle-children-placeholder {
     margin-right: 5px;
+
     color: #e7e5e5;
 
     &:before {
-      content: "\e022";
+      content: '\e022';
     }
+  }
+
+  .node-wrapper {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .node-content-wrapper {
@@ -40,20 +51,23 @@
   }
 
   .toggle-children-wrapper-collapsed .toggle-children {
-    transform: rotate(-90deg);
     margin-top: 8px;
     margin-right: 5px;
+
+    transform: rotate(-90deg);
   }
 
   .toggle-children-wrapper-expanded .toggle-children {
-    transform: rotate(0);
-    margin-right: 5px;
     margin-top: 4px;
+    margin-right: 5px;
+
+    transform: rotate(0);
   }
 
-  .node-content-wrapper-active, .node-content-wrapper:hover {
+  .node-content-wrapper-active,
+  .node-content-wrapper:hover {
+    color: $dark-blue;
     background: none;
     box-shadow: none;
-    color: $dark-blue;
   }
 }

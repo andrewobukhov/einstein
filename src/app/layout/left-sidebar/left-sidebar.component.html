@@ -1,103 +1,41 @@
-<!--<div class="col-md-3 col-sm-3 col-xs-3 col-xl-3 sidebar_left">
+<div class="col-md-3 col-sm-3 col-xs-3 col-xl-3 sidebar-left resizable-col">
   <div class="filters">
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">search</a>
-      </li>
+      <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">search</a></li>
       <li role="presentation"><a href="#filters" aria-controls="filters" role="tab" data-toggle="tab">filters</a></li>
       <li role="presentation"><a href="#query" aria-controls="query" role="tab" data-toggle="tab">query</a></li>
     </ul>
-
-    <!-- Tab panes -->
-    <!--<div class="tab-content">
+    <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="search">
         <div class="input-group">
-          <input type="text" class="form-control" id="serachline" placeholder="serach">
+          <input type="text" class="form-control" id="serachline" placeholder="">
+          <span class="glyphicon glyphicon-remove remove"></span>
         </div>
       </div>
       <div role="tabpanel" class="tab-pane" id="filters">
-        <input type="text" class="form-control" id="filtersline" placeholder="filters">
+        <input type="text" class="form-control" id="filtersline" placeholder="">
       </div>
       <div role="tabpanel" class="tab-pane" id="query">
-        <input type="text" class="form-control" id="queryline" placeholder="query">
+        <input type="text" class="form-control" id="queryline" placeholder="">
       </div>
     </div>
   </div>
-  <div class="row controls">
-    <div class="col-12">
-      <button type="button" class="btn-xs btn-default m-r-xs">Expand all</button>
-      <button type="button" class="btn-xs btn-default">Collapse all</button>
-
-      <div class="btn-group btn-group-xs pull-right" role="group" aria-label="...">
-        <button type="button" class="btn btn-default active">Tree</button>
-        <button type="button" class="btn btn-default">Table</button>
-      </div>
+  <div class="col-12 m-t-19 m-b-17">
+    <button type="button" class="btn-xs btn-default">Expand all</button>
+    <button type="button" class="btn-xs btn-default">Collapse all</button>
+    <div class="btn-group btn-group-xs pull-right" role="group" aria-label="...">
+      <button type="button" class="btn btn-default active">Tree</button>
+      <button type="button" class="btn btn-default">Table</button>
     </div>
   </div>
-
   <div class="easy-tree">
     <tree-root [nodes]="nodes" [options]="options"></tree-root>
   </div>
-
-  <div class="bottom_controls">
+  <div class="bottom-controls">
     <input class="btn btn-primary" type="button" value="Add Project">
     <span class="pull-right">
-      <span class="m-r-xs">245 Test Cases</span>
-      <input class="btn btn-default" type="button" value="Bulk Update">
+      <span class="">245 Test Cases</span>
+    <input class="btn btn-default" type="button" value="Bulk Update">
     </span>
   </div>
-</div>
-
--->
-
-
-
-
-
-<div class="col-md-3 col-sm-3 col-xs-3 col-xl-3 sidebar_left resizable_col">
-	<div class="filters">
-		<ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">search</a></li>
-    <li role="presentation"><a href="#filters" aria-controls="filters" role="tab" data-toggle="tab">filters</a></li>
-    <li role="presentation"><a href="#query" aria-controls="query" role="tab" data-toggle="tab">query</a></li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="search">
-			<div class="input-group">
-    		<input type="text" class="form-control" id="serachline" placeholder="">
-    		<span class="glyphicon glyphicon-remove remove"></span>
-			</div>
-    </div>
-    <div role="tabpanel" class="tab-pane" id="filters">
-			<input type="text" class="form-control" id="filtersline" placeholder="">
-		</div>
-    <div role="tabpanel" class="tab-pane" id="query">
-    	<input type="text" class="form-control" id="queryline" placeholder="">
-    </div>
-  </div>
-	</div>
-	<!--<div class="row controls">-->
-		<div class="col-12 m-t-19 m-b-17">
-			<button type="button" class="btn-xs btn-default">Expand all</button>
-			<button type="button" class="btn-xs btn-default">Collapse all</button>
-
-			<div class="btn-group btn-group-xs pull-right" role="group" aria-label="...">
-				<button type="button" class="btn btn-default active">Tree</button>
-				<button type="button" class="btn btn-default">Table</button>
-			</div>
-		</div>
-	<!--</div>-->
-
-    <div class="easy-tree">
-      <tree-root [nodes]="nodes" [options]="options"></tree-root>
-    </div>
-
-	<div class="bottom_controls">
-		<input class="btn btn-primary" type="button" value="Add Project">
-		<span class="pull-right">
-			<span class="">245 Test Cases</span>
-			<input class="btn btn-default" type="button" value="Bulk Update">
-		</span>
-	</div>
 </div>
