@@ -10,6 +10,7 @@
 }
 
 [class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
@@ -18,10 +19,18 @@
   text-transform: none;
   line-height: 1;
 
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-ico-actions-move:before {
+  content: "\e910";
+  color: #0c4ba8;
+}
+.icon-ico-case-notactive:before {
+  content: "\e90f";
+}
 .icon-ico-listopen:before {
   content: "\e904";
   color: #0747a6;
@@ -82,4 +91,3 @@
   content: "\e90e";
   color: #0747a6;
 }
-

@@ -30,13 +30,30 @@
     </div>
   </div>
   <div class="easy-tree">
-    <tree-root [nodes]="nodes" [options]="options"></tree-root>
+    <tree-root [nodes]="nodes" [options]="options">
+      <ng-template #treeNodeTemplate let-node let-index="index">
+        <span dropdown class="mini-tabs">
+            <a href="javascript: void(0);" title="select" data-toggle="dropdown" dropdownToggle>
+              <span class="name">{{ node.data.name }}</span>
+        <span class="items-count" >{{ node.data.count }}</span>
+        </a>
+        <ul class="dropdown-menu" *dropdownMenu>
+          <li class="">
+            <tabset>
+              <tab heading="Add" class="ic-add" id="tab1"></tab>
+              <tab heading="Move"class="ic-move"></tab>
+              <tab heading="Edit" class="ic-ed"></tab>
+            </tabset>
+          </li>
+        </ul>
+        </span>
+      </ng-template>
+    </tree-root>
   </div>
-
 </div>
-  <div class="bottom-controls">
-    <span class="pull-right">
+<div class="bottom-controls">
+  <span class="pull-right">
       <span class="p-r-16">245 Test Cases</span>
-    <input class="btn btn-default" type="button" value="Bulk Update">
-    </span>
-  </div>
+  <input class="btn btn-default" type="button" value="Bulk Update">
+  </span>
+</div>
