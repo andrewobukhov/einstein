@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <div class="sticky-content-header">
+<div class="container-fluid p-t-15">
+  <div appSticky position="top" margin="58" class="normal-content-header">
     <div class="col-12-md">
       <div class="col-md-7">
         <div class="small-row bcrumb">
@@ -9,23 +9,16 @@
           </ul>
         </div>
         <div class="small-row">
-          <div class="col-md-3">
-            <h4 class="text1 dotted shift-left" style="margin: 0; margin-top:-4px">UBP-961511:</h4>
-          </div>
-          <div class="col-md-9">
-            <h4 class="text2 no-wrap" style="margin: 0; margin-top:-4px">This test case has a deliberately chosen long name that doesn't fit into one line</h4>
+          <div class="col-md-12 no-wrap">
+            <div style="float: left;"><h4 class="text1 dotted shift-left" style="margin: 0; margin-top:-4px">UBP-961511:</h4></div><div style="float: left;"> <h4 class="text2" style="margin: 0; margin-top: -4px; margin-left: 8px">This test case has a deliberately chosen long <br>name that doesn't fit into one line</h4></div>
           </div>
         </div>
       </div>
       <div class="col-md-5">
         <input class="btn btn-default pull-right" type="button" value="Save">
-        <div class="btn-group gray-border pull-right">
-          <button type="button" class="btn btn-default">Version 5</button>
-          <button type="button" class="btn btn-deault dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="icon-ico-listopen"></span>
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-          <ul class="dropdown-menu dropdown-3">
+        <div class="btn-group gray-border pull-right" dropdown>
+          <button type="button" dropdownToggle class="btn btn-default p-r-25">Version 5 <span class="icon-ico-listopen"></span> </button>
+          <ul class="dropdown-menu dropdown-3" *dropdownMenu>
             <li class="list">
               <div class="list-group">
                 <a href="#" class="list-group-item radio-container">
@@ -42,7 +35,7 @@
                                   <p class="list-group-item-text"><span class="list-group-item-heading">Version 4</span><br>by Konstantin K., Nov 5th at 15:35</p>
                               </label>
                             </a>
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item selected">
                               <input type="radio" class="radio-btn" name="choice" id="rad3" />
                               <label for="rad3" class="label lb1">
                                   <p class="list-group-item-text"><span class="list-group-item-heading">Version 3</span><br>by Konstantin K., Nov 5th at 15:35</p>
@@ -84,13 +77,9 @@
             </li>
           </ul>
         </div>
-        <div class="btn-group gray-border pull-right">
-          <button type="button" class="btn btn-default">More</button>
-          <button type="button" class="btn btn-deault dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="icon-ico-listopen"></span>
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-          <ul class="dropdown-menu dropdown-1">
+        <div class="btn-group gray-border pull-right" dropdown>
+          <button type="button" class="btn btn-default p-r-25" dropdownToggle>More <span class="icon-ico-listopen"></span> </button>
+          <ul class="dropdown-menu dropdown-1" *dropdownMenu>
             <li><a href="#">Add to Test Plan</a></li>
             <li><a href="#">Delete</a></li>
           </ul>

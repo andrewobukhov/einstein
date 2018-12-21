@@ -13,6 +13,7 @@ import {CustomFieldsComponent} from './components/custom-fields/custom-fields.co
 import {TextTableComponent} from './components/text-table/text-table.component';
 import {TreeModule} from 'angular-tree-component';
 import {BsDropdownModule} from 'ngx-bootstrap';
+import {AngularSplitModule} from 'angular-split';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {BsDropdownModule} from 'ngx-bootstrap';
   imports: [
     BrowserModule,
     TreeModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    AngularSplitModule
   ],
   providers: [],
   bootstrap: [AppComponent]
