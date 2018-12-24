@@ -12,7 +12,8 @@ import {ContentOneComponent} from './components/content-one/content-one.componen
 import {CustomFieldsComponent} from './components/custom-fields/custom-fields.component';
 import {TextTableComponent} from './components/text-table/text-table.component';
 import {TreeModule} from 'angular-tree-component';
-import {BsDropdownModule} from 'ngx-bootstrap';
+import {BsDropdownModule, TabsModule} from 'ngx-bootstrap';
+import {AngularSplitModule} from 'angular-split';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import {BsDropdownModule} from 'ngx-bootstrap';
   imports: [
     BrowserModule,
     TreeModule.forRoot(),
-    BsDropdownModule.forRoot()
+    TabsModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    AngularSplitModule
   ],
   providers: [],
   bootstrap: [AppComponent]
