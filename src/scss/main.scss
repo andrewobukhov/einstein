@@ -1,11 +1,11 @@
 @import "_fonts";
+@import "_icons_font.scss";
+@import '~angular-tree-component/dist/angular-tree-component.css';
 @import "_override-variables";
 @import "bootstrap-custom";
-@import "_icons_font.scss";
 @import "_ring_theme";
 @import "easyTree";
-
 @import "app.utilities";
 
 
-@import '~angular-tree-component/dist/angular-tree-component.css';
+

@@ -1,17 +1,18 @@
-
 <app-header></app-header>
-
 <div class="container-fluid content-container">
   <div class="row page-row resizable-row">
-    <app-left-sidebar></app-left-sidebar>
-
-    <div class="col-md-9 col-sm-9 col-xs-9 col-xl-9 content">
-      <div class="scroll-wrap">
-        <app-content-one></app-content-one>
-      </div>
-    </div>
-
+    <as-split [direction]="horizontal" class="sa-c">
+      <as-split-area size="25" class="sa-l">
+        <app-left-sidebar></app-left-sidebar>
+      </as-split-area>
+      <as-split-area size="75">
+        <div class="col-md-9 col-sm-9 col-xs-9 col-xl-9 content">
+          <div class="scroll-wrap">
+            <app-content-one></app-content-one>
+          </div>
+        </div>
+      </as-split-area>
+    </as-split>
   </div>
 </div>
-
 <app-right-sidebar></app-right-sidebar>

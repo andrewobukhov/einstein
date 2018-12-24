@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('./../fonts/icons/icomoon.eot?2yuqp4');
-  src:  url('./../fonts/icons/icomoon.eot?2yuqp4#iefix') format('embedded-opentype'),
-    url('./../fonts/icons/icomoon.ttf?2yuqp4') format('truetype'),
-    url('./../fonts/icons/icomoon.woff?2yuqp4') format('woff'),
-    url('./../fonts/icons/icomoon.svg?2yuqp4#icomoon') format('svg');
+  src:  url('./../fonts/icomoon.eot?2yuqp4');
+  src:  url('./../fonts/icomoon.eot?2yuqp4#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon.ttf?2yuqp4') format('truetype'),
+    url('./../fonts/icomoon.woff?2yuqp4') format('woff'),
+    url('./../fonts/icomoon.svg?2yuqp4#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-ico-actions-move:before {
+  content: "\e910";
+  color: #0c4ba8;
+}
+.icon-ico-case-notactive:before {
+  content: "\e90f";
+}
+.icon-ico-listopen:before {
+  content: "\e904";
+  color: #0747a6;
+}
+.icon-ico-ico-searchreset:before {
+  content: "\e905";
+  color: #979797;
+}
 .icon-ico-case-active:before {
   content: "\e900";
   color: #0747a6;
@@ -39,12 +54,6 @@
 .icon-ico-head-arrow:before {
   content: "\e903";
   color: #fff;
-}
-.icon-ico-ico-searchreset:before {
-  content: "\e904";
-}
-.icon-ico-listopen:before {
-  content: "\e905";
 }
 .icon-ico-navpanel-attachms:before {
   content: "\e906";
