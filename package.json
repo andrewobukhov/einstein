@@ -23,7 +23,9 @@
     "angular-split": "^2.0.0",
     "angular-tree-component": "^8.0.1",
     "core-js": "^2.5.4",
+    "ng6-sticky": "^1.0.7",
     "ngx-bootstrap": "^3.1.2",
+    "ngx-sticky": "^2.0.1",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

@@ -25,7 +25,6 @@ hr
 }
 
 [class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
@@ -33,8 +32,6 @@ hr
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -452,8 +449,6 @@ h4
 
     border-color: $dark-blue;
     text-shadow: none;
-
-    //margin: 3.4px;
 
     &.dropdown-toggle
     {
@@ -1141,12 +1136,9 @@ table.table
 
     height: 100%;
     min-height: 100%;
-    //margin-bottom: -99999px;
-    //padding-bottom: 99999px;
     padding-left: 15px;
     padding-right:15px;
     background-color: $sidebat-bg;
-    //box-shadow: 1px 0 0 0 $sidebat-box-shadow;
 
     .btn-group-xs.switch-view > .btn,
     .btn-group-xs > .btn
@@ -1159,7 +1151,7 @@ table.table
         .btn-default:hover,
         .btn-default:focus
         {
-            color: #0747a6;
+            color: #000;
             border: none !important;
             background-color: #f2f2f2 !important;
         }
@@ -1173,7 +1165,7 @@ table.table
         .open > .btn-default.dropdown-toggle:focus,
         .open > .btn-default.dropdown-toggle.focus
         {
-            color: #0747a6;
+            color: #000;
             border: none !important;
             background-color: #c6c6c6 !important;
         }
@@ -1183,16 +1175,16 @@ table.table
 
 .bottom-controls
 {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-
-    width: 25%;
+    width: 100%;
     height: 74px;
     padding: 20px 15px;
 
+    display: flex;
+    flex: 1;
+    align-self: flex-end;
+    justify-content: flex-end;
     background-color: $sidebat-bg;
-    box-shadow: -2px 0 10px 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 -10px 10px 0 rgba(0, 0, 0, .05);
 
     .btn
     {
@@ -1221,32 +1213,11 @@ table.table
     cursor: ew-resize;
 }
 
-// .sidebar-left:after
-// {
-//       font-family: 'icomoon' !important;
-//   speak: none;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-variant: normal;
-//   text-transform: none;
-//   line-height: 1;
-//     font-size: 24px;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   content: "\e90d";
-//   color: #d8d8d8;
-//     display: block;
-//     width: 18px;
-//     height: 24px;
-//     position: fixed;
-//     top: calc(50% - 12px);
-//     left: 25%;
-//     cursor: ew-resize !important;
-// }
 .icon-ico-listopen
 {
     font-size: 24px;
 }
+
 //
 // Content
 //
@@ -1272,6 +1243,34 @@ table.table
     }
 }
 .mini-tabs{
+    .block {
+        margin-top:5px;
+        width: 47px;
+        max-width: 47px;
+        float: left;
+        display: block;
+        background-color: white;
+        text-align: center;
+         font-family: Roboto;
+  font-size: 11px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0747a6;
+  p:hover{
+            text-decoration: underline;
+  }
+  p{
+    span{
+        font-size: 15px;
+    }
+  }
+    }
+        .block:first-child {
+        margin-left:4px;
+    }
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
         background: white;
         padding: 5px 10px;
@@ -1280,16 +1279,61 @@ table.table
     }
     ul.nav-tabs{
         height: auto;
-        border: 1px solid white;
-        border-radius: 2px;
+        border: none;
+        border-radius: 3px;
     }
+
+    ul.nav-tabs li:before {
+        font-family: 'icomoon' !important;
+        position: absolute;
+        top: 3px;
+        left: 7px;
+        content:'\e910';
+        z-index: 888;
+    }
+    ul.nav-tabs li {
+        padding-left: 10px;
+    }
+    ul.nav-tabs li:first-child:before {
+        font-family: 'icomoon' !important;
+        position: absolute;
+        top: 3px;
+        left: 7px;
+        content:'\e914';
+        z-index: 888;
+    }
+    ul.nav-tabs li:last-child:before {
+        font-family: 'icomoon' !important;
+        position: absolute;
+        top: 3px;
+        left: 7px;
+        content:'\e913';
+        z-index: 888;
+    }
+
     ul.nav-tabs li {
         min-width: auto;
         height: auto;
         text-align: center;
         border: none;
         margin-bottom: 0;
+        background-color: #f3f3f3;
     }
+
+    ul.nav-tabs li.active {
+        background-color: $white;
+    }
+    ul.nav-tabs li.active:hover {
+        background-color: $white;
+    }
+    ul.nav-tabs li:hover {
+        background-color: #f3f3f3;
+        text-decoration: underline;
+    }
+    li.nav-item:hover{
+        background-color: #f3f3f3;
+    }
+
     ul.nav-tabs li a {
           font-family: Roboto;
           font-size: 11px;
@@ -1308,13 +1352,16 @@ table.table
         margin: 0;
         border:none;
     }
+    .nav > li > a.disabled{
+        cursor: pointer;
+    }
     .nav-tabs > li > a:hover {
         border-color: none !important;
-        background-color: white !important;
+        background-color: #f3f3f3;
     }
         .nav-tabs > li > a:focus {
         border-color: none !important;
-        background-color: white !important;
+        background-color: #f3f3f3;
     }
     .tab-content {
         padding: 0px;
@@ -1333,15 +1380,9 @@ table.table
         list-style: none;
         background-color: white;
         background-clip: padding-box;
-        border:none;
+        border:1px solid white;
         border-radius: 3px;
         box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.16);
-    }
-    .ic-add:before {
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        content:'+'
     }
 }
 
@@ -1581,13 +1622,7 @@ table.table
 
     .normal-content-header
     {
-        position: absolute;
-        top: 0;
-        left: -26px;
-
-        width: calc(100% + 25px);
-        padding: 16px;
-
+        margin-left: -15px;
         background-color: $white;
     }
 
@@ -1596,14 +1631,39 @@ table.table
         position: fixed;
         z-index: 999;
 
-        width: calc(75% - 66px);
+        width: calc(75% - 65px);
         height: 64px;
-        margin-top: -1px;
-        //margin-left: -41px;
+        margin-left: -53px;
+        margin-top: -16px;
+
         padding: 16px;
 
         background-color: $white;
         box-shadow: 0 1px 15px 0 rgba(0, 0, 0, .08);
+        .breadcrumb {
+            margin-bottom: 3px !important;
+        }
+
+        .title{
+
+        }
+        .name{
+            overflow: hidden;
+            height: 22px;
+            position: relative;
+        }
+        .name:after{
+            content: '';
+            width: 20px;
+            height: 21px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 98%, rgba(255,255,255,1) 99%); 
+            background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 98%,rgba(255,255,255,1) 99%);
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 98%,rgba(255,255,255,1) 99%); 
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+        }
     }
 
     .content-header
@@ -1914,7 +1974,7 @@ table.table
 
 .breadcrumb
 {
-    margin-bottom: 0;
+    margin-bottom: 17px;
     padding: 8px 3px;
 
     list-style: none;
@@ -1927,8 +1987,6 @@ table.table
         a
         {
             text-decoration: underline;
-            //text-decoration-style: dotted;
-
             text-decoration-color: $dark-blue;
             text-underline-position: under;
         }
@@ -2091,12 +2149,10 @@ table.table
 
 .as-split-gutter
 {
-    //box-shadow: 1px 0 0 0 $sidebat-box-shadow;
     position: relative;
 
     margin-bottom: -99999px;
     padding-bottom: 99999px;
-    //background-color: $sidebat-bg !important;
 
     background-color: $white !important;
 }
@@ -2127,7 +2183,9 @@ table.table
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+.tree-node-level-1{
+    padding-bottom: 20px;
+}
 @media (max-width: 1439px)
 {
     .pull-right

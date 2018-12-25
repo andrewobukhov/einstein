@@ -72,7 +72,7 @@
 
     .toggle-children-placeholder
     {
-        margin-right: 5px;
+        margin-right: 10px;
 
         color: #e7e5e5;
 
@@ -84,10 +84,7 @@
         }
     }
 
-    .node-wrapper
-    {
 
-    }
 
     .node-content-wrapper
     {
@@ -141,6 +138,8 @@
         a
         {
             width: 100%;
+
+            text-decoration: none;
             span.items-count
             {
                 font-family: Roboto;
@@ -179,6 +178,20 @@
 
                 color: #1d1d1d;
             }
+            .name:hover
+            {
+                font-family: Roboto;
+                font-size: 13px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+
+                text-decoration: none;
+                letter-spacing: normal;
+
+                color: #252525;
+            }
         }
     }
     .toggle-children-wrapper-collapsed .toggle-children
@@ -204,7 +217,20 @@
         background: none;
         box-shadow: none;
     }
-
+    .node-content-wrapper-focused,
+    .node-content-wrapper-active
+    {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        border:none;
+        letter-spacing: normal;
+        background: none;
+        color: #0747a6 !important;
+    }
     .tree-node-leaf
     {
         height: 27px;
