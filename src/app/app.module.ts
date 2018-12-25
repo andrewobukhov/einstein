@@ -14,6 +14,9 @@ import {TextTableComponent} from './components/text-table/text-table.component';
 import {TreeModule} from 'angular-tree-component';
 import {BsDropdownModule, TabsModule} from 'ngx-bootstrap';
 import {AngularSplitModule} from 'angular-split';
+//import { NgxStickyModule } from 'ng6-sticky';
+//import {NgxStickyModule} from 'ngx-sticky';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import {AngularSplitModule} from 'angular-split';
     TreeModule.forRoot(),
     TabsModule.forRoot(),
     BsDropdownModule.forRoot(),
-    AngularSplitModule
+    TooltipModule.forRoot(),
+    AngularSplitModule,
+    //NgxStickyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

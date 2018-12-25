@@ -32,17 +32,28 @@
   <div class="easy-tree">
     <tree-root [nodes]="nodes" [options]="options">
       <ng-template #treeNodeTemplate let-node let-index="index">
-        <span dropdown class="mini-tabs">
-            <a href="javascript: void(0);" title="select" data-toggle="dropdown" dropdownToggle>
-              <span class="name">{{ node.data.name }}</span>
+        <span dropdown class="mini-tabs" triggers="mouseover" #dp="bs-dropdown" style="width:100%;">
+          <a href="javascript: void(0);" title="select" data-toggle="dropdown" dropdownToggle (mouseleave)="dp.hide()">
+            <span class="name">{{ node.data.name }}</span>
         <span class="items-count" >{{ node.data.count }}</span>
         </a>
         <ul class="dropdown-menu" *dropdownMenu>
           <li class="">
             <tabset>
-              <tab heading="Add" class="ic-add" id="tab1"></tab>
-              <tab heading="Move"class="ic-move"></tab>
-              <tab heading="Edit" class="ic-ed"></tab>
+              <tab disabled="true" heading="Add" class="ic-add" id="tab1">
+              </tab>
+              <tab disabled="true" heading="Move" class="ic-move"></tab>
+              <tab active="true" heading="Edit" class="ic-ed">
+                <div class="block">
+                  <p><span class="icon-ico-actions-copy"></span><br>Copy</p>
+                </div>
+                <div class="block">
+                  <p><span class="icon-ico-actions-clone"></span><br>Clone</p>
+                </div>
+                <div class="block">
+                  <p><span class="icon-ico-actions-remove-2"></span><br>Remove</p>
+                </div>
+              </tab>
             </tabset>
           </li>
         </ul>
@@ -53,7 +64,7 @@
 </div>
 <div class="bottom-controls">
   <span class="pull-right">
-      <span class="p-r-16">245 Test Cases</span>
-  <input class="btn btn-default" type="button" value="Bulk Update">
+    <span class="p-r-16">245 Test Cases</span>
+    <input class="btn btn-default" type="button" value="Bulk Update">
   </span>
 </div>
