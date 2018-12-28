@@ -1,0 +1,51 @@
+
+.smrnote {
+  &-active.note-editor.note-frame  {
+    border-color: #a9a9a9;
+    .note-toolbar {
+      display: block;
+    }
+  }
+}
+
+.note-editor.note-frame {
+  border-color: transparent;
+  .note-toolbar {
+    position: absolute !important;
+    left: -2px;
+    top: -47px !important;
+    z-index: 2;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    width: auto !important;
+    min-width: 465px;
+    display: none;
+  }
+  .note-statusbar, .note-status-output {
+    display: none;
+  }
+  .note-editing-area {
+    p {
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.note-modal-content {
+  padding-bottom: 25px;
+}
+
+.smrnote-view {
+  padding: 10px;
+  border: 1px solid transparent;
+  min-height: 40px;
+  p {
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

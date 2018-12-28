@@ -10,9 +10,10 @@
         </div>
         <div class="small-row">
           <div class="col-md-12 no-wrap">
-            <div style="float: left;"><h4 class="text1 dotted shift-left title" style="margin: 0; margin-top:-4px; margin-right: 23px;">UBP-961511:</h4>
+            <div style="float: left;"><h4 class="text1 dotted shift-left title" style="margin: 0; margin-top:-4px; margin-right: 23px;">{{model.key}}:</h4>
             </div>
-            <div style="float: left;"> <h4 class="text2 name" style="margin: 0; margin-top: -4px; margin-left: -15px;">This test case has a deliberately chosen long <br>name that doesn't fit into one line</h4>
+            <div style="float: left;"> <h4 class="text2 name" style="margin: 0; margin-top: -4px; margin-left: -15px;">
+             {{model.name}}</h4>
             </div>
           </div>
         </div>
@@ -94,8 +95,8 @@
     <div class="col-12-md ">
     </div>
   </div>
-  <app-steps-table></app-steps-table>
-  <app-text-blocks></app-text-blocks>
+  <app-steps-table [model]="model"></app-steps-table>
+  <app-text-blocks  [model]="model"></app-text-blocks>
   <app-text-table></app-text-table>
   <app-custom-fields></app-custom-fields>
 </div>

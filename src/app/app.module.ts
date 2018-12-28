@@ -17,6 +17,8 @@ import {AngularSplitModule} from 'angular-split';
 //import { NgxStickyModule } from 'ng6-sticky';
 //import {NgxStickyModule} from 'ngx-sticky';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { SummernoteEditorComponent } from './shared/summernote/summernote-editor.component';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     AngularSplitModule,
+    SharedModule
     //NgxStickyModule
   ],
   providers: [],
