@@ -25,6 +25,7 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/summernote/dist/summernote-lite.css",
+              "node_modules/dragula/dist/dragula.min.css",
               "src/scss/main.scss"
             ],
             "stylePreprocessorOptions": {

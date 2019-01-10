@@ -19,6 +19,7 @@ import {AngularSplitModule} from 'angular-split';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { SummernoteEditorComponent } from './shared/summernote/summernote-editor.component';
 import {SharedModule} from './shared/shared.module';
+import {DragulaModule, DragulaService} from 'ng2-dragula';
 
 @NgModule({
   declarations: [
@@ -39,10 +40,13 @@ import {SharedModule} from './shared/shared.module';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     AngularSplitModule,
-    SharedModule
+    SharedModule,
+    DragulaModule.forRoot()
     //NgxStickyModule
   ],
-  providers: [],
+  providers: [
+    DragulaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
