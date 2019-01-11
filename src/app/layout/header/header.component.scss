@@ -1,0 +1,36 @@
+@import "../scss/_override-variables";
+
+.navbar {
+  .user-actions {
+    position: relative;
+
+    &.open .user-role{
+      color: $dark-blue;
+      background: $white;
+
+      padding: 7px 0px 13px 7px;
+      border-top-left-radius: $border-radius-base;
+      border-top-right-radius: $border-radius-base;
+      border-bottom-color: white;
+      z-index: 1001;
+      position: relative;
+      margin-left: -1px;
+    }
+  }
+
+  .user-name {
+    font-size: 13px;
+    color: $white;
+
+    .user-role {
+      font-weight: 300;
+      margin-left: 4px;
+    }
+
+    .icon-ico-head-arrow {
+      font-size: 24px;
+      line-height: normal;
+      vertical-align: middle;
+    }
+  }
+}

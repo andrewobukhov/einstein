@@ -1,5 +1,5 @@
-<!-- <div class="col-md-3 col-sm-3 col-xs-3 col-xl-3 sidebar-left resizable-col"> -->
-<div class="sidebar-left">
+<div class="sidebar-left-container">
+<div class="sidebar-left" #sidebar [style.height]="'calc(100vh - ' +  (sidebar.getBoundingClientRect().y || 0) + 'px)'">
   <div class="filters">
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">search</a></li>
@@ -64,7 +64,7 @@
 </div>
 <div class="bottom-controls">
   <span class="pull-right">
-    <span class="p-r-16">245 Test Cases</span>
-    <input class="btn btn-default" type="button" value="Bulk Update">
+    <input class="btn btn-default btn-action" type="button" value="Bulk Update">
   </span>
+</div>
 </div>

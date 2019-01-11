@@ -3,6 +3,7 @@ import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 @Component({
   selector: 'app-steps-table',
   templateUrl: './steps-table.component.html',
+  styleUrls: ['./steps-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StepsTableComponent implements OnInit {
@@ -18,5 +19,4 @@ export class StepsTableComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

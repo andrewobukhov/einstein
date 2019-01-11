@@ -1,0 +1,137 @@
+@import "../scss/_override-variables";
+
+:host {
+  position: sticky;
+  display: block;
+  z-index: 1000;
+  top: 8px;
+  max-height: 100vh;
+}
+
+
+.sidebar-left-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.bottom-controls {
+  width: 100%;
+  height: 74px;
+  padding: 20px 15px;
+
+  display: flex;
+  flex: 1;
+  align-self: flex-end;
+  justify-content: flex-end;
+  background-color: $sidebat-bg;
+  box-shadow: 0 -10px 10px 0 rgba(0, 0, 0, .05);
+
+  margin-top: -74px;
+
+  .btn {
+    min-width: 100px;
+  }
+
+  .pull-right {
+    span {
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+
+      letter-spacing: normal;
+
+      color: #000;
+    }
+  }
+}
+
+.sidebar-left {
+  display: block;
+
+  height: 100%;
+  min-height: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: $sidebat-bg;
+
+  .btn-group-xs.switch-view > .btn,
+  .btn-group-xs > .btn {
+    font-size: 12px !important;
+  }
+
+  .btn-group-xs.switch-view {
+    .btn-default:hover,
+    .btn-default:focus {
+      color: #000;
+      border: none !important;
+      background-color: #f2f2f2 !important;
+    }
+
+    .btn-default:active:hover,
+    .btn-default:active:focus,
+    .btn-default:active.focus,
+    .btn-default.active:hover,
+    .btn-default.active:focus,
+    .btn-default.active.focus,
+    .open > .btn-default.dropdown-toggle:hover,
+    .open > .btn-default.dropdown-toggle:focus,
+    .open > .btn-default.dropdown-toggle.focus {
+      color: #000;
+      border: none !important;
+      background-color: #c6c6c6 !important;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .pull-right {
+    float: none !important;
+
+    width: 100%;
+  }
+
+  .controls {
+    .btn-xs {
+      width: calc(100% - 6px);
+      min-width: auto;
+      margin-top: 2px;
+    }
+  }
+
+  .btn-xs,
+  .btn-group-xs > .btn,
+  .btn-group-xs > .btn {
+    width: calc(50% - 3px);
+    min-width: auto;
+    margin-top: 2px;
+  }
+
+  .sidebar-left {
+    display: table-cell;
+    padding-right: 15px;
+    height: calc(100% - 94px);
+
+    .easy-tree ul > li > span > a span.items-count {
+    }
+
+    .easy-tree {
+      overflow-y: scroll;
+
+      max-height: calc(100% - 330px);
+    }
+
+    .bottom-controls {
+      height: 100px;
+      padding: 0;
+
+      .btn {
+        width: calc(100% - 6px);
+        min-width: auto;
+        margin-top: 2px;
+      }
+    }
+  }
+}

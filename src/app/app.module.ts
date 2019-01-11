@@ -7,18 +7,19 @@ import {LeftSidebarComponent} from './layout/left-sidebar/left-sidebar.component
 
 import {TextBlocksComponent} from './components/text-blocks/text-blocks.component';
 import {StepsTableComponent} from './components/steps-table/steps-table.component';
-import {RightSidebarComponent} from './layout/right-sidebar/right-sidebar.component';
-import {ContentOneComponent} from './components/content-one/content-one.component';
 import {CustomFieldsComponent} from './components/custom-fields/custom-fields.component';
 import {TextTableComponent} from './components/text-table/text-table.component';
 import {TreeModule} from 'angular-tree-component';
 import {BsDropdownModule, TabsModule} from 'ngx-bootstrap';
 import {AngularSplitModule} from 'angular-split';
-//import { NgxStickyModule } from 'ng6-sticky';
-//import {NgxStickyModule} from 'ngx-sticky';
+
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { SummernoteEditorComponent } from './shared/summernote/summernote-editor.component';
 import {SharedModule} from './shared/shared.module';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { TaskHeaderComponent } from './components/task-header/task-header.component';
+import { ProjectItemComponent } from './components/project-item/project-item.component';
+import { SidebarNavigationComponent } from './components/sidebar-navigation/sidebar-navigation.component';
 import {DragulaModule, DragulaService} from 'ng2-dragula';
 
 @NgModule({
@@ -29,9 +30,11 @@ import {DragulaModule, DragulaService} from 'ng2-dragula';
     TextTableComponent,
     TextBlocksComponent,
     StepsTableComponent,
-    RightSidebarComponent,
-    ContentOneComponent,
-    CustomFieldsComponent
+    CustomFieldsComponent,
+    DropdownComponent,
+    TaskHeaderComponent,
+    ProjectItemComponent,
+    SidebarNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,6 @@ import {DragulaModule, DragulaService} from 'ng2-dragula';
     AngularSplitModule,
     SharedModule,
     DragulaModule.forRoot()
-    //NgxStickyModule
   ],
   providers: [
     DragulaService

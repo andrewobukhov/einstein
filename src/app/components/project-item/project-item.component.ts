@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {TestCasesData} from '../../test-data/test-cases-data';
 
 @Component({
-  selector: 'app-content-one',
-  templateUrl: './content-one.component.html'
+  selector: 'app-project-item',
+  templateUrl: './project-item.component.html',
+  styleUrls: ['./project-item.component.scss']
 })
-export class ContentOneComponent implements OnInit {
+export class ProjectItemComponent implements OnInit {
 
   public model: any;
 
@@ -15,5 +16,4 @@ export class ContentOneComponent implements OnInit {
   ngOnInit() {
     this.model = TestCasesData.item2;
   }
-
 }

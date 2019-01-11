@@ -1,0 +1,127 @@
+@import "../scss/_override-variables";
+
+.sidebar-right {
+  top: 57px;
+  right: 0;
+  z-index: 1000;
+
+  width: 64px;
+  height: calc(100% - 58px);
+  min-height: calc(100% - 58px);
+
+  background-color: $sidebat-bg;
+/*  box-shadow: 0 0 0 1px $light-grey;*/
+
+  ul {
+    margin: 1px 0 0 0;
+    padding: 0;
+  }
+
+  li.square {
+    display: flex;
+
+    width: 64px;
+    height: 64px;
+
+    cursor: pointer;
+    text-align: center;
+
+    align-items: center;
+    justify-content: center;
+
+    &.toggle-view {
+      color: $dark-blue;
+/*      box-shadow: 0 1px 15px 0 rgba(0, 0, 0, .08);*/
+    }
+
+    &:hover {
+      -webkit-transition: all .5s ease-in-out;
+      -moz-transition: all .5s ease-in-out;
+      -ms-transition: all .5s ease-in-out;
+      -o-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+
+      background-color: $right-sidebar-active-item;
+    }
+
+    .ring-icon {
+      font-size: 24px;
+    }
+
+    span.glyphicon {
+      font-size: 24px;
+
+      color: $dark-blue;
+
+      &.inactive {
+        color: $grey;
+      }
+    }
+
+    .wrap {
+      position: relative;
+
+      width: 54px;
+      height: 54px;
+      margin: 5px;
+      padding-top: 6px;
+
+      background: $white;
+
+      > span.label {
+        font-size: 10px;
+        font-weight: 300;
+        line-height: 3;
+
+        margin-bottom: -10px;
+        padding: 0;
+
+        text-align: center;
+        color: $dark-blue;
+      }
+
+      &.inactive {
+        > span.label {
+          color: $grey;
+        }
+
+        > span.glyphicon {
+          color: $grey;
+        }
+      }
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 200;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: .91;
+
+      position: absolute;
+      top: -4px;
+      right: -4px;
+
+      min-width: 18px;
+      min-height: 18px;
+      padding: 4.5px 4px;
+
+      text-align: center;
+      letter-spacing: normal;
+
+      color: #fff;
+      border-radius: 50%;
+      background-color: $dark-blue;
+
+      > span.glyphicon {
+        font-size: 9px;
+
+        color: $white;
+      }
+
+      &.inactive {
+        background-color: $grey;
+      }
+    }
+  }
+}
