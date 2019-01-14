@@ -1,0 +1,33 @@
+@import "../scss/_override-variables";
+
+.description {
+  .panel.panel-default {
+    border: 1px solid $light-grey;
+    margin-right: 24px;
+    margin-bottom: 35px;
+  }
+
+  .placeholder-preconditions {
+    color: $placeholder-gray;
+    &:before {
+      content: 'Preconditions';
+      position: absolute;
+      top: 12px;
+      left: 26px;
+      line-height: 1.5em;
+      z-index: 1;
+    }
+  }
+
+  .placeholder-summary {
+    color: $placeholder-gray;
+    &:before {
+      content: 'Summary';
+      position: absolute;
+      top: 12px;
+      left: 26px;
+      line-height: 1.5em;
+      z-index: 1;
+    }
+  }
+}

@@ -28,10 +28,12 @@ export class LeftSidebarComponent implements OnInit {
             children: [
               {
                 id: 99,
-                name: 'UBP-961511: Mobile Web: Add Extension'
+                name: 'UBP-961511: Mobile Web: Add Extension',
+                key: 'UBP-961511',
               }, {
                 id: 98,
                 name: 'UBP-961512: Transfer from paid to trial',
+                key: 'UBP-961511',
               }
             ]
           }, {
@@ -41,10 +43,12 @@ export class LeftSidebarComponent implements OnInit {
             children: [
               {
                 id: 97,
-                name: 'UBP-961532: Service parameter to remove'
+                name: 'UBP-961532: Service parameter to remove',
+                key: 'UBP-961511',
               }, {
                 id: 96,
                 name: 'UBP-961533: Setup wizard',
+                key: 'UBP-961511',
               }
             ]
           }
@@ -62,7 +66,8 @@ export class LeftSidebarComponent implements OnInit {
             children: [
               {
                 id: 95,
-                name: 'UBP-961545: Check 1st level pages'
+                name: 'UBP-961545: Check 1st level pages',
+                key: 'UBP-961511',
               }, {
                 id: 94,
                 name: 'Case in case',

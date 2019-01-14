@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './layout/header/header.component';
 import {LeftSidebarComponent} from './layout/left-sidebar/left-sidebar.component';
 
-import {TextBlocksComponent} from './components/text-blocks/text-blocks.component';
+import {DescriptionBlocksComponent} from './components/description-blocks/description-blocks.component';
 import {StepsTableComponent} from './components/steps-table/steps-table.component';
 import {CustomFieldsComponent} from './components/custom-fields/custom-fields.component';
 import {TextTableComponent} from './components/text-table/text-table.component';
@@ -16,7 +16,7 @@ import {AngularSplitModule} from 'angular-split';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { SummernoteEditorComponent } from './shared/summernote/summernote-editor.component';
 import {SharedModule} from './shared/shared.module';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { SimpleDropdownComponent } from './components/simple-dropdown/simple-dropdown.component';
 import { TaskHeaderComponent } from './components/task-header/task-header.component';
 import { ProjectItemComponent } from './components/project-item/project-item.component';
 import { SidebarNavigationComponent } from './components/sidebar-navigation/sidebar-navigation.component';
@@ -28,10 +28,10 @@ import {DragulaModule, DragulaService} from 'ng2-dragula';
     HeaderComponent,
     LeftSidebarComponent,
     TextTableComponent,
-    TextBlocksComponent,
+    DescriptionBlocksComponent,
     StepsTableComponent,
     CustomFieldsComponent,
-    DropdownComponent,
+    SimpleDropdownComponent,
     TaskHeaderComponent,
     ProjectItemComponent,
     SidebarNavigationComponent

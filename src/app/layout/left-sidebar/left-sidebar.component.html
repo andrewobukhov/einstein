@@ -1,70 +1,78 @@
 <div class="sidebar-left-container">
-<div class="sidebar-left" #sidebar [style.height]="'calc(100vh - ' +  (sidebar.getBoundingClientRect().y || 0) + 'px)'">
-  <div class="filters">
-    <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">search</a></li>
-      <li role="presentation"><a href="#filters" aria-controls="filters" role="tab" data-toggle="tab">filters</a></li>
-      <li role="presentation"><a href="#query" aria-controls="query" role="tab" data-toggle="tab">query</a></li>
-    </ul>
-    <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="search">
-        <div class="input-group">
-          <input type="text" class="form-control" id="serachline" placeholder="">
-          <span class="icon-ico-ico-searchreset"></span>
+  <div class="sidebar-left container-fluid" #sidebar
+       [style.height]="'calc(100vh - ' +  (sidebar.getBoundingClientRect().y || 0) + 'px)'">
+    <div class="row filters">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">search</a>
+        </li>
+        <li role="presentation"><a href="#filters" aria-controls="filters" role="tab" data-toggle="tab">filters</a>
+        </li>
+        <li role="presentation"><a href="#query" aria-controls="query" role="tab" data-toggle="tab">query</a></li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="search">
+          <div class="input-group">
+            <input type="text" class="form-control" id="serachline" placeholder="">
+            <span class="icon-ico-ico-searchreset"></span>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="filters">
+          <input type="text" class="form-control" id="filtersline" placeholder="">
+        </div>
+        <div role="tabpanel" class="tab-pane" id="query">
+          <input type="text" class="form-control" id="queryline" placeholder="">
         </div>
       </div>
-      <div role="tabpanel" class="tab-pane" id="filters">
-        <input type="text" class="form-control" id="filtersline" placeholder="">
-      </div>
-      <div role="tabpanel" class="tab-pane" id="query">
-        <input type="text" class="form-control" id="queryline" placeholder="">
+    </div>
+    <div class="row tree-controls">
+      <div class="col-12 controls">
+        <div class="btn-group btn-group-xs">
+          <button type="button" class="btn btn-xs-default btn-default">Expand all</button>
+          <button type="button" class="btn btn-xs-default btn-default">Collapse all</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-xs-default btn-default active">Tree</button>
+          <button type="button" class="btn btn-xs-default btn-default">Table</button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-12 m-t-19 m-b-17">
-    <button type="button" class="btn-xs btn-default min-w-50 m-r-2">Expand all</button>
-    <button type="button" class="btn-xs btn-default min-w-50">Collapse all</button>
-    <div class="btn-group btn-group-xs pull-right switch-view" role="group" aria-label="...">
-      <button type="button" class="btn btn-default active">Tree</button>
-      <button type="button" class="btn btn-default">Table</button>
+    <div class="row tree">
+      <div class="col-12 easy-tree">
+        <tree-root [nodes]="nodes" [options]="options">
+          <ng-template #treeNodeTemplate let-node let-index="index">
+            <div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown" [autoClose]="false" style="width:100%;" (mouseleave)="dp.hide()">
+              <a title="select" data-toggle="dropdown" dropdownToggle>
+                <span class="name">{{ node.data.name }}</span>
+                <span class="items-count">{{ node.data.count }}</span>
+              </a>
+              <ul class="dropdown-menu" *dropdownMenu >
+                <li>
+                  <tabset>
+                    <tab active="false" heading="Add" class="ic-add" id="tab1"></tab>
+                    <tab active="false" heading="Move" class="ic-move"></tab>
+                    <tab active="false" heading="Edit" class="ic-ed">
+                      <div class="block">
+                        <p><span class="icon-ico-actions-copy"></span><br>Copy</p>
+                      </div>
+                      <div class="block">
+                        <p><span class="icon-ico-actions-clone"></span><br>Clone</p>
+                      </div>
+                      <div class="block">
+                        <p><span class="icon-ico-actions-remove-2"></span><br>Remove</p>
+                      </div>
+                    </tab>
+                  </tabset>
+                </li>
+              </ul>
+            </div>
+          </ng-template>
+        </tree-root>
+      </div>
+    </div>
+    <div class="row bottom-controls">
+      <span class="pull-right">
+        <input class="btn btn-default btn-action" type="button" value="Bulk Update">
+      </span>
     </div>
   </div>
-  <div class="easy-tree">
-    <tree-root [nodes]="nodes" [options]="options">
-      <ng-template #treeNodeTemplate let-node let-index="index">
-        <span dropdown class="mini-tabs" triggers="mouseover" #dp="bs-dropdown" style="width:100%;">
-          <a href="javascript: void(0);" title="select" data-toggle="dropdown" dropdownToggle (mouseleave)="dp.hide()">
-            <span class="name">{{ node.data.name }}</span>
-        <span class="items-count" >{{ node.data.count }}</span>
-        </a>
-        <ul class="dropdown-menu" *dropdownMenu>
-          <li class="">
-            <tabset>
-              <tab disabled="true" heading="Add" class="ic-add" id="tab1">
-              </tab>
-              <tab disabled="true" heading="Move" class="ic-move"></tab>
-              <tab active="true" heading="Edit" class="ic-ed">
-                <div class="block">
-                  <p><span class="icon-ico-actions-copy"></span><br>Copy</p>
-                </div>
-                <div class="block">
-                  <p><span class="icon-ico-actions-clone"></span><br>Clone</p>
-                </div>
-                <div class="block">
-                  <p><span class="icon-ico-actions-remove-2"></span><br>Remove</p>
-                </div>
-              </tab>
-            </tabset>
-          </li>
-        </ul>
-        </span>
-      </ng-template>
-    </tree-root>
-  </div>
-</div>
-<div class="bottom-controls">
-  <span class="pull-right">
-    <input class="btn btn-default btn-action" type="button" value="Bulk Update">
-  </span>
-</div>
 </div>

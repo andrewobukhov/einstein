@@ -3,8 +3,26 @@
 .navbar {
   .user-actions {
     position: relative;
+  }
 
-    &.open .user-role{
+  .user-name {
+    color: $white;
+    font-size: 13px;
+  }
+
+  .user-role {
+    color: $white;
+    font-weight: 300;
+  }
+
+  .icon-ico-head-arrow {
+    font-size: 24px;
+    line-height: normal;
+    vertical-align: middle;
+  }
+
+  .open {
+    .user-role {
       color: $dark-blue;
       background: $white;
 
@@ -14,23 +32,6 @@
       border-bottom-color: white;
       z-index: 1001;
       position: relative;
-      margin-left: -1px;
-    }
-  }
-
-  .user-name {
-    font-size: 13px;
-    color: $white;
-
-    .user-role {
-      font-weight: 300;
-      margin-left: 4px;
-    }
-
-    .icon-ico-head-arrow {
-      font-size: 24px;
-      line-height: normal;
-      vertical-align: middle;
     }
   }
 }

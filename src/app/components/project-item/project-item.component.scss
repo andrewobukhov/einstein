@@ -20,6 +20,7 @@
 
 .task-number {
   font-size: 14px;
+  font-weight: 300;
   color: $dark-grey;
   margin: -4px 23px 0 0;
 }
@@ -38,24 +39,12 @@
 
 .normal-content-header {
   background-color: $white;
-  padding-bottom: 9px;
-  margin-left: -40px;
-  margin-right: -14px;
+  margin-left: -24px;
+  margin-right: 0;
   margin-bottom: 30px;
-
-  padding-right: 24px;
-  padding-left: 8px;
-  padding-top: 8px;
-  padding-bottom: 9px;
-
+  padding: 8px 24px 9px 8px;
   height: 64px;
-
   box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.08);
-
-  &.freezed {
-    top: 56px;
-    z-index: 1000;
-  }
 }
 
 .content-header {

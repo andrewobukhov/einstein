@@ -55,6 +55,39 @@
 }
 
 
+.btn-xs {
+  min-width: 80px;
+  height: 24px;
+  cursor: pointer;
+
+  &:focus {
+    background-image: none;
+    outline: none!important;
+    box-shadow: none;
+  }
+}
+
+.btn-xs-default {
+  min-width: 80px;
+  height: 24px;
+
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1em;
+
+  color: #000;
+  border: 1px solid $btn-group-border;
+  background-color: $white;
+
+  &.active {
+    font-weight: normal;
+    color: #000;
+    border-color: $btn-group-border;
+    background-color: $btn-group-border;
+  }
+}
+
+
 // -----------------------
 
 .as-split-area,
