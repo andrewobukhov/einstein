@@ -25,12 +25,16 @@
 }
 
 .easy-tree {
+  .tree-node-level-1 {
+    padding-bottom: 20px;
+  }
+
   .tree-children {
     margin-left: 6px;
     padding-right: 0;
     padding-left: 11px;
 
-    border-left: 1px solid #dfe0df;
+    border-left: 1px solid $tree-grey;
     overflow: visible;
   }
 
@@ -67,7 +71,7 @@
   .toggle-children-placeholder {
     margin-right: 10px;
 
-    color: #e7e5e5;
+    color: $btn-group-border;
 
     &:before {
       font-size: 24px;
@@ -94,13 +98,13 @@
 
         text-align: right;
 
-        color: #8f8f8f;
-        background-color: #fafafa;
+        color: $tree-base-grey;
+        background-color: $sidebar-bg;
       }
 
       .name {
         font-size: 13px;
-        color: #767676;
+        color: $tree-name-grey;
       }
     }
   }
@@ -127,19 +131,14 @@
 
         text-align: right;
 
-        color: #8f8f8f;
-        background-color: #fafafa;
-      }
-
-      .marked {
-        font-size: 13px;
-        color: #1d1d1d;
+        color: $tree-base-grey;
+        background-color: $sidebar-bg;
       }
 
       .name:hover {
         font-size: 13px;
         font-weight: normal;
-        color: #252525;
+        color: $tree-hover-grey;
       }
     }
   }

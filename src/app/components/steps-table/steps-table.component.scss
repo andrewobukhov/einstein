@@ -1,14 +1,72 @@
+@import "../scss/_override-variables";
+
 .steps-container {
   padding-right: 24px;
+  margin-bottom: 36px;
 
   .row {
     margin-bottom: 16px;
   }
 
-  .preconditions,
-  .summary {
-    line-height: 1em;
-    min-height: 49px;
-    font-size: 14px;
+  .steps-table {
+    thead {
+      tr {
+        border: none;
+        padding-left: 0;
+
+        th {
+          padding: 12px;
+          font-size: 12px;
+          font-weight: 500;
+          color: #ddd8d8;
+          border: none;
+        }
+      }
+    }
+
+    tr {
+      border-bottom: 1px solid #e7e8ec;
+
+      td {
+        font-size: 14px;
+        font-weight: normal;
+        position: relative;
+        padding: 12px 19px 12px 12px;
+        color: $black;
+
+        &.order {
+          color: #b1b1b1;
+          padding-top: 24px;
+          padding-left: 0px;
+        }
+
+        .btn-dropdown {
+          .btn {
+            font-family: 'Roboto Mono';
+            font-size: 12px;
+            margin-top: 5px;
+            padding: 0;
+            color: #b1b1b1;
+          }
+        }
+
+        .glyphicon {
+          font-size: 12px;
+          font-weight: 500;
+          color: #ddd8d8;
+        }
+
+        .icon-ico-drag {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .btn.add-new {
+    min-width: auto;
+    height: 32px;
+    margin: 0;
+    padding: 7px 49px;
   }
 }

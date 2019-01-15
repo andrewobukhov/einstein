@@ -16,11 +16,12 @@ import {AngularSplitModule} from 'angular-split';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { SummernoteEditorComponent } from './shared/summernote/summernote-editor.component';
 import {SharedModule} from './shared/shared.module';
-import { SimpleDropdownComponent } from './components/simple-dropdown/simple-dropdown.component';
+import { SimpleDropdownComponent } from './shared/simple-dropdown/simple-dropdown.component';
 import { TaskHeaderComponent } from './components/task-header/task-header.component';
 import { ProjectItemComponent } from './components/project-item/project-item.component';
 import { SidebarNavigationComponent } from './components/sidebar-navigation/sidebar-navigation.component';
 import {DragulaModule, DragulaService} from 'ng2-dragula';
+import { ChipsComponent } from './components/chips/chips.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {DragulaModule, DragulaService} from 'ng2-dragula';
     SimpleDropdownComponent,
     TaskHeaderComponent,
     ProjectItemComponent,
-    SidebarNavigationComponent
+    SidebarNavigationComponent,
+    ChipsComponent
   ],
   imports: [
     BrowserModule,

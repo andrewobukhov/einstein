@@ -37,7 +37,7 @@ hr {
 }
 
 .form-control:focus {
-  border-color: #0747a6;
+  border-color: $dark-blue;
   outline: none;
   box-shadow: none;
 }
@@ -51,7 +51,6 @@ h4 {
 //
 // Dropdowns
 // --------------------------------------------------
-
 
 .open > .btn[aria-expanded="true"] {
   z-index: 9909;
@@ -190,7 +189,7 @@ h4 {
   user-select: none;
   letter-spacing: normal;
 
-  color: #767676;
+  color: $tree-name-grey;
 }
 
 .checkbox-container input {
@@ -260,7 +259,6 @@ h4 {
 // Buttons
 // --------------------------------------------------
 
-
 .btn {
   font-size: 14px;
   font-weight: 500;
@@ -295,11 +293,48 @@ h4 {
   }
 }
 
+.btn-primary {
+  background-color: $dark-blue;
+}
+
+.btn-sm {
+  min-width: 80px;
+  height: 24px;
+  line-height: 1em;
+}
+
+.btn-light {
+  &:active,
+  &:focus,
+  &:hover {
+    background-image: none;
+    outline: none!important;
+    box-shadow: none;
+  }
+
+  background-color: $white;
+  border-color: $light-grey;
+  font-size: 12px;
+  font-weight: 300;
+  color: #000;
+  border-radius: 0;
+  text-shadow: none;
+  box-shadow: none;
+
+  &:not(:disabled):not(.disabled).active {
+    font-weight: normal;
+    color: #000;
+    border-color: transparent;
+    background-color: $btn-group-border;
+  }
+}
+
 .btn-action {
   border-color: $dark-blue;
 }
 
 .btn-default,
+.btn-light,
 .btn-primary,
 .btn-success,
 .btn-info,
@@ -443,23 +478,6 @@ h4 {
   @include box-shadow($shadow);
 }
 
-// Mixin for generating new styles
-@mixin alert-styles($color) {
-  border-color: darken($color, 15%);
-
-  @include gradient-vertical($start-color: $color, $end-color: darken($color, 7.5%));
-}
-
-//
-// List groups
-// --------------------------------------------------
-
-.list-group {
-  border-radius: $border-radius-base;
-
-  @include box-shadow(0 1px 2px rgba(0, 0, 0, .075));
-}
-
 //
 // Panels
 // --------------------------------------------------
@@ -467,11 +485,6 @@ h4 {
 // Common styles
 .panel {
   @include box-shadow(0 1px 2px rgba(0, 0, 0, .05));
-}
-
-// Mixin for generating new styles
-@mixin panel-heading-styles($color) {
-  @include gradient-vertical($start-color: $color, $end-color: darken($color, 5%));
 }
 
 .tab-content {
@@ -517,38 +530,9 @@ ul.nav-tabs {
   }
 }
 
-//
-// Tables
-// --------------------------------------------------
-
-table.table {
-  line-height: 1.57;
-
-  color: $table-color;
-
-  thead {
-    font-weight: bold;
-
-    color: $thead-color;
-    background-color: $thead-bg;
-
-    tr {
-      th {
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-    }
-  }
-}
-
-.ew-resize {
-  cursor: ew-resize;
-}
-
 .icon-ico-listopen {
   font-size: 24px;
 }
-
 
 // replace to one of dropdown components
 .mini-tabs {
@@ -567,7 +551,7 @@ table.table {
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #0747a6;
+    color: $dark-blue;
 
     p:hover {
       text-decoration: underline;
@@ -662,7 +646,7 @@ table.table {
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #0747a6;
+    color: $dark-blue;
     text-transform: none;
   }
 
@@ -731,7 +715,7 @@ table.table {
 
     border: 1px solid #ebebeb;
     border-radius: 1px;
-    background-color: #fafafa;
+    background-color: $sidebar-bg;
   }
 
   .descr {
@@ -817,35 +801,6 @@ table.table {
   }
 }
 
-
-.btn-group.gray-border.chips {
-  .btn {
-    min-width: auto !important;
-  }
-
-  .icon-ico-ico-searchreset {
-    font-size: 24px;
-
-    position: absolute;
-    top: 3px;
-    right: 0;
-
-    color: $light-grey;
-  }
-
-  .remove-btn {
-    border-left: none;
-    background-color: $white;
-  }
-
-  .trash-icon {
-    font-size: 24px;
-
-    margin-top: -4px;
-  }
-}
-
-
 .panel-default {
   font-family: Roboto;
   font-size: 14px;
@@ -859,138 +814,13 @@ table.table {
   color: #000;
 }
 
-.steps-table {
-  thead {
-    background: transparent !important;
-
-    tr {
-      th {
-        font-family: Roboto;
-        font-size: 12px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-
-        padding-top: 5px !important;
-        padding-bottom: 5px !important;
-
-        letter-spacing: normal;
-
-        color: #ddd8d8;
-        border-bottom: none;
-      }
-    }
-  }
-
-  tr {
-    padding-top: 12px;
-    padding-bottom: 12px;
-
-    border-bottom: 1px solid #e7e8ec;
-
-    th {
-      font-family: Roboto;
-      font-size: 12px;
-      font-weight: 500;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-
-      padding-top: 5px;
-      padding-bottom: 5px;
-
-      letter-spacing: normal;
-
-      color: #ddd8d8;
-      background: transparent !important;
-
-      .btn-group {
-        .btn {
-          font-family: 'Roboto Mono';
-          font-size: 12px;
-          font-weight: normal;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: normal;
-
-          margin-top: -5px;
-
-          letter-spacing: normal;
-
-          color: #b1b1b1;
-        }
-      }
-    }
-
-    td {
-      font-family: Roboto;
-      font-size: 14px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.29;
-
-      position: relative;
-
-      letter-spacing: normal;
-
-      color: #000;
-      border-bottom: 1px solid $light-grey !important;
-
-      .glyphicon {
-        font-size: 12px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-
-        letter-spacing: normal;
-
-        color: #ddd8d8;
-      }
-
-      .icon-ico-drag {
-        font-size: 24px;
-      }
-
-      .btn {
-        min-width: auto;
-        height: 24px;
-        margin: 0;
-        margin-top: -3px;
-        padding: 0;
-      }
-    }
-  }
-}
-
-.custom-fields {
-  .btn-group.chips {
-    .btn-default {
-      font-family: Roboto;
-      font-size: 14px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.57;
-
-      padding-top: 4px;
-
-      letter-spacing: normal;
-
-      color: #404040;
-    }
-  }
-}
-
 .no-border {
   border: none !important;
 }
 
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-  background-color: #fafafa !important;
+  background-color: $sidebar-bg !important;
   background-image: none;
 }
 
@@ -1067,7 +897,7 @@ table.table {
 }
 
 .list-group-item:hover {
-  background-color: #fafafa !important;
+  background-color: $sidebar-bg !important;
 }
 
 .list-group-item {
@@ -1129,12 +959,6 @@ table.table {
   border: .2rem solid $dark-blue;
   border-radius: 50%;
 }
-
-
-.tree-node-level-1 {
-  padding-bottom: 20px;
-}
-
 
 @media (min-width: 768px) {
   .navbar-nav > li > a.user-name {

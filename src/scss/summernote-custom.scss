@@ -1,7 +1,8 @@
 
 .smrnote {
-  &-active.note-editor.note-frame  {
+  &-active.note-editor.note-frame {
     border-color: #a9a9a9;
+
     .note-toolbar {
       display: block;
     }
@@ -10,6 +11,7 @@
 
 .note-editor.note-frame {
   border-color: transparent;
+
   .note-toolbar {
     position: absolute !important;
     left: -2px;
@@ -21,12 +23,15 @@
     min-width: 465px;
     display: none;
   }
+
   .note-statusbar, .note-status-output {
     display: none;
   }
+
   .note-editing-area {
     p {
       margin-bottom: 5px;
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -42,10 +47,25 @@
   padding: 10px;
   border: 1px solid transparent;
   min-height: 40px;
+
   p {
     margin-bottom: 5px;
+
     &:last-child {
       margin-bottom: 0;
     }
   }
 }
+
+
+/*Uncomment for aligin summernote element in table*/
+/*table {
+  .smrnote-view.ngx-summernote-view,
+  .note-editor.note-frame:not(.smrnote-active) {
+    padding: 0;
+
+    ol {
+      padding-left: 1em;
+    }
+  }
+}*/

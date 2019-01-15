@@ -1,0 +1,25 @@
+@import "../scss/_override-variables";
+
+.custom-fields {
+
+  .btn {
+    min-width: 100px;
+  }
+
+  .row {
+    &.fields {
+      margin: 4px 0;
+      padding: 6px 0 2px;
+      align-items: center;
+
+      &:nth-child(2n+1) {
+        background-color: $sidebar-bg;
+      }
+    }
+
+    .field-name {
+      font-size: 14px;
+      font-weight: normal;
+    }
+  }
+}

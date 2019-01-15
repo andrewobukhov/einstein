@@ -22,7 +22,7 @@
 
 .icon-ico-actions-remove-2:before {
   content: "\e915";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-actions-add:before {
   content: "\e914";
@@ -30,15 +30,15 @@
 }
 .icon-ico-actions-edit:before {
   content: "\e913";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-actions-clone:before {
   content: "\e911";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-actions-copy:before {
   content: "\e912";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-actions-move:before {
   content: "\e910";
@@ -49,7 +49,7 @@
 }
 .icon-ico-listopen:before {
   content: "\e904";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-ico-searchreset:before {
   content: "\e905";
@@ -57,7 +57,7 @@
 }
 .icon-ico-case-active:before {
   content: "\e900";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-delete:before {
   content: "\e901";
@@ -73,37 +73,42 @@
 }
 .icon-ico-navpanel-attachms:before {
   content: "\e906";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-navpanel-custfields:before {
   content: "\e907";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-navpanel-precond:before {
   content: "\e908";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-navpanel-steps:before {
   content: "\e909";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-navpanel-summary:before {
   content: "\e90a";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-redo:before {
   content: "\e90b";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-settings:before {
   content: "\e90c";
-  color: #0747a6;
+  color: $dark-blue;
 }
 .icon-ico-tree-move:before {
   content: "\e90d";
-  color: #d8d8d8;
+  color: $right-sidebar-active-item;
 }
 .icon-ico-undo:before {
   content: "\e90e";
-  color: #0747a6;
+  color: $dark-blue;
+}
+
+.icon-ico-plus:before {
+  content: "\2b";
+  color: $dark-grey;
 }

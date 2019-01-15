@@ -1,0 +1,42 @@
+@import "../scss/_override-variables";
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  .chip {
+    padding: 0;
+    border: 1px solid $light-grey;
+    font-size: 12px;
+    font-weight: normal;
+    margin-right: 7px;
+    margin-bottom: 4px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+
+    .label {
+      padding: 0 12px;
+      cursor: default;
+    }
+
+    .icon-ico-ico-searchreset {
+      cursor: pointer;
+      font-size: 24px;
+      color: $light-grey;
+      position: relative;
+      top: -1px;
+    }
+
+    .btn {
+      .icon-ico-plus {
+        position: relative;
+        top: -8px;
+      }
+    }
+  }
+
+  .btn.trash-icon {
+    margin-left: auto;
+  }
+}

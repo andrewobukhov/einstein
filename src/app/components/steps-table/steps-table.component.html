@@ -1,29 +1,19 @@
 <div class="steps-container">
-  <!--<div class="row">
-    <app-summernote-editor class="summary form-control" [htmlContent]="model.summary"></app-summernote-editor>
-  &lt;!&ndash;  <textarea  type="text" class="summary form-control" placeholder="Summary" rows="1">{{model.summary}}</textarea>&ndash;&gt;
-  </div>
-  <div class="row">
-    <app-summernote-editor class="preconditions form-control" [htmlContent]="model.preconditions"></app-summernote-editor>
-  &lt;!&ndash;  <textarea  type="text" class="preconditions form-control" placeholder="Preconditions" rows="1">{{model.preconditions}}</textarea>&ndash;&gt;
-  </div>-->
 
   <div class="row steps">
     <div class="col-md-12">
-      <h4 class="text2">Test steps</h4>
+      <h4>Test steps</h4>
       <table class="table steps-table">
         <thead>
         <tr>
-          <th>Step</th>
-          <th></th>
-          <th></th>
-          <th>Expected result</th>
+          <th colspan="3">Step</th>
+          <th width="50%">Expected result</th>
         </tr>
         </thead>
         <tbody dragula="STEPS" [dragulaModel]="steps">
         <tr *ngFor="let step of model.children;let i = index;">
           <td>
-            <div class="btn-group" dropdown>
+            <div class="btn-dropdown" dropdown>
               <button type="button" dropdownToggle class="btn btn-clear dropdown-toggle"
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
                 class="icon-ico-drag"></span></button>
@@ -35,9 +25,9 @@
               </ul>
             </div>
           </td>
-          <th scope="row">
+          <td class="order" scope="row">
             {{i + 1}}
-          </th>
+          </td>
           <td>
             <app-summernote-editor [htmlContent]="step.name"></app-summernote-editor>
           </td>
@@ -50,8 +40,8 @@
       </table>
     </div>
   </div>
-  <div class="row">
-    <input class="btn btn-primary" type="button" value="New step">
+  <div>
+    <input class="add-new btn btn-primary" type="button" value="New step">
   </div>
 </div>
 
