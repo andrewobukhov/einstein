@@ -59,11 +59,24 @@
   color: $dark-blue;
 }
 
+.no-selected {
+  color: $placeholder-gray;
+}
+
 .btn-group {
   margin-right: 3.4px;
 
+  [dropdown] {
+    position: relative;
+    .btn {
+      min-width: auto;
+    }
+  }
+
   .btn {
     min-width: 80px;
+    position: relative;
+    flex: 1 1 auto;
 
     .icon-ico-listopen {
       position: absolute;

@@ -25,28 +25,29 @@
     }
 
     tr {
-      border-bottom: 1px solid #e7e8ec;
+      border-bottom: 1px solid $table-border-grey;
 
       td {
         font-size: 14px;
         font-weight: normal;
-        position: relative;
         padding: 12px 19px 12px 12px;
         color: $black;
 
         &.order {
-          color: #b1b1b1;
+          color: $table-order-grey;
           padding-top: 24px;
           padding-left: 0px;
         }
 
         .btn-dropdown {
+          position: relative;
+
           .btn {
             font-family: 'Roboto Mono';
             font-size: 12px;
             margin-top: 5px;
             padding: 0;
-            color: #b1b1b1;
+            color: $table-order-grey;
           }
         }
 

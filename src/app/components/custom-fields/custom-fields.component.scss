@@ -1,6 +1,8 @@
 @import "../scss/_override-variables";
 
 .custom-fields {
+  margin-right: 24px;
+  margin-bottom: 36px;
 
   .btn {
     min-width: 100px;
@@ -20,6 +22,57 @@
     .field-name {
       font-size: 14px;
       font-weight: normal;
+    }
+  }
+}
+
+.attachments {
+  margin-right: 24px;
+
+  .attachment-list {
+    margin: 24px 0;
+
+    .attachment-item {
+      display: flex;
+      margin-bottom: 5px;
+
+      .img {
+        float: left;
+
+        min-width: 72px;
+        height: 48px;
+        margin-right: 17px;
+
+        border: 1px solid #ebebeb;
+        border-radius: 1px;
+        background-color: $sidebar-bg;
+      }
+
+      .description {
+        float: left;
+        padding-top: 8px;
+        font-size: 14px;
+
+        .info {
+          padding-top: 0;
+          color: #c8c8c8;
+        }
+
+        .filename {
+          margin-bottom: 0;
+          color: $black;
+        }
+      }
+
+      .remove-btn {
+        height: 48px;
+        padding-top: 15px;
+
+        .icon-ico-delete {
+          font-size: 24px;
+          color: $light-grey;
+        }
+      }
     }
   }
 }

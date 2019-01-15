@@ -1,97 +1,126 @@
 <div class="project-item">
   <div class="row normal-content-header sticky  no-wrap">
-      <div class="col-md-7">
-        <div class="small-row bcrumb">
-          <ul class="breadcrumb">
-            <li><a href="#">RC UPB ALL</a></li>
-            <li><a href="#">Telephony (black box)</a></li>
-          </ul>
-        </div>
-        <div class="current-task-name">
-          <div><h4 class="task-number dotted shift-left title">{{model.key}}:</h4></div>
-          <div><h4 class="task-name name">{{model.name}}</h4></div>
-        </div>
+    <div class="col-md-7">
+      <div class="small-row bcrumb">
+        <ul class="breadcrumb">
+          <li><a href="#">RC UPB ALL</a></li>
+          <li><a href="#">Telephony (black box)</a></li>
+        </ul>
       </div>
-      <div class="col-md-5 version-actions">
-        <div class="btn-group" dropdown placement="bottom right">
-          <button type="button" dropdownToggle class="btn btn-default ">Version 5 <span
-            class="icon-ico-listopen"></span></button>
-          <ul class="dropdown-menu dropdown-menu-right dropdown-3" *dropdownMenu>
-            <li class="list">
-              <div class="list-group">
-                <a href="#" class="list-group-item radio-container">
-                  <input type="radio" class="radio-btn" name="choice" id="rad1"/>
-                  <label for="rad1" class="label lb1">
-
-                    <p class="list-group-item-text"><span class="list-group-item-heading">Version 5</span><br>by
-                      Konstantin K., Nov 5th at 15:35</p>
-                  </label>
-                </a>
-                <a href="#" class="list-group-item">
-                  <input type="radio" class="radio-btn" name="choice" id="rad2"/>
-                  <label for="rad2" class="label lb1">
-
-                    <p class="list-group-item-text"><span class="list-group-item-heading">Version 4</span><br>by
-                      Konstantin K., Nov 5th at 15:35</p>
-                  </label>
-                </a>
-                <a href="#" class="list-group-item selected">
-                  <input type="radio" class="radio-btn" name="choice" id="rad3"/>
-                  <label for="rad3" class="label lb1">
-                    <p class="list-group-item-text"><span class="list-group-item-heading">Version 3</span><br>by
-                      Konstantin K., Nov 5th at 15:35</p>
-                  </label>
-                </a>
-                <a href="#" class="list-group-item">
-                  <input type="radio" class="radio-btn" name="choice" id="rad4"/>
-                  <label for="rad4" class="label lb1">
-                    <p class="list-group-item-text"><span class="list-group-item-heading">Version 2</span><br>by
-                      Konstantin K., Nov 5th at 15:35</p>
-                  </label>
-                </a>
-                <a href="#" class="list-group-item ">
-                  <input type="radio" class="radio-btn" name="choice" id="rad5"/>
-                  <label for="rad5" class="label lb1">
-                    <p class="list-group-item-text"><span class="list-group-item-heading">Version 1</span><br>by
-                      Konstantin K., Nov 5th at 15:35</p>
-                  </label>
-                </a>
-                <a href="#" class="list-group-item ">
-                  <input type="radio" class="radio-btn" name="choice" id="rad6"/>
-                  <label for="rad6" class="label lb1">
-
-                    <p class="list-group-item-text"><span class="list-group-item-heading">Version 0</span><br>by
-                      Konstantin K., Nov 5th at 15:35</p>
-                  </label>
-                </a>
-                <a href="#" class="list-group-item ">
-                  <input type="radio" class="radio-btn" name="choice" id="rad7"/>
-                  <label for="rad7" class="label lb1">
-                    <p class="list-group-item-text"><span class="list-group-item-heading">Version -1</span><br>by
-                      Konstantin K., Nov 5th at 15:35</p>
-                  </label>
-                </a>
-              </div>
-            </li>
-            <li class="last">
-              <div class="btn-group" role="group" aria-label="...">
-                <button type="button" class="btn btn-default no-border">ADD</button>
-                <button type="button" class="btn btn-default no-border">REMOVE</button>
-                <button type="button" class="btn btn-default no-border">COMPARE</button>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="btn-group" dropdown placement="bottom right">
-          <button type="button" class="btn btn-default " dropdownToggle>More <span
-            class="icon-ico-listopen"></span></button>
-          <ul class="dropdown-menu dropdown-menu-right dropdown-1" *dropdownMenu>
-            <li><a href="#">Add to Test Plan</a></li>
-            <li><a href="#">Delete</a></li>
-          </ul>
-        </div>
-        <input class="btn btn-default btn-action" type="button" value="Save">
+      <div class="current-task-name">
+        <div><h4 class="task-number dotted shift-left title">{{model.key}}:</h4></div>
+        <div><h4 class="task-name name">{{model.name}}</h4></div>
       </div>
+    </div>
+    <div class="col-md-5 version-actions">
+
+      <div class="btn-group">
+        <div dropdown placement="bottom right">
+          <input type="button" dropdownToggle class="btn btn-light" [ngClass]="{'no-selected': true}"
+                 [value]="'Execution type'">
+          <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+            <li><a href="#">Manual</a></li>
+            <li><a href="#">Automatic</a></li>
+            <li><a href="#">Semi-Automatic</a></li>
+          </ul>
+        </div>
+
+        <div dropdown placement="bottom right">
+          <input type="button" dropdownToggle class="btn btn-light" [ngClass]="{'no-selected': true}"
+                 [value]="'P2'">
+
+          <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
+              role="menu">
+            <li><a href="#">P1</a></li>
+            <li><a href="#">P2</a></li>
+            <li><a href="#">p3</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <div class="btn-group" dropdown placement="bottom right">
+        <button type="button" dropdownToggle class="btn btn-default ">Version 5 <span
+          class="icon-ico-listopen"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right dropdown-3" *dropdownMenu>
+          <li class="list">
+            <div class="list-group">
+              <a href="#" class="list-group-item radio-container">
+                <input type="radio" class="radio-btn" name="choice" id="rad1"/>
+                <label for="rad1" class="label lb1">
+
+                  <p class="list-group-item-text"><span class="list-group-item-heading">Version 5</span><br>by
+                    Konstantin K., Nov 5th at 15:35</p>
+                </label>
+              </a>
+              <a href="#" class="list-group-item">
+                <input type="radio" class="radio-btn" name="choice" id="rad2"/>
+                <label for="rad2" class="label lb1">
+
+                  <p class="list-group-item-text"><span class="list-group-item-heading">Version 4</span><br>by
+                    Konstantin K., Nov 5th at 15:35</p>
+                </label>
+              </a>
+              <a href="#" class="list-group-item selected">
+                <input type="radio" class="radio-btn" name="choice" id="rad3"/>
+                <label for="rad3" class="label lb1">
+                  <p class="list-group-item-text"><span class="list-group-item-heading">Version 3</span><br>by
+                    Konstantin K., Nov 5th at 15:35</p>
+                </label>
+              </a>
+              <a href="#" class="list-group-item">
+                <input type="radio" class="radio-btn" name="choice" id="rad4"/>
+                <label for="rad4" class="label lb1">
+                  <p class="list-group-item-text"><span class="list-group-item-heading">Version 2</span><br>by
+                    Konstantin K., Nov 5th at 15:35</p>
+                </label>
+              </a>
+              <a href="#" class="list-group-item ">
+                <input type="radio" class="radio-btn" name="choice" id="rad5"/>
+                <label for="rad5" class="label lb1">
+                  <p class="list-group-item-text"><span class="list-group-item-heading">Version 1</span><br>by
+                    Konstantin K., Nov 5th at 15:35</p>
+                </label>
+              </a>
+              <a href="#" class="list-group-item ">
+                <input type="radio" class="radio-btn" name="choice" id="rad6"/>
+                <label for="rad6" class="label lb1">
+
+                  <p class="list-group-item-text"><span class="list-group-item-heading">Version 0</span><br>by
+                    Konstantin K., Nov 5th at 15:35</p>
+                </label>
+              </a>
+              <a href="#" class="list-group-item ">
+                <input type="radio" class="radio-btn" name="choice" id="rad7"/>
+                <label for="rad7" class="label lb1">
+                  <p class="list-group-item-text"><span class="list-group-item-heading">Version -1</span><br>by
+                    Konstantin K., Nov 5th at 15:35</p>
+                </label>
+              </a>
+            </div>
+          </li>
+          <li class="last">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default no-border">ADD</button>
+              <button type="button" class="btn btn-default no-border">REMOVE</button>
+              <button type="button" class="btn btn-default no-border">COMPARE</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="btn-group" dropdown placement="bottom right">
+        <button type="button" class="btn btn-default " dropdownToggle>More <span
+          class="icon-ico-listopen"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right dropdown-1" *dropdownMenu>
+          <li><a href="#">Add to Test Plan</a></li>
+          <li><a href="#">Delete</a></li>
+        </ul>
+      </div>
+      <input class="btn btn-default btn-action" type="button" value="Save">
+    </div>
   </div>
   <app-description-blocks [model]="model"></app-description-blocks>
   <app-steps-table [model]="model"></app-steps-table>
