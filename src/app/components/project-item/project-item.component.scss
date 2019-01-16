@@ -1,6 +1,7 @@
 @import "../scss/_override-variables";
 
 :host {
+  //TODO Why?
   display: block;
   display: flex;
   flex-direction: row;
@@ -63,6 +64,7 @@
   color: $placeholder-gray;
 }
 
+//TODO Please rewrite like for .attachments and .custom-fields
 .btn-group {
   margin-right: 3.4px;
 

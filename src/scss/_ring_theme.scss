@@ -53,6 +53,7 @@ h4 {
 // Dropdowns
 // --------------------------------------------------
 
+//TODO Specify class
 .open > .btn[aria-expanded="true"] {
   z-index: 9909;
 
@@ -91,6 +92,7 @@ h4 {
   }
 }
 
+//TODO dropdown-3
 .dropdown-menu.dropdown-3 {
   min-width: 334px;
   height: 352px;
@@ -151,7 +153,7 @@ h4 {
 //
 // Navbar
 // --------------------------------------------------
-
+//TODO Move to header component
 .navbar {
   min-height: 56px;
   width: 100%;
@@ -208,6 +210,7 @@ h4 {
 }
 
 .checkbox-container {
+  //TODO Use font mixin
   font-family: Roboto;
   font-size: 13px;
   font-weight: normal;
@@ -281,6 +284,7 @@ h4 {
   border-width: 0 1px 1px 0;
 }
 
+//TODO ICONS
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon' !important;
   speak: none;
@@ -568,6 +572,7 @@ ul.nav-tabs {
   }
 }
 
+//TODO Move to icons
 .icon-ico-listopen {
   font-size: 24px;
 }
@@ -743,6 +748,7 @@ ul.nav-tabs {
 // Stuff
 //
 
+//TODO All tables without borders;
 .table.text-table > thead > tr > th,
 .table > thead > tr > td,
 .table > tbody > tr > th,
@@ -753,6 +759,7 @@ ul.nav-tabs {
 }
 
 .text-table {
+  //TODO Use font mixin
   font-family: 'Roboto Mono', monospace;
   font-size: 12px;
   font-weight: normal;
@@ -771,14 +778,18 @@ ul.nav-tabs {
 
   tr {
     td {
+      //TODO line-height - 14 times
+
       line-height: 1.83 !important;
 
+      //!important - 19 times
       border: none !important;
     }
   }
 }
 
 .panel-default {
+  //TODO Use font mixin
   font-family: Roboto;
   font-size: 14px;
   font-weight: normal;
@@ -794,8 +805,6 @@ ul.nav-tabs {
 .no-border {
   border: none !important;
 }
-
-
 
 .radio-container {
   position: relative;
@@ -835,6 +844,7 @@ ul.nav-tabs {
   border-left: none;
 }
 
+//TODO Lb1
 .label.lb1 {
   display: flex;
 
@@ -845,6 +855,7 @@ ul.nav-tabs {
   align-items: center;
 
   > p.list-group-item-text {
+    //TODO Use font mixin
     font-family: Roboto;
     font-size: 12px;
     font-weight: normal;
@@ -860,6 +871,7 @@ ul.nav-tabs {
     color: rgba(64, 64, 64, .35);
 
     > span.list-group-item-heading {
+      //TODO Use font mixin
       font-family: Roboto;
       font-size: 14px;
       font-weight: normal;
