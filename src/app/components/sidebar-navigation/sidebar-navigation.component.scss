@@ -1,16 +1,14 @@
 @import "../scss/_override-variables";
 
 .sidebar-right {
-  top: 57px;
+  top: -1px;
   right: 0;
   z-index: 1000;
-
+  position: relative;
   width: 64px;
   height: calc(100% - 58px);
   min-height: calc(100% - 58px);
-
   background-color: $sidebar-bg;
-/*  box-shadow: 0 0 0 1px $light-grey;*/
 
   ul {
     margin: 1px 0 0 0;
@@ -73,7 +71,6 @@
       > span.label {
         font-size: 10px;
         font-weight: 300;
-        line-height: 3;
 
         margin-bottom: -10px;
         padding: 0;

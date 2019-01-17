@@ -3,35 +3,70 @@
 .navbar {
   .user-actions {
     position: relative;
+
+    &.open {
+      .user-role {
+        color: $dark-blue;
+        background: $white;
+
+        border-top-left-radius: $border-radius-base;
+        border-top-right-radius: $border-radius-base;
+        border-bottom-color: white;
+        z-index: 1001;
+        position: relative;
+
+        &:after {
+          display: block;
+          content: '';
+          background-color: $white;
+          width: 100%;
+          height: 9px;
+          position: absolute;
+          z-index: 10000;
+          bottom: -6px;
+          left: 0px;
+          border-right: 1px solid $border2;
+          border-left: 1px solid $border2;
+        }
+      }
+
+      .icon-ico-head-arrow:before {
+        color: $dark-blue;
+      }
+
+      &:after {
+        content: none;
+      }
+
+      .dropdown-menu {
+        padding: 0;
+
+        li > a {
+          padding: 10px;
+        }
+      }
+    }
   }
 
   .user-name {
     color: $white;
     font-size: 13px;
+    display: flex;
+    align-items: center;
   }
 
   .user-role {
+    padding-left: 7px;
     color: $white;
     font-weight: 300;
+    display: flex;
+    align-items: center;
   }
 
   .icon-ico-head-arrow {
     font-size: 24px;
-    line-height: normal;
     vertical-align: middle;
   }
 
-  .open {
-    .user-role {
-      color: $dark-blue;
-      background: $white;
 
-      padding: 7px 0px 13px 7px;
-      border-top-left-radius: $border-radius-base;
-      border-top-right-radius: $border-radius-base;
-      border-bottom-color: white;
-      z-index: 1001;
-      position: relative;
-    }
-  }
 }

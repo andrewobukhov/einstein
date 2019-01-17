@@ -15,7 +15,6 @@
   font-weight: normal;
   font-style: normal;
   font-variant: normal;
-  line-height: 1;
 
   text-transform: none;
 
@@ -25,8 +24,36 @@
 }
 
 .easy-tree {
+
+  .angular-tree-component {
+    overflow: unset;
+  }
+
+  tree-viewport {
+    overflow: visible;
+  }
+
   .tree-node-level-1 {
     padding-bottom: 20px;
+
+  }
+
+  .node-content-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  a {
+    display: flex;
+
+    .name {
+      font-size: 13px;
+      color: $tree-title-dark;
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 
   .tree-children {
@@ -43,7 +70,6 @@
     font-family: 'icomoon';
     font-weight: normal;
     font-style: normal;
-    line-height: 1;
 
     position: relative;
     top: 1px;
@@ -80,34 +106,42 @@
     }
   }
 
+  tree-node-children {
+    .node-content-wrapper {
+      a {
+        span.items-count {
+          font-size: 12px;
 
-  .node-content-wrapper {
-    position: relative;
+          position: absolute;
+          top: 6px;
+          right: 0;
 
-    width: 100%;
+          padding-left: 10px;
 
-    a {
-      span.items-count {
-        font-size: 12px;
+          text-align: right;
 
-        position: absolute;
-        top: 6px;
-        right: 0;
+          color: $tree-base-grey;
+          background-color: $sidebar-bg;
+        }
 
-        padding-left: 10px;
-
-        text-align: right;
-
-        color: $tree-base-grey;
-        background-color: $sidebar-bg;
-      }
-
-      .name {
-        font-size: 13px;
-        color: $tree-name-grey;
+        .name {
+          color: $tree-name-grey;
+        }
       }
     }
   }
+
+  .node-content-wrapper-active,
+  .node-content-wrapper-focused,
+  .node-content-wrapper:hover {
+    box-shadow: none;
+  }
+
+
+  .node-content-wrapper-focused {
+    background: transparent;
+  }
+
 
   .node-wrapper {
     display: flex;
@@ -168,7 +202,6 @@
   .tree-node-leaf {
     height: 27px;
 
-
     .node-content-wrapper-focused,
     .node-content-wrapper-active {
       font-size: 13px;
@@ -203,6 +236,6 @@
 
 
   .open > .dropdown-menu.show {
-    top: calc(100% - 12px)!important;
+    top: calc(100% - 12px) !important;
   }
 }

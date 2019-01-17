@@ -40,7 +40,7 @@
       <div class="col-12 easy-tree">
         <tree-root [nodes]="nodes" [options]="options">
           <ng-template #treeNodeTemplate let-node let-index="index">
-            <div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown" [autoClose]="false" style="width:100%;" (mouseleave)="dp.hide()">
+            <div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown" [autoClose]="false" (mouseleave)="dp.hide()">
               <a title="select" data-toggle="dropdown" dropdownToggle>
                 <span class="name">{{ node.data.name }}</span>
                 <span class="items-count">{{ node.data.count }}</span>

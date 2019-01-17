@@ -45,7 +45,6 @@ hr {
 h4 {
   font-size: 18px;
   font-weight: normal;
-  line-height: 1.17;
   margin-bottom: 16px;
 }
 
@@ -53,22 +52,48 @@ h4 {
 // Dropdowns
 // --------------------------------------------------
 
-//TODO Specify class
-.open > .btn[aria-expanded="true"] {
-  z-index: 9909;
+[dropdown].open.show {
+  &:after {
+    display: block;
+    content: '';
+    background-color: $white;
+    width: 100%;
+    height: 9px;
+    position: absolute;
+    z-index: 10000;
+    bottom: -6px;
+    left: 0px;
+    border-right: 1px solid $border2;
+    border-left: 1px solid $border2;
+  }
 
-  margin-bottom: -1px;
+  [aria-expanded="true"] {
+    z-index: 9909;
+    border-color: $border2;
 
-  border-color: $border2;
-  border-bottom-color: $white;
-}
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 
-.open > .dropdown-menu.show {
-  top: calc(100% - 5px)!important;
+    .btn  {
+      border-color: $border2;
+    }
 
-  display: block;
+  }
 
-  border-color: $border2;
+  .dropdown-menu.show {
+    top: calc(100% + 3px) !important;
+
+    display: block;
+    border-color: $border2;
+
+    &:not(.dropdown-menu-right) {
+      border-top-left-radius: 0;
+    }
+
+    &.dropdown-menu-right {
+      border-top-right-radius: 0;
+    }
+  }
 }
 
 
@@ -78,55 +103,11 @@ h4 {
   }
 }
 
-.dropdown-menu > .active > a,
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
-  background-color: darken($dropdown-link-active-bg, 5%);
-
-  @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
-}
-
 .dropdown-toggle {
   &:after {
     display: none;
   }
 }
-
-//TODO dropdown-3
-.dropdown-menu.dropdown-3 {
-  min-width: 334px;
-  height: 352px;
-}
-
-.dropdown-menu.dropdown-3 > li.list {
-  overflow-y: scroll;
-
-  max-height: 300px;
-
-  > .list-group {
-    &:first-child {
-      border-top: none;
-    }
-  }
-}
-
-.dropdown-menu.dropdown-3 > li.last {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  height: 52px;
-  padding-top: 10px;
-
-  border-top: 1px solid $light-grey;
-  background: white;
-}
-
-.dropdown-menu.dropdown-3 > li > a {
-  padding: 15px;
-}
-
 
 .dropdown-menu {
   padding: 0;
@@ -147,6 +128,17 @@ h4 {
         @include gradient-vertical($start-color: $dropdown-link-hover-bg, $end-color: darken($dropdown-link-hover-bg, 5%));
       }
     }
+
+    &.dropdown-divider {
+      margin: 0;
+    }
+  }
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    background-color: darken($dropdown-link-active-bg, 5%);
+    @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
   }
 }
 
@@ -191,99 +183,6 @@ h4 {
   }
 }
 
-.glyphicon {
-  &.remove {
-    font-size: 24px;
-    font-weight: 300;
-
-    position: absolute;
-    z-index: 999;
-    top: 6;
-    right: -2px;
-
-    color: $dark-grey;
-  }
-}
-
-.chbox-checked {
-  background-color: #f0f6fe;
-}
-
-.checkbox-container {
-  //TODO Use font mixin
-  font-family: Roboto;
-  font-size: 13px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-
-  position: relative;
-
-  padding: 5px;
-  padding-left: 22px;
-
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  letter-spacing: normal;
-
-  color: $tree-name-grey;
-}
-
-.checkbox-container input {
-  position: absolute;
-
-  width: 0;
-  height: 0;
-
-  cursor: pointer;
-
-  opacity: 0;
-}
-
-.checkmark {
-  position: absolute;
-  top: 3px;
-  left: 0;
-
-  width: 18px;
-  height: 18px;
-
-  border: 1px solid $table-border-grey;
-  background-color: $white;
-}
-
-
-.checkmark:after {
-  position: absolute;
-
-  display: none;
-
-  content: '';
-}
-
-.checkbox-container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.checkbox-container .checkmark:after {
-  top: 1px;
-  left: 3px;
-
-  width: 10px;
-  height: 10px;
-
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-
-  border: solid $dark-blue;
-  border-width: 0 1px 1px 0;
-}
-
 //TODO ICONS
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon' !important;
@@ -323,16 +222,6 @@ h4 {
   color: $dark-blue;
   background-color: $white;
   border-color: $light-grey;
-
-  &[dropdownToggle] {
-    padding-right: 25px;
-
-    .icon-ico-listopen {
-      position: absolute;
-      top: 3px;
-      right: 0;
-    }
-  }
 }
 
 .btn-primary {
@@ -351,7 +240,7 @@ h4 {
   &:hover {
     background-image: none;
     outline: none!important;
-    box-shadow: none;
+    box-shadow: none!important;
   }
 
   background-color: $white;
@@ -402,13 +291,6 @@ h4 {
   .badge {
     border-radius: 50%;
     text-shadow: none;
-  }
-
-  &.dropdown-toggle {
-    min-width: auto;
-
-    border-left: none;
-    background-color: $white;
   }
 }
 
@@ -529,6 +411,11 @@ h4 {
   @include box-shadow(0 1px 2px rgba(0, 0, 0, .05));
 }
 
+.panel-default {
+  font-size: 14px;
+  color: #000;
+}
+
 .tab-content {
   padding: 25px;
 
@@ -549,7 +436,7 @@ ul.nav-tabs {
     a {
       font-size: 14px;
       font-weight: 500;
-      line-height: 1.57;
+
 
       text-transform: uppercase;
 
@@ -560,11 +447,8 @@ ul.nav-tabs {
   li.active {
     a {
       font-size: 12px;
-      line-height: 1.33;
-
       padding-top: 14px;
       padding-bottom: 14px;
-
       letter-spacing: .6px;
 
       color: $nav-tabs-active-link-color;
@@ -587,13 +471,9 @@ ul.nav-tabs {
     display: block;
     background-color: white;
     text-align: center;
-    font-family: Roboto;
     font-size: 11px;
     font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
+
     color: $dark-blue;
 
     p:hover {
@@ -682,13 +562,8 @@ ul.nav-tabs {
   }
 
   ul.nav-tabs li a {
-    font-family: Roboto;
     font-size: 11px;
     font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: $dark-blue;
     text-transform: none;
   }
@@ -759,148 +634,29 @@ ul.nav-tabs {
 }
 
 .text-table {
-  //TODO Use font mixin
   font-family: 'Roboto Mono', monospace;
   font-size: 12px;
   font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.83 !important;
-
   width: calc(100% - 20px);
   margin-top: 20px;
   padding-right: 40px;
 
-  letter-spacing: normal;
 
   color: #000;
   border: none;
 
   tr {
     td {
-      //TODO line-height - 14 times
-
-      line-height: 1.83 !important;
-
       //!important - 19 times
       border: none !important;
     }
   }
 }
 
-.panel-default {
-  //TODO Use font mixin
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.43;
-
-  letter-spacing: normal;
-
-  color: #000;
-}
-
 .no-border {
   border: none !important;
 }
 
-.radio-container {
-  position: relative;
-}
-
-.radio-container:hover > .label::after {
-  border: 1rem solid $dark-blue;
-}
-
-.radio-btn {
-  position: absolute;
-
-  visibility: hidden;
-
-  opacity: 0;
-}
-
-.radio-btn:checked + .label {
-  color: $dark-blue;
-}
-
-.radio-btn:checked + .label::before {
-  border: .6rem solid $dark-blue;
-  background: #fff;
-}
-
-.list-group-item.selected {
-  background-color: #f0f6fe !important;
-}
-
-.list-group-item:hover {
-  background-color: $sidebar-bg !important;
-}
-
-.list-group-item {
-  border-right: none;
-  border-left: none;
-}
-
-//TODO Lb1
-.label.lb1 {
-  display: flex;
-
-  padding: .75rem 0;
-
-  cursor: pointer;
-
-  align-items: center;
-
-  > p.list-group-item-text {
-    //TODO Use font mixin
-    font-family: Roboto;
-    font-size: 12px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.83;
-
-    padding-left: 50px;
-
-    text-align: left;
-    letter-spacing: normal;
-
-    color: rgba(64, 64, 64, .35);
-
-    > span.list-group-item-heading {
-      //TODO Use font mixin
-      font-family: Roboto;
-      font-size: 14px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.57;
-
-      letter-spacing: normal;
-
-      color: #404040;
-    }
-  }
-}
-
-.label.lb1::before {
-  position: absolute;
-  right: 27px;
-
-  display: inline-block;
-
-  width: 2rem;
-  height: 2rem;
-  margin-right: 8px;
-
-  content: '';
-
-  border: .2rem solid $dark-blue;
-  border-radius: 50%;
-}
 
 @media (min-width: 768px) {
   .navbar-nav > li > a.user-name {

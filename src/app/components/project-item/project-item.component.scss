@@ -1,120 +1,12 @@
 @import "../scss/_override-variables";
 
 :host {
-  //TODO Why?
-  display: block;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.version-actions {
-  display: flex;
-  justify-content: flex-end;
-  padding: 7px 0 7px 7px;
-}
+.project-item {
 
-.current-task-name {
-  display: flex;
-  flex-wrap: nowrap;
-}
 
-.task-number {
-  font-size: 14px;
-  font-weight: 300;
-  color: $dark-grey;
-  margin: -4px 23px 0 0;
-}
-
-.task-name {
-  font-size: 14px;
-  font-weight: normal;
-  color: $black;
-  margin: -4px 0 0 -15px;
-  max-width: 50vw;
-}
-
-.btn {
-  min-width: 80px;
-}
-
-.normal-content-header {
-  background-color: $white;
-  margin-left: -24px;
-  margin-right: 0;
-  margin-bottom: 30px;
-  padding: 8px 24px 9px 8px;
-  height: 64px;
-  box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.08);
-}
-
-.content-header {
-  h4 {
-    margin-top: 0;
-  }
-}
-
-.settings-btn {
-  font-size: 24px;
-
-  color: $dark-blue;
-}
-
-.no-selected {
-  color: $placeholder-gray;
-}
-
-//TODO Please rewrite like for .attachments and .custom-fields
-.btn-group {
-  margin-right: 3.4px;
-
-  [dropdown] {
-    position: relative;
-    .btn {
-      min-width: auto;
-    }
-  }
-
-  .btn {
-    min-width: 80px;
-    position: relative;
-    flex: 1 1 auto;
-
-    .icon-ico-listopen {
-      position: absolute;
-      top: 5px;
-      right: 0;
-    }
-
-    &.dropdown-toggle {
-      min-width: auto;
-      margin-left: -1px;
-    }
-  }
-}
-
-.breadcrumb {
-  margin-bottom: 15px;
-  padding: 0;
-
-  list-style: none;
-
-  border-radius: 2px;
-  background-color: $white;
-
-  li {
-    a {
-      font-size: 12px;
-      color: $dark-blue;
-      text-decoration: underline;
-      text-decoration-color: $dark-blue;
-      text-underline-position: under;
-    }
-  }
-
-  & > li + li:before {
-    padding: 0 5px;
-    color: #ccc;
-    content: "/ ";
-  }
 }
