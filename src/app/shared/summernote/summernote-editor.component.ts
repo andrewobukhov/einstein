@@ -5,7 +5,7 @@ import {
   Component,
   ElementRef,
   Input, OnChanges, OnDestroy,
-  OnInit
+  OnInit, SimpleChanges
 } from '@angular/core';
 import {BaseComponent} from '../../common/base-component';
 import {Subject} from 'rxjs';
@@ -17,13 +17,16 @@ declare let jQuery: any;
   templateUrl: './summernote-editor.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SummernoteEditorComponent extends BaseComponent implements OnInit, AfterViewInit, OnDestroy {
+export class SummernoteEditorComponent extends BaseComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges {
 
   @Input()
   public htmlContent: string;
 
   @Input()
   public editMode: boolean;
+
+  @Input()
+  public simpleMode: boolean;
 
   public config: any;
 
@@ -111,6 +114,12 @@ export class SummernoteEditorComponent extends BaseComponent implements OnInit, 
       }
     }
     super.ngOnDestroy();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.simpleMode) {
+      this.config.toolbar =  [];
+    }
   }
 
 }

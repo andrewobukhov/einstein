@@ -22,6 +22,7 @@
   position: fixed;
   top: 0;
   background-image: none!important;
+  z-index: 10000;
 }
 
 .as-split-gutter {
@@ -86,15 +87,11 @@ as-split {
 
 
 .left-split-area {
-  min-width: 25%;
-  max-width: 40%;
   height: initial!important;
 }
 
 .right-split-area {
-  max-width: 75%;
-  min-width: 60%;
-  flex-basis: calc(75% - 19px)!important;
+
 }
 .no-wrap {
   overflow: visible;

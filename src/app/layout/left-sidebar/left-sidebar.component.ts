@@ -1,4 +1,5 @@
 import {Component, HostListener, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {CommonService} from '../../common/common-service';
 
 @Component({
   selector: 'app-left-sidebar',
@@ -13,6 +14,7 @@ export class LeftSidebarComponent implements OnInit {
   public nodes = [];
 
   public options = {};
+  public isClosed: boolean;
 
   ngOnInit() {
     const nodes = [
@@ -162,10 +164,12 @@ export class LeftSidebarComponent implements OnInit {
     ];
 
     this.nodes = nodes;
+
+    CommonService.leftSideBarState.subscribe(sideBarOpen => this.isClosed = !sideBarOpen);
   }
 
   // workaround for update host element height style
-  @HostListener("window:scroll", [])
+  @HostListener('window:scroll', [])
   onWindowScroll() {
   }
 }

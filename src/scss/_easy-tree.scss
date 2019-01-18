@@ -53,6 +53,12 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+
+      &.hovered {
+        font-size: 13px;
+        font-weight: normal;
+        color: $tree-hover-grey;
+      }
     }
   }
 
@@ -126,6 +132,12 @@
 
         .name {
           color: $tree-name-grey;
+
+          &.hovered {
+            font-size: 13px;
+            font-weight: normal;
+            color: $tree-hover-grey;
+          }
         }
       }
     }
@@ -169,10 +181,12 @@
         background-color: $sidebar-bg;
       }
 
-      .name:hover {
-        font-size: 13px;
-        font-weight: normal;
-        color: $tree-hover-grey;
+      &:hover {
+        .name {
+          font-size: 13px;
+          font-weight: normal;
+          color: $tree-hover-grey;
+        }
       }
     }
   }

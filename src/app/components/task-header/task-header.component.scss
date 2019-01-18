@@ -13,9 +13,44 @@
   margin-bottom: 30px;
   padding: 8px 24px 9px 8px;
   min-height: 64px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 
   &.shadowed {
     box-shadow: 4px 1px 15px 0 rgba(0, 0, 0, 0.08);
+    height: 64px;
+
+    .current-task-name {
+      &.single {
+        .fading {
+          top: -7px;
+        }
+      }
+    }
+
+    .task-name {
+      app-summernote-editor {
+        .note-editor.note-frame .note-editing-area .note-editable {
+          height: 1.5em !important;
+          overflow: hidden;
+          word-break: break-all;
+
+          p {
+            display: inline;
+          }
+        }
+      }
+    }
+
+    .fading {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      background-image: linear-gradient(to right, transparent , white 57%);
+    }
   }
 
   .breadcrumb {
@@ -45,6 +80,7 @@
   }
 
   .version-actions {
+    height: max-content;
     display: flex;
     justify-content: flex-end;
     padding: 7px 0 7px 7px;
@@ -57,14 +93,36 @@
 
   .current-task-name {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+
+    .d-flex {
+      width: 100%;
+    }
+
+    &.single {
+      padding-top: 13px;
+
+      .task-number, .task-name {
+        font-size: 18px;
+        h4 {
+          font-size: 18px;
+        }
+      }
+    }
   }
 
   .task-number {
     font-size: 14px;
     font-weight: 300;
     color: $dark-grey;
-    margin: -4px 23px 0 0;
+    margin: -1px 23px 0 0;
+    white-space: nowrap;
+    display: flex;
+
+    h4 {
+      font-size: 14px;
+      font-weight: 300;
+    }
   }
 
   .task-name {
@@ -72,8 +130,16 @@
     font-weight: normal;
     color: $black;
     margin: -4px 0 0 -15px;
-    max-width: 50vw;
+    width: 100%;
     white-space: normal;
+
+    app-summernote-editor {
+      width: 100%;
+
+      .note-editor.note-frame .note-editing-area .note-editable, .smrnote-view {
+        padding: 2px;
+      }
+    }
   }
 
   .btn {
@@ -82,6 +148,9 @@
 
   .no-selected {
     color: $placeholder-gray;
+  }
+  .selected {
+    font-weight: normal;
   }
 
   .btn-group {

@@ -1,20 +1,26 @@
-<div class="header row normal-content-header sticky  no-wrap" #header [ngClass]="{'shadowed': header.getBoundingClientRect().top == 0}">
-  <div class="col-md-7">
-    <div class="small-row bcrumb">
+<div class="header row normal-content-header sticky" #header [ngClass]="{'shadowed': isSticked(header)}">
+
+  <div class="col-sm">
+    <div class="small-row bcrumb" *ngIf="!sideBarClosed">
       <ul class="breadcrumb">
         <li><a href="#">RC UPB ALL</a></li>
         <li><a href="#">Telephony (black box)</a></li>
       </ul>
     </div>
-    <div class="current-task-name">
-      <div><h4 class="task-number dotted shift-left title">{{model.key}}:</h4></div>
-      <div><h4 class="task-name name">{{model.name}}</h4></div>
+    <div class="current-task-name" [ngClass]="{'single': sideBarClosed}">
+      <div class="d-flex">
+        <div class="task-number"><h4 class="dotted">{{model.key}}</h4><h4>:</h4></div>
+        <div class="task-name name">
+          <app-summernote-editor [htmlContent]="model.name" [simpleMode]="true"></app-summernote-editor>
+          <div [ngClass]="{'fading': isSticked(header) }"></div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-md-5 version-actions">
+  <div class="version-actions">
     <div class="btn-group">
       <div dropdown placement="bottom right">
-        <input type="button" dropdownToggle class="btn btn-light" [ngClass]="{'no-selected': true}"
+        <input type="button" dropdownToggle class="btn btn-light" [ngClass]="{'no-selected': true, 'selected': false}"
                [value]="'Execution type'">
         <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
           <li><a href="#">Manual</a></li>
@@ -24,14 +30,14 @@
       </div>
 
       <div dropdown placement="bottom right">
-        <input type="button" dropdownToggle class="btn btn-light" [ngClass]="{'no-selected': true}"
-               [value]="'Priority'">
+        <input type="button" dropdownToggle class="btn btn-light selected" [ngClass]="{'no-selected': false}"
+               [value]="'P2'">
 
         <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
             role="menu">
           <li><a href="#">P1</a></li>
-          <li><a href="#">P2</a></li>
-          <li><a href="#">p3</a></li>
+          <li class="selected"><a href="#">P2</a></li>
+          <li><a href="#">P3</a></li>
         </ul>
       </div>
     </div>

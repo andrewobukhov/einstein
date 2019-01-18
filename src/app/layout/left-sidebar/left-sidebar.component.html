@@ -1,4 +1,4 @@
-<div class="sidebar-left-container">
+<div class="sidebar-left-container" [ngClass]="{closed: isClosed}">
   <div class="sidebar-left container-fluid" #sidebar
        [style.height]="'calc(100vh - ' +  (sidebar.getBoundingClientRect().y || 0) + 'px)'">
     <div class="row filters">
@@ -42,7 +42,7 @@
           <ng-template #treeNodeTemplate let-node let-index="index">
             <div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown" [autoClose]="false" (mouseleave)="dp.hide()">
               <a title="select" data-toggle="dropdown" dropdownToggle>
-                <span class="name">{{ node.data.name }}</span>
+                <span class="name" [ngClass]="{hovered: dp.isOpen}">{{ node.data.name }}</span>
                 <span class="items-count">{{ node.data.count }}</span>
               </a>
               <ul class="dropdown-menu" *dropdownMenu >

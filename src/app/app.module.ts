@@ -46,9 +46,9 @@ import { AddDropdownComponent } from './components/add-dropdown/add-dropdown.com
     TabsModule.forRoot(),
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    AngularSplitModule,
     SharedModule,
-    DragulaModule.forRoot()
+    DragulaModule.forRoot(),
+    AngularSplitModule.forRoot()
   ],
   providers: [
     DragulaService
