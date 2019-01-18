@@ -10,14 +10,3 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
   background-repeat: repeat-x;
 }
-
-@mixin font($size, $weight, $color) {
-  font-family: Roboto;
-  font-size: $size;
-  font-weight: $weight;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: $color;
-}

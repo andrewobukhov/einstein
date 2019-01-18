@@ -29,17 +29,10 @@
 
     &.toggle-view {
       color: $dark-blue;
-/*      box-shadow: 0 1px 15px 0 rgba(0, 0, 0, .08);*/
     }
 
     &:hover {
-      //TODO Why?
-      -webkit-transition: all .5s ease-in-out;
-      -moz-transition: all .5s ease-in-out;
-      -ms-transition: all .5s ease-in-out;
-      -o-transition: all .5s ease-in-out;
       transition: all .5s ease-in-out;
-
       background-color: $right-sidebar-active-item;
     }
 

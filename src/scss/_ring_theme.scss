@@ -341,32 +341,8 @@ h4 {
 }
 
 //
-// Images
-// --------------------------------------------------
-
-.thumbnail,
-.img-thumbnail {
-  @include box-shadow(0 1px 2px rgba(0, 0, 0, .075));
-}
-
-
-//
-// Alerts
-// --------------------------------------------------
-
-// Common styles
-.alert {
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
-
-  $shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 2px rgba(0, 0, 0, .05);
-  @include box-shadow($shadow);
-}
-
-//
 // Panels
 // --------------------------------------------------
-
-// Common styles
 .panel {
   @include box-shadow(0 1px 2px rgba(0, 0, 0, .05));
 }
@@ -374,46 +350,6 @@ h4 {
 .panel-default {
   font-size: 14px;
   color: #000;
-}
-
-.tab-content {
-  padding: 25px;
-
-  border-right: 1px solid $nav-tabs-border-color;
-  border-bottom: 1px solid $nav-tabs-border-color;
-  border-left: 1px solid $nav-tabs-border-color;
-}
-
-ul.nav-tabs {
-  height: 46px;
-
-  li {
-    min-width: 160px;
-    height: 46px;
-
-    text-align: center;
-
-    a {
-      font-size: 14px;
-      font-weight: 500;
-
-
-      text-transform: uppercase;
-
-      color: $dark-blue;
-    }
-  }
-
-  li.active {
-    a {
-      font-size: 12px;
-      padding-top: 14px;
-      padding-bottom: 14px;
-      letter-spacing: .6px;
-
-      color: $nav-tabs-active-link-color;
-    }
-  }
 }
 
 //TODO Move to icons
@@ -579,19 +515,6 @@ ul.nav-tabs {
   }
 }
 
-//
-// Stuff
-//
-
-//TODO All tables without borders;
-.table.text-table > thead > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > th,
-.table > tbody > tr > td,
-.table > tfoot > tr > th,
-.table > tfoot > tr > td {
-  border: none !important;
-}
 
 .text-table {
   font-family: 'Roboto Mono', monospace;
@@ -608,13 +531,9 @@ ul.nav-tabs {
   tr {
     td {
       //!important - 19 times
-      border: none !important;
+      border: none;
     }
   }
-}
-
-.no-border {
-  border: none !important;
 }
 
 
