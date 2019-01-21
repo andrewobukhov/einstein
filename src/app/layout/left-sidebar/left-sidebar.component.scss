@@ -60,7 +60,7 @@
           }
 
           &.active {
-            background-color: $tree-active-grey;
+            background-color: $tree-input-grey;
             a {
               color: $nav-tabs-active-link-color;
             }
@@ -137,7 +137,8 @@
       }
     }
 
-    .tree {
+    .tree,
+    .tree-table{
       max-height: calc(100% - 74px);
       overflow-y: auto;
       overflow-x: hidden;

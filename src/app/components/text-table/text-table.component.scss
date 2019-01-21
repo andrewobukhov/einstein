@@ -1,0 +1,21 @@
+.text-table-container {
+  .text-table {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+    font-weight: normal;
+    width: calc(100% - 20px);
+    margin-top: 20px;
+    padding-right: 40px;
+
+
+    color: #000;
+    border: none;
+
+    tr {
+      td {
+        border: none;
+      }
+    }
+  }
+
+}

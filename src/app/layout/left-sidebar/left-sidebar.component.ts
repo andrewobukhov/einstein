@@ -41,7 +41,8 @@ export class LeftSidebarComponent implements OnInit {
                 key: 'UBP-961511',
               }
             ]
-          }, {
+          },
+          {
             id: 3,
             name: 'Acceptance',
             count: 34,
@@ -56,6 +57,11 @@ export class LeftSidebarComponent implements OnInit {
                 key: 'UBP-961511',
               }
             ]
+          },
+          {
+            id: 2,
+            name: 'NO CHILDREN',
+            count: 567
           }
         ]
       },
@@ -116,8 +122,7 @@ export class LeftSidebarComponent implements OnInit {
             count: 18
           }
         ]
-      }
-      ,
+      },
       {
         id: 90,
         name: 'RC UPB ALL',
@@ -178,7 +183,7 @@ export class LeftSidebarComponent implements OnInit {
   }
 
   getHeightOffset() {
-    return this.scrollPosition < 64 ?  64 - this.scrollPosition : 0;
+    return this.scrollPosition < 64 ? 64 - this.scrollPosition : 0;
   }
 
   getTopOffset() {

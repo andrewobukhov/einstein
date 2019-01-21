@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'icomoon';
+
+  src: url('../fonts/ring-icons.eot');
+  src: url('../fonts/ring-icons.eot?#iefix') format('eot'),
+  url('../fonts/ring-icons.woff2') format('woff2'),
+  url('../fonts/ring-icons.woff') format('woff'),
+  url('../fonts/ring-icons.ttf') format('truetype'),
+  url('../fonts/ring-icons.svg#ring-icons') format('svg');
+}
+
 .icon-ico-actions-remove-2:before {
   content: "\e915";
   color: $dark-blue;
@@ -90,4 +101,10 @@
   content: "\2b";
   color: $dark-grey;
 }
+
+.icon-ico-folder:before {
+  content: "\E92F";
+  color: $tree-separator-grey;
+}
+
 

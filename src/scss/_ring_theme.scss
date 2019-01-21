@@ -156,6 +156,13 @@ h4 {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ring-icons {
+  &:before,
+  &:after{
+    @include font-icons();
+  }
+}
+
 //
 // Buttons
 // --------------------------------------------------
@@ -233,8 +240,8 @@ h4 {
     outline: none !important;
     box-shadow: none;
     text-decoration: none;
-    border-color: inherit!important;
-    background-color: inherit!important;
+    border-color: inherit !important;
+    background-color: inherit !important;
   }
 }
 
@@ -529,27 +536,6 @@ h4 {
     &.show {
       right: 0 !important;
       left: auto !important;
-    }
-  }
-}
-
-
-.text-table {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 12px;
-  font-weight: normal;
-  width: calc(100% - 20px);
-  margin-top: 20px;
-  padding-right: 40px;
-
-
-  color: #000;
-  border: none;
-
-  tr {
-    td {
-      //!important - 19 times
-      border: none;
     }
   }
 }

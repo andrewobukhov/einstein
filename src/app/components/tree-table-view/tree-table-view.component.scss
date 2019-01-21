@@ -1,0 +1,70 @@
+@import "../scss/_override-variables";
+@import "../scss/custom-variables";
+
+:host {
+  display: block;
+}
+
+.tree-table-container {
+
+
+  .node-block {
+    margin-bottom: 20px;
+
+    .caption {
+      display: flex;
+      flex-wrap: nowrap;
+      border-bottom: 1px solid $tree-border-grey;
+      padding-bottom: 5px;
+
+      .icon-ico-folder {
+        padding-right: 5px;
+        font-size: 14px;
+      }
+      .node {
+        font-size: 10px;
+        font-weight: 300;
+        color: $tree-title-dark;
+        display: flex;
+        align-items: center;
+
+
+        .node-separator {
+          transform: rotate(-90deg);
+
+          &:before {
+            @include font-icons();
+            color: $tree-separator-grey;
+            font-size: 14px;
+            content: '\e904';
+            position: relative;
+            left: -1px;
+          }
+        }
+      }
+    }
+
+    .node-items {
+      display: flex;
+      flex-direction: column;
+
+      .node-item {
+        font-size: 13px;
+        font-weight: normal;
+        color: $tree-name-grey;
+        cursor: pointer;
+        border-bottom: 1px solid $tree-border-grey;
+        padding: 7px 0;
+
+        &.selected {
+          color: $dark-blue;
+          font-weight: 500;
+        }
+
+        &:hover:not(.selected) {
+          color: $tree-hover-grey;
+        }
+      }
+    }
+  }
+}

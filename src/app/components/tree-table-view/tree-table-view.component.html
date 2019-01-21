@@ -1,0 +1,21 @@
+<div class="tree-table-container">
+
+  <div *ngFor="let node of tableNodes | keyvalue">
+    <div class="node-block">
+      <div class="caption">
+        <span class="ring-icons icon-ico-folder"></span>
+        <div *ngFor="let item of node.value.captions" class="node">
+          <div>{{item.name}}</div>
+          <div class="node-separator"></div>
+        </div>
+      </div>
+
+      <div class="node-items">
+        <div *ngFor="let item of node.value.items" class="node-item"
+             [ngClass]="{'selected': item.id === selectedItem}"
+             (click)="selectedItem = item.id">  {{item.name}}    </div>
+      </div>
+    </div>
+  </div>
+
+</div>
