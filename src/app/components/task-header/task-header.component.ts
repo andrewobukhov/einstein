@@ -12,13 +12,16 @@ export class TaskHeaderComponent implements OnInit {
   @Input()
   public model: any;
   public sideBarClosed = true;
+  public keys = [];
+  public isShowAdd = false;
 
   constructor() {
     CommonService.leftSideBarState.subscribe(sideBarClosed => this.sideBarClosed = sideBarClosed);
   }
 
   ngOnInit() {
-
+    this.keys = ['Functionality', 'Accepted_ODS', 'Admin', 'Directory Integration', 'Summary',
+      'Custom', 'RBS_Aplicable', 'Any', 'Some value', 'Some Value 2' ];
   }
 
   isSticked(element) {

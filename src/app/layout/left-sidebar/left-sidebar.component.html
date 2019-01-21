@@ -1,6 +1,7 @@
 <div class="sidebar-left-container" [ngClass]="{closed: isClosed}">
-  <div class="sidebar-left container-fluid" #sidebar
-       [style.height]="'calc(100vh - ' +  (sidebar.getBoundingClientRect().y || 0) + 'px)'">
+  <div class="sidebar-left container-fluid"
+       [style.height]="'calc(100vh - ' +  getHeightOffset() + 'px)'"
+       [style.marginTop.px]="getTopOffset()">
     <div class="row filters">
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">search</a>
@@ -12,7 +13,7 @@
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="search">
           <div class="input-group">
-            <input type="text" class="form-control" id="serachline" placeholder="">
+            <input type="text" class="form-control" id="serachline" placeholder="Case">
             <span class="icon-ico-ico-searchreset"></span>
           </div>
         </div>
@@ -31,8 +32,8 @@
           <button type="button" class="btn btn-light btn-sm">Collapse all</button>
         </div>
         <div class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-light btn-sm active">Tree</button>
-          <button type="button" class="btn btn-light btn-sm">Table</button>
+          <button type="button" class="btn btn-light btn-sm" [ngClass]="{'active': treeViewMode}" (click)="treeViewMode=true">Tree</button>
+          <button type="button" class="btn btn-light btn-sm" [ngClass]="{'active': !treeViewMode}" (click)="treeViewMode=false">Table</button>
         </div>
       </div>
     </div>

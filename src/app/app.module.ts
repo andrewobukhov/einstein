@@ -23,6 +23,8 @@ import {DragulaModule, DragulaService} from 'ng2-dragula';
 import { ChipsComponent } from './components/chips/chips.component';
 import { VersionDropdownComponent } from './components/version-dropdown/version-dropdown.component';
 import { AddDropdownComponent } from './components/add-dropdown/add-dropdown.component';
+import {RouterModule} from '@angular/router';
+import { TreeTableViewComponent } from './components/tree-table-view/tree-table-view.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { AddDropdownComponent } from './components/add-dropdown/add-dropdown.com
     SidebarNavigationComponent,
     ChipsComponent,
     VersionDropdownComponent,
-    AddDropdownComponent
+    AddDropdownComponent,
+    TreeTableViewComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { AddDropdownComponent } from './components/add-dropdown/add-dropdown.com
     TooltipModule.forRoot(),
     SharedModule,
     DragulaModule.forRoot(),
-    AngularSplitModule.forRoot()
+    AngularSplitModule.forRoot(),
+    RouterModule.forRoot([])
   ],
   providers: [
     DragulaService

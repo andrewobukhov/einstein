@@ -8,13 +8,16 @@ import {CommonService} from '../../common/common-service';
 })
 export class LeftSidebarComponent implements OnInit {
 
+  scrollPosition = 0;
+
   constructor() {
   }
 
   public nodes = [];
-
   public options = {};
   public isClosed: boolean;
+
+  public treeViewMode = true;
 
   ngOnInit() {
     const nodes = [
@@ -168,8 +171,17 @@ export class LeftSidebarComponent implements OnInit {
     CommonService.leftSideBarState.subscribe(sideBarOpen => this.isClosed = !sideBarOpen);
   }
 
-  // workaround for update host element height style
+  // workarounds for update host element height style
   @HostListener('window:scroll', [])
   onWindowScroll() {
+    this.scrollPosition = window.scrollY;
+  }
+
+  getHeightOffset() {
+    return this.scrollPosition < 64 ?  64 - this.scrollPosition : 0;
+  }
+
+  getTopOffset() {
+    return this.scrollPosition > 64 ? this.scrollPosition - 64 : 0;
   }
 }

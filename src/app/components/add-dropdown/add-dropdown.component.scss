@@ -82,6 +82,8 @@
 
       .label {
         margin: auto 0 auto 30px;
+        width: 100%;
+        cursor: pointer;
 
         &:before {
           position: absolute;
@@ -90,7 +92,7 @@
           width: 20px;
           height: 20px;
           content: '';
-          border: 0.2rem solid $dark-blue;
+          border: 2px solid $dark-blue;
 
         }
 
@@ -101,10 +103,10 @@
           height: 12px;
           -webkit-transform: rotate(45deg);
           transform: rotate(41deg);
-          border-bottom: 0.2rem solid $white;
-          border-right: 0.2rem solid $white;
+          border-bottom: 3px solid $white;
+          border-right: 3px solid $white;
           position: absolute;
-          left: 7px;
+          left: 6px;
           top: calc(50% - 7px);
         }
 

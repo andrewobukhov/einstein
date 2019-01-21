@@ -3,6 +3,7 @@
 .chips-container {
   display: flex;
   flex-wrap: wrap;
+  padding-right: 30px;
 
   .chip {
     background-color: $white;
@@ -38,6 +39,8 @@
   }
 
   .btn.trash-icon {
-    margin-left: auto;
+    position: absolute;
+    right: 0;
+    top: -3px;
   }
 }

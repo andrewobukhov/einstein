@@ -6,12 +6,12 @@
       <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
         <li class="filter-block">
           <div class="input-group">
-            <input type="text" class="form-control search" id="search" placeholder="Find">
+            <input type="text" class="form-control search" placeholder="Find">
           </div>
         </li>
         <li class="list-block">
           <div class="list-group">
-            <a href="#" class="list-group-item" *ngFor="let key of keys; index as idx;">
+            <a href="javascript:void(0)" class="list-group-item" *ngFor="let key of keys; index as idx;">
               <input type="checkbox" class="checkbox-btn" [id]="'radio' + idx"/>
               <label [for]="'radio' + idx" class="label">{{key}}</label>
             </a>
@@ -28,12 +28,12 @@
       <ul class="dropdown-menu" *dropdownMenu>
         <li class="filter-block">
           <div class="input-group">
-            <input type="text" class="form-control search" id="search" placeholder="Find">
+            <input type="text" class="form-control search" placeholder="Find">
           </div>
         </li>
         <li class="list-block">
           <div class="list-group">
-            <a href="#" class="list-group-item" *ngFor="let key of keys; index as idx;">
+            <a href="javascript:void(0)" class="list-group-item" *ngFor="let key of keys; index as idx;">
               <input type="checkbox" class="checkbox-btn" [id]="'radio' + idx"/>
               <label [for]="'radio' + idx" class="label">{{key}}</label>
             </a>

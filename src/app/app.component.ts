@@ -24,19 +24,19 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.model = TestCasesData.item2;
     this.splitter.dragProgress$.subscribe(x => {
-      console.log(this.splitter.getVisibleAreaSizes());
       this.splitterSizes = {first: x.sizes[0], second: x.sizes[1]};
 
+      if (x.sizes[0] < 1) {
+        this.sideBarOpen = !this.sideBarOpen;
+        CommonService.leftSideBarState.next(this.sideBarOpen);
+      } else
       if (x.sizes[1] <= 100 && !this.sideBarOpen) {
         this.sideBarOpen = !this.sideBarOpen;
         CommonService.leftSideBarState.next(this.sideBarOpen);
         this.splitterSizes = {first: 20, second: 80};
         this.splitter.setVisibleAreaSizes([20, 80]);
       }
-
     });
-
-
   }
 
   onCloseSideBar() {

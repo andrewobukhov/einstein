@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div class="row fields">
+  <div class="row fields align-items-start">
     <div class="col-md-2">
       <span class="field-name">Keywords</span>
     </div>
@@ -16,7 +16,7 @@
       <app-chips [chipsCollection]="keywords"></app-chips>
     </div>
   </div>
-  <div class="row fields">
+  <div class="row fields align-items-start">
     <div class="col-md-2">
       <span class="field-name">Auxillary tags</span>
     </div>
@@ -24,7 +24,7 @@
       <app-chips [chipsCollection]="tags"></app-chips>
     </div>
   </div>
-  <div class="row fields">
+  <div class="row fields align-items-start">
     <div class="col-md-2">
       <span class="field-name">Quantity</span>
     </div>
@@ -42,76 +42,51 @@
     </div>
   </div>
   <div class="row attachment-list">
-    <div class="col-sm attachment-item">
+
+    <div class="col-md-4 attachment-item">
       <div class="img"></div>
       <div class="description">
-        <p class="filename">filename.bat</p>
-        <p class="info">by John Smith, November 5th</p>
+        <p class="filename" tooltip="filename.bat">filename.bat</p>
+        <p class="info" tooltip="by John Smith, November 1st">by John Smith, November 1st</p>
       </div>
       <button type="button" class="btn btn-clear remove-btn">
         <span class="icon-ico-delete"></span>
       </button>
     </div>
-    <div class="col-sm attachment-item">
+
+    <div class="col-md-4 attachment-item">
       <div class="img"></div>
       <div class="description">
-        <p class="filename">filename.bat</p>
-        <p class="info">by John Smith, November 5th</p>
+        <p class="filename" tooltip="b030b28214c374e4a88673d58d77bd7c at 12.12.12.jpeg">b030b28214c374e4a88673d58d77bd7c at 12.12.12.jpeg</p>
+        <p class="info" tooltip="by Adolph Blaine Charles David Earl Frederick, November 5th">by Adolph Blaine Charles David Earl Frederick, November 5th</p>
       </div>
       <button type="button" class="btn btn-clear remove-btn">
         <span class="icon-ico-delete"></span>
       </button>
     </div>
-    <div class="col-sm attachment-item">
+
+    <div class="col-md-4 attachment-item">
       <div class="img"></div>
       <div class="description">
-        <p class="filename">filename.bat</p>
-        <p class="info">by John Smith, November 5th</p>
+        <p class="filename" tooltip="filename.bat">filename.bat</p>
+        <p class="info" tooltip="by John Smith, November 5th">by John Smith, November 5th</p>
       </div>
       <button type="button" class="btn btn-clear remove-btn">
         <span class="icon-ico-delete"></span>
       </button>
     </div>
-    <div class="col-sm attachment-item">
+
+    <div class="col-md-4 attachment-item">
       <div class="img"></div>
       <div class="description">
-        <p class="filename">filename.bat</p>
-        <p class="info">by John Smith, November 5th</p>
+        <p class="filename" tooltip="filename.bat">filename.bat</p>
+        <p class="info" tooltip="by John Smith, November 5th">by John Smith, November 5th</p>
       </div>
       <button type="button" class="btn btn-clear remove-btn">
         <span class="icon-ico-delete"></span>
       </button>
     </div>
-    <div class="col-sm attachment-item">
-      <div class="img"></div>
-      <div class="description">
-        <p class="filename">filename.bat</p>
-        <p class="info">by John Smith, November 5th</p>
-      </div>
-      <button type="button" class="btn btn-clear remove-btn">
-        <span class="icon-ico-delete"></span>
-      </button>
-    </div>
-    <div class="col-sm attachment-item">
-      <div class="img"></div>
-      <div class="description">
-        <p class="filename">filename.bat</p>
-        <p class="info">by John Smith, November 5th</p>
-      </div>
-      <button type="button" class="btn btn-clear remove-btn">
-        <span class="icon-ico-delete"></span>
-      </button>
-    </div>
-    <div class="col-sm attachment-item">
-      <div class="img"></div>
-      <div class="description">
-        <p class="filename">filename.bat</p>
-        <p class="info">by John Smith, November 5th</p>
-      </div>
-      <button type="button" class="btn btn-clear remove-btn">
-        <span class="icon-ico-delete"></span>
-      </button>
-    </div>
+
   </div>
   <div class="row m-t-64">
     <div class="col-md-12 ">

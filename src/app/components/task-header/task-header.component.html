@@ -42,13 +42,35 @@
       </div>
     </div>
     <app-version-dropdown></app-version-dropdown>
-    <div class="btn-group" dropdown placement="bottom right">
+    <div class="btn-group" dropdown placement="bottom right" [insideClick]="true" (onHidden)="isShowAdd = false">
       <button type="button" class="btn btn-default dropdown-toggle" dropdownToggle>More <span
         class="icon-ico-listopen"></span></button>
-      <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-        <li><a href="#">Add to Test Plan</a></li>
+
+      <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu [ngClass]="{'unwrapped': isShowAdd}">
+        <li [ngClass]="{'open': isShowAdd}"><a href="#" (click)="isShowAdd = true">Add to Test Plan</a>
+          <ul class="dropdown-sub-menu dropdown-menu-right" [ngClass]="{'inner': isShowAdd}">
+            <li class="filter-block">
+              <div class="input-group">
+                <input type="text" class="form-control search" id="search" placeholder="Find">
+              </div>
+            </li>
+            <li class="list-block">
+              <div class="list-group">
+                <a href="#" class="list-group-item" *ngFor="let key of keys; index as idx;">
+                  <input type="checkbox" class="checkbox-btn" [id]="'radio' + idx"/>
+                  <label [for]="'radio' + idx" class="label">{{key}}</label>
+                </a>
+              </div>
+            </li>
+            <li class="add-controls">
+              <button type="button" class="btn btn-default no-border text-uppercase" (click)="isShowAdd = false">Done</button>
+            </li>
+          </ul>
+        </li>
         <li><a href="#">Delete</a></li>
       </ul>
+
+
     </div>
 
     <input class="btn btn-default btn-action" type="button" value="Save">

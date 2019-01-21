@@ -1,7 +1,6 @@
 @import "../scss/_override-variables";
 
 :host {
-  position: sticky;
   display: block;
   z-index: 1000;
   top: 0;
@@ -61,7 +60,7 @@
           }
 
           &.active {
-            background-color: $filters-bg;
+            background-color: $tree-active-grey;
             a {
               color: $nav-tabs-active-link-color;
             }
@@ -100,7 +99,7 @@
           width: 100%;
           color: #000;
           border: none;
-          background: $filters-bg;
+          background: $tree-input-grey;
           box-shadow: none;
 
           &::placeholder {
@@ -141,6 +140,7 @@
     .tree {
       max-height: calc(100% - 74px);
       overflow-y: auto;
+      overflow-x: hidden;
       flex: 1;
       margin-left: -30px;
 

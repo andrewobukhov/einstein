@@ -14,14 +14,13 @@ $tree-grey: #dfe0df;
 $table-order-grey: #b1b1b1;
 $table-border-grey: #e7e8ec;
 
+$tree-input-grey: #f8f7f7;
+$tree-active-grey: #c6c6c6;
 $dark-grey: #8d8d8d;
 $tree-base-grey: #8f8f8f;
 $tree-name-grey: #767676;
 $tree-hover-grey: #252525;
 $tree-title-dark: #1d1d1d;
-
-
-
 
 $navbar-active-color: rgba(255, 255, 255, .7);
 $navbar-brand-color: rgba(255, 255, 255, .25);
@@ -29,7 +28,7 @@ $heading0: #7b7b7b;
 $hr-color: #ccc;
 $sidebar-bg: #fafafa;
 
-$filters-bg: rgb(244, 243, 243);
+$filters-bg: $tree-input-grey;
 $filters-tabs-color: #a2a2a2;
 $nav-tabs-border-color: #e4e4e4;
 $nav-tabs-active-link-color: #212121;
