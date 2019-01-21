@@ -62,6 +62,10 @@
         }
       }
     }
+
+    [dropdown].open.show:after {
+      content: none;
+    }
   }
 
   .btn.add-new {

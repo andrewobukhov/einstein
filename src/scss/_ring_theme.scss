@@ -225,6 +225,19 @@ h4 {
   border-color: $dark-blue;
 }
 
+.btn-link {
+  &:active,
+  &:focus,
+  &:hover {
+    background-image: none;
+    outline: none !important;
+    box-shadow: none;
+    text-decoration: none;
+    border-color: inherit!important;
+    background-color: inherit!important;
+  }
+}
+
 .btn-default,
 .btn-light,
 .btn-primary,
