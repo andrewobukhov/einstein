@@ -1,21 +1,108 @@
+@import "../scss/_override-variables";
+
 .text-table-container {
+  margin-bottom: 36px;
+
   .text-table {
     font-family: 'Roboto Mono', monospace;
     font-size: 12px;
     font-weight: normal;
+    line-height: 1.92;
     width: calc(100% - 20px);
     margin-top: 20px;
     padding-right: 40px;
-
 
     color: #000;
     border: none;
 
     tr {
+      th {
+        border: none;
+        background-color: $sidebar-bg;
+        font-weight: normal;
+
+        .title {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            padding: 4px 0;
+          }
+        }
+      }
+
       td {
         border: none;
+
+        .action-types-list {
+          width: inherit;
+          display: flex;
+          flex-direction: column;
+        }
+
+        p {
+          height: 1.92em;
+          margin-bottom: 0;
+          padding: 1px;
+        }
+
+        &.action-types {
+          width: 120px;
+          display: flex;
+          flex-direction: row;
+
+          .order {
+            margin-right: 5px;
+          }
+
+          .out:after {
+            font-family: 'LucidaGrande';
+            font-size: 12px;
+            content: '\2190';
+          }
+
+          .in:after {
+            font-family: 'LucidaGrande';
+            font-size: 12px;
+            content: '\2192';
+          }
+
+          &.edit-mode {
+            display: table-cell;
+          }
+        }
+
+        &.actions {
+          padding: 0;
+        }
+      }
+
+      &:nth-child(even) {
+        background-color: $sidebar-bg;
       }
     }
+
+    .editable-area {
+      background: transparent;
+      width: 100%;
+      min-height: 100px;
+      overflow: hidden;
+      resize: none;
+      border: none;
+      word-break: break-all;
+
+      &:focus {
+        outline: none;
+        border: 1px solid $tree-hover-grey;
+      }
+    }
+
+
+    /*.note-editor.note-frame:not(.smrnote-active) {
+      .note-editable {
+        background: transparent;
+      }
+    }*/
   }
 
 }

@@ -25,6 +25,7 @@ import { VersionDropdownComponent } from './components/version-dropdown/version-
 import { AddDropdownComponent } from './components/add-dropdown/add-dropdown.component';
 import {RouterModule} from '@angular/router';
 import { TreeTableViewComponent } from './components/tree-table-view/tree-table-view.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { TreeTableViewComponent } from './components/tree-table-view/tree-table-
     SharedModule,
     DragulaModule.forRoot(),
     AngularSplitModule.forRoot(),
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    FormsModule
   ],
   providers: [
     DragulaService

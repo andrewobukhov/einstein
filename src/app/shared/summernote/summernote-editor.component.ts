@@ -3,9 +3,9 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  ElementRef,
+  ElementRef, EventEmitter,
   Input, OnChanges, OnDestroy,
-  OnInit, SimpleChanges
+  OnInit, Output, SimpleChanges
 } from '@angular/core';
 import {BaseComponent} from '../../common/base-component';
 import {Subject} from 'rxjs';
@@ -27,6 +27,8 @@ export class SummernoteEditorComponent extends BaseComponent implements OnInit, 
 
   @Input()
   public simpleMode: boolean;
+
+  @Output() htmlContentChange = new EventEmitter();
 
   public config: any;
 
@@ -89,6 +91,10 @@ export class SummernoteEditorComponent extends BaseComponent implements OnInit, 
       this.initSummernoteEditor();
       this.onFocusEditor();
     }, 200);
+  }
+
+  public onContentChange(content) {
+    this.htmlContentChange.emit(content || this.htmlContent);
   }
 
   private initSummernoteEditor() {

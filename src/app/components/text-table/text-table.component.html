@@ -1,48 +1,67 @@
 <div class="text-table-container">
   <div class="row">
     <div class="col-md-12">
-      <table class="table table-striped text-table">
+      <table class="table text-table" [hidden]="!editMode">
         <tr>
-          <td width="20%">
-            <p>Title <br>
-              Summary <br>
-              Preconditions <br></p>
+          <td class="action-types  edit-mode">
+            <div class="action-types-list">
+
+
+              <p *ngFor="let item of calcLinesRows(); index as idx;" [style.height.em]="item.linesCount*1.92">
+                <span *ngIf="0 === idx"> Title </span>
+                <span *ngIf="1 === idx"> Summary </span>
+                <span *ngIf="2 === idx"> Preconditions </span>
+               <!-- <span class="order">-</span>-->
+                <span class="{{getActionType(item.line)}}"></span>
+              </p>
+            </div>
           </td>
-          <td>
-            <p>Mobile Web: Add Extension <br>
-              Something in Summary <br>
-              Something in Preconditions <br></p>
+
+          <td style="padding: 0.75rem 0;">
+            <textarea class="editable-area" [(ngModel)]="editModel" #areaElement (blur)="editMode = false" [autofocus]="true"></textarea>
+          </td>
+
+        </tr>
+      </table>
+
+      <table class="table text-table" *ngIf="!editMode">
+        <thead>
+        <tr>
+          <th width="120px">
+            <div class="title">
+              <span> Title </span>
+              <span> Summary </span>
+              <span> Preconditions </span>
+            </div>
+          </th>
+          <th #actionArea>
+            <div class="title">
+              <span> Mobile Web: Add Extension </span>
+              <span>  Something in Summary  </span>
+              <span>  Something in Preconditions </span>
+            </div>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of model; index as idx">
+          <td class="action-types">
+            <div class="order">{{idx + 1}}</div>
+            <div class="action-types-list">
+              <p [style.height.em]="countLineRow(item.name)*1.92">
+                <span class="{{getActionType(item.name)}}"></span>
+              </p>
+              <p [style.height.em]="countLineRow(item.expectedResult).linesCount*1.92">
+                <span class="{{getActionType(item.expectedResult)}}"></span>
+              </p>
+            </div>
+          </td>
+          <td class="actions" (click)="editMode = true">
+            <div>{{item.name}}</div>
+            <div>{{item.expectedResult}}</div>
           </td>
         </tr>
-        <tr>
-          <td width="20%">Lorem ipsum dolor sit.</td>
-          <td> <app-summernote-editor [htmlContent]="'!fdsfdsfsd\r\n 11\r\n !! woo'"></app-summernote-editor>
-          </td>
-        </tr>
-        <tr>
-          <td width="20%">Lorem ipsum dolor sit.</td>
-          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis rhoncus fermentum. Donec ornare
-            quam massa, vel condimentum quam viverra sit amet. Praesent id blandit justo. Maecenas sed mattis libero.
-            Suspendisse potenti. Nulla feugiat cursus neque a malesuada. Vivamus massa felis, malesuada a dui sit amet,
-            congue dictum erat. Suspendisse malesuada ac quam id scelerisque.
-          </td>
-        </tr>
-        <tr>
-          <td width="20%">Lorem ipsum dolor sit.</td>
-          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis rhoncus fermentum. Donec ornare
-            quam massa, vel condimentum quam viverra sit amet. Praesent id blandit justo. Maecenas sed mattis libero.
-            Suspendisse potenti. Nulla feugiat cursus neque a malesuada. Vivamus massa felis, malesuada a dui sit amet,
-            congue dictum erat. Suspendisse malesuada ac quam id scelerisque.
-          </td>
-        </tr>
-        <tr>
-          <td width="20%">Lorem ipsum dolor sit.</td>
-          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis rhoncus fermentum. Donec ornare
-            quam massa, vel condimentum quam viverra sit amet. Praesent id blandit justo. Maecenas sed mattis libero.
-            Suspendisse potenti. Nulla feugiat cursus neque a malesuada. Vivamus massa felis, malesuada a dui sit amet,
-            congue dictum erat. Suspendisse malesuada ac quam id scelerisque.
-          </td>
-        </tr>
+        </tbody>
       </table>
     </div>
   </div>

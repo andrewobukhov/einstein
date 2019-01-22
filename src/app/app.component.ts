@@ -24,6 +24,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.model = TestCasesData.item2;
     this.splitter.dragProgress$.subscribe(x => {
+      CommonService.splitterActivity.next({});
+
       this.splitterSizes = {first: x.sizes[0], second: x.sizes[1]};
 
       if (x.sizes[0] < 1) {
