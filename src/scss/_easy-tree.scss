@@ -1,28 +1,3 @@
-@font-face {
-  font-family: 'icomoon';
-
-  src: url('../fonts/ring-icons.eot');
-  src: url('../fonts/ring-icons.eot?#iefix') format('eot'),
-  url('../fonts/ring-icons.woff2') format('woff2'),
-  url('../fonts/ring-icons.woff') format('woff'),
-  url('../fonts/ring-icons.ttf') format('truetype'),
-  url('../fonts/ring-icons.svg#ring-icons') format('svg');
-}
-
-[class^='icon-'],
-[class*=' icon-'] {
-  font-family: 'icomoon' !important;
-  font-weight: normal;
-  font-style: normal;
-  font-variant: normal;
-
-  text-transform: none;
-
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .easy-tree {
 
   .angular-tree-component {
@@ -41,6 +16,7 @@
   .node-content-wrapper {
     position: relative;
     width: 100%;
+    padding: 2px;
   }
 
   a {
@@ -50,9 +26,6 @@
       font-size: 13px;
       color: $tree-title-dark;
       max-width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
 
       &.hovered {
         font-size: 13px;
@@ -65,7 +38,7 @@
   .tree-children {
     margin-left: 6px;
     padding-right: 0;
-    padding-left: 11px;
+    padding-left: 4px;
 
     border-left: 1px solid $tree-grey;
     overflow: visible;
@@ -107,20 +80,19 @@
 
     &:before {
       font-size: 24px;
-
       content: '\e90f';
+      position: relative;
+      top: -3px;
     }
   }
 
   tree-node-children {
     .node-content-wrapper {
       a {
+
         span.items-count {
           font-size: 12px;
 
-          position: absolute;
-          top: 6px;
-          right: 0;
 
           padding-left: 10px;
 
@@ -157,21 +129,22 @@
 
   .node-wrapper {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+
+    .toggle-children-wrapper {
+      vertical-align: middle;
+    }
   }
 
   tree-node-content {
     a {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
-
       text-decoration: none;
 
       span.items-count {
         font-size: 12px;
-
-        position: absolute;
-        top: 6px;
-        right: 0;
 
         padding-left: 10px;
 
@@ -192,14 +165,14 @@
   }
 
   .toggle-children-wrapper-collapsed .toggle-children {
-    margin-top: 8px;
-    margin-right: 5px;
+    margin-top: 7px;
+    margin-right: 6px;
 
     transform: rotate(-90deg);
   }
 
   .toggle-children-wrapper-expanded .toggle-children {
-    margin-top: 4px;
+    margin-top: 0;
     margin-right: 5px;
 
     transform: rotate(0);
@@ -214,7 +187,7 @@
   }
 
   .tree-node-leaf {
-    height: 27px;
+    min-height: 27px;
 
     .node-content-wrapper-focused,
     .node-content-wrapper-active {
@@ -249,7 +222,7 @@
   }
 
 
-  .open > .dropdown-menu.show {
+  .open>.dropdown-menu.show {
     top: calc(100% - 12px) !important;
   }
 }

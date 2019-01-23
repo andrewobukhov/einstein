@@ -26,6 +26,7 @@ import { AddDropdownComponent } from './components/add-dropdown/add-dropdown.com
 import {RouterModule} from '@angular/router';
 import { TreeTableViewComponent } from './components/tree-table-view/tree-table-view.component';
 import {FormsModule} from '@angular/forms';
+import { TreeContextComponent } from './components/tree-context/tree-context.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {FormsModule} from '@angular/forms';
     ChipsComponent,
     VersionDropdownComponent,
     AddDropdownComponent,
-    TreeTableViewComponent
+    TreeTableViewComponent,
+    TreeContextComponent
   ],
   imports: [
     BrowserModule,

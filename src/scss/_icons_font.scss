@@ -9,6 +9,17 @@
   url('../fonts/ring-icons.svg#ring-icons') format('svg');
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url('./../fonts/icomoon.eot?2yuqp4');
+  src: url('./../fonts/icomoon.eot?2yuqp4#iefix') format('embedded-opentype'),
+  url('./../fonts/icomoon.ttf?2yuqp4') format('truetype'),
+  url('./../fonts/icomoon.woff?2yuqp4') format('woff'),
+  url('./../fonts/icomoon.svg?2yuqp4#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .icon-ico-actions-remove-2:before {
   content: "\e915";
   color: $dark-blue;
@@ -40,7 +51,7 @@
   content: "\e904";
   color: $dark-blue;
 }
-.icon-ico-ico-searchreset:before {
+.icon-ico-searchreset:before {
   content: "\e905";
   color: #979797;
 }

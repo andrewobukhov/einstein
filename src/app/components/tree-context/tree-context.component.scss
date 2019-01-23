@@ -1,0 +1,149 @@
+@import "../scss/_override-variables";
+
+.tree-context-dropdown {
+  [dropdown].open.show {
+    &:after {
+      content: none;
+    }
+
+    .dropdown-menu.show {
+      top: calc(100% - 20px) !important;
+    }
+  }
+
+  .mini-tabs {
+    .block {
+      margin-top: 5px;
+      width: 47px;
+      max-width: 47px;
+      float: left;
+      display: block;
+      background-color: white;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 300;
+
+      color: $dark-blue;
+
+      p:hover {
+        text-decoration: none;
+      }
+
+      p {
+        span {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .block:first-child {
+      margin-left: 4px;
+    }
+
+
+    ul.nav-tabs {
+      height: auto;
+      border: none;
+      border-radius: 3px;
+
+      li {
+        position: relative;
+        padding-left: 10px;
+        min-width: auto;
+        height: auto;
+        text-align: center;
+        border: none;
+        margin-bottom: 0;
+        background-color: #f3f3f3;
+
+
+
+        &:before,
+        &:first-child:before,
+        &:last-child:before {
+          font-family: 'icomoon' !important;
+          position: absolute;
+          top: 6px;
+          left: 8px;
+          z-index: 888;
+          color: $dark-blue;
+        }
+
+        &:before {
+          content: '\e910';
+        }
+
+        &:first-child:before {
+          content: '\e914';
+        }
+
+        &:last-child:before {
+          content: '\e913';
+        }
+
+        &.nav-item {
+          .nav-link {
+            font-size: 11px;
+            font-weight: 300;
+            color: $dark-blue;
+            text-transform: none;
+            position: relative;
+            display: block;
+            padding: 5px 10px;
+            margin: 0;
+            border: none;
+
+            &.disabled {
+              cursor: pointer;
+            }
+
+            
+          }
+
+          &:hover:not(.active) {
+            background-color: $white;
+          }
+
+          &.active {
+            background-color: $white;
+
+            &:hover {
+              background-color: $white;
+            }
+          }
+        }
+
+      }
+    }
+
+    .tab-content {
+      padding: 0px;
+      border: none;
+    }
+
+    &.open>.dropdown-menu {
+      font-size: 11px;
+      font-weight: 300;
+      position: absolute;
+      top: 0;
+      left: auto;
+      right: 1px;
+      z-index: 1000;
+      float: right;
+      min-width: auto;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      background-color: white;
+      background-clip: padding-box;
+      border: 1px solid white;
+      border-radius: 3px;
+      box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.16);
+
+      &.show {
+        right: 0 !important;
+        left: auto !important;
+      }
+    }
+  }
+}

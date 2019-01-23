@@ -144,18 +144,7 @@
       overflow-x: hidden;
       flex: 1;
       margin-left: -30px;
-
-
-
-      [dropdown].open.show {
-        &:after {
-          content: none;
-        }
-
-        .dropdown-menu.show {
-          top: calc(100% - 12px) !important;
-        }
-      }
+      
     }
 
     .bottom-controls {

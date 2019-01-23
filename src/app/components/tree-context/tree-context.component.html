@@ -1,0 +1,27 @@
+<div class="tree-context-dropdown">	
+	<div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown" [autoClose]="false" (mouseleave)="dp.hide()">
+	  <a title="select" data-toggle="dropdown" dropdownToggle>
+	    <span class="name" [ngClass]="{hovered: dp.isOpen}">{{ nodeData.name }}</span>
+	    <span class="items-count">{{ nodeData.count }}</span>
+	  </a>
+	  <ul class="dropdown-menu" *dropdownMenu >
+	    <li>
+	      <tabset>
+	        <tab active="false" heading="Add" class="ic-add" id="tab1"></tab>
+	        <tab active="false" heading="Move" class="ic-move"></tab>
+	        <tab active="false" heading="Edit" class="ic-ed">
+	          <div class="block">
+	            <p><span class="ring-icon icon-ico-actions-copy"></span><br>Copy</p>
+	          </div>
+	          <div class="block">
+	            <p><span class="ring-icon icon-ico-actions-clone"></span><br>Clone</p>
+	          </div>
+	          <div class="block">
+	            <p><span class="ring-icon icon-ico-actions-remove-2"></span><br>Remove</p>
+	          </div>
+	        </tab>
+	      </tabset>
+	    </li>
+	  </ul>
+	</div>
+</div>

@@ -1,18 +1,18 @@
 <div class="chips-container">
   <div class="chip" *ngFor="let chip of chipsCollection">
     <span class="label">{{chip}}</span>
-    <div class="icon-ico-ico-searchreset"></div>
+    <div class="ring-icon icon-ico-searchreset"></div>
   </div>
 
   <div class="chip">
     <app-add-dropdown [rightPosition]="true">
       <button type="button" class="btn btn-clear btn-light ">
-        <span class="icon-ico-plus"></span>
+        <span class="ring-icon icon-ico-plus"></span>
       </button>
     </app-add-dropdown>
   </div>
   <button type="button" class="btn btn-clear remove-btn trash-icon">
-    <span class="icon-ico-delete"></span>
+    <span class="ring-icon icon-delete"></span>
   </button>
 
 </div>
