@@ -26,8 +26,11 @@ export class TextTableComponent implements OnInit, AfterViewInit {
     this.model = TestCasesData.item2.children
       .sort((a, b) => a.order - b.order)
       .map(item => ({name: `!${this.replaceNewLines(item.name)}`, expectedResult: `!!${this.replaceNewLines(item.expectedResult)}`}));
-    const title = `${this.replaceNewLines(TestCasesData.item2.name)}\r\n${this.replaceNewLines(TestCasesData.item2.summary)}\r\n${this.replaceNewLines(TestCasesData.item2.preconditions)}\r\n`;
-    this.editModel = title + this.model.map(item => `!${this.replaceNewLines(item.name)}\r\n!!${this.replaceNewLines(item.expectedResult)}`).join('\r\n');
+    const title = `${this.replaceNewLines(TestCasesData.item2.name)}\r\n` +
+      `${this.replaceNewLines(TestCasesData.item2.summary)}\r\n` +
+      `${this.replaceNewLines(TestCasesData.item2.preconditions)}\r\n`;
+    this.editModel = title + this.model.map(item => `${this.replaceNewLines(item.name)}\r\n${this.replaceNewLines(item.expectedResult)}`)
+      .join('\r\n');
   }
 
   ngAfterViewInit(): void {

@@ -1,9 +1,9 @@
 <div class="description">
   <div class="row steps">
     <div class="col-md-12">
-      <h4 *ngIf="model.summary">Summary</h4>
+      <h4 *ngIf="model.summary && model.summary !== '<p><br></p>'">Summary</h4>
       <div class="panel panel-default">
-        <div [ngClass]="{'panel-body': true, 'placeholder-summary': !model.summary}">
+        <div class="panel-body'">
           <app-summernote-editor [(htmlContent)]="model.summary" [placeholder]="'Summary'" [editMode]="true"></app-summernote-editor>
         </div>
       </div>
@@ -11,9 +11,9 @@
   </div>
   <div class="row steps">
     <div class="col-md-12">
-      <h4 *ngIf="model.preconditions">Preconditions</h4>
+      <h4 *ngIf="model.preconditions && model.preconditions !== '<p><br></p>'">Preconditions</h4>
       <div class="panel panel-default">
-        <div [ngClass]="{'panel-body': true, 'placeholder-preconditions': !model.preconditions}">
+        <div class="panel-body'">
           <app-summernote-editor [(htmlContent)]="model.preconditions" [placeholder]="'Preconditions'" [editMode]="true"></app-summernote-editor>
         </div>
       </div>

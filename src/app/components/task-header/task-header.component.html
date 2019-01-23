@@ -44,7 +44,7 @@
     <app-version-dropdown></app-version-dropdown>
     <div class="btn-group" dropdown placement="bottom right" [insideClick]="true" (onHidden)="isShowAdd = false">
       <button type="button" class="btn btn-default dropdown-toggle" dropdownToggle>More <span
-        class="ring-icon ico-listopen"></span></button>
+        class="ring-icon icon-ico-listopen"></span></button>
 
       <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu [ngClass]="{'unwrapped': isShowAdd}">
         <li [ngClass]="{'open': isShowAdd}"><a href="#" (click)="isShowAdd = true">Add to Test Plan</a>

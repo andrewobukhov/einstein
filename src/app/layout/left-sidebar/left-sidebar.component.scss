@@ -79,10 +79,11 @@
         .tab-pane {
           .input-group {
             width: 100%;
+            flex-wrap: nowrap;
 
-            .icon-ico-ico-searchreset {
+            .icon-ico-searchreset {
+              cursor: pointer;
               font-size: 24px;
-
               position: absolute;
               z-index: 999;
               top: 5px;

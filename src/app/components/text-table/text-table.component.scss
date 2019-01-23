@@ -41,7 +41,7 @@
         }
 
         p {
-          height: 1.92em;
+          min-height: 1.92em!important;
           margin-bottom: 0;
           padding: 1px;
         }
@@ -50,6 +50,7 @@
           width: 120px;
           display: flex;
           flex-direction: row;
+          padding-top: 0;
 
           .order {
             margin-right: 5px;
@@ -96,13 +97,6 @@
         border: 1px solid $tree-hover-grey;
       }
     }
-
-
-    /*.note-editor.note-frame:not(.smrnote-active) {
-      .note-editable {
-        background: transparent;
-      }
-    }*/
   }
 
 }

@@ -36,9 +36,11 @@
     padding-bottom: 6px;
 
     input.search {
-      background-color: $btn-group-border;
+      font-size: 14px;
+      font-weight: normal;
+      background-color: $tree-input-grey;
       width: 100%;
-      color: #000;
+      color: $black;
       border: none;
       box-shadow: none;
     }
@@ -93,6 +95,7 @@
           height: 20px;
           content: '';
           border: 2px solid $dark-blue;
+          border-radius: $border-radius-base;
 
         }
 
