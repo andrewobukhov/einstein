@@ -7,9 +7,48 @@
   border-radius: 0;
   background: $dark-blue;
   z-index: 10001;
+  display: flex;
+
+  .navbar-toggler {
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32'
+                          xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.25)' stroke-width='2'
+                          stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
+
+  .navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+
+    &.in.show {
+      .navbar-nav {
+        flex-direction: column;
+
+        .nav-item {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-right: 30px;
+        }
+      }
+
+      .form-inline {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 30px;
+      }
+    }
+  }
 
   .navbar-nav {
     flex-direction: row;
+    flex-wrap: nowrap;
+
 
     .nav-item > a {
       font-size: 16px;
@@ -19,6 +58,7 @@
       padding-top: 10px;
       padding-bottom: 10px;
       padding-right: 30px;
+      white-space: nowrap;
     }
 
     .nav-item.active > a {
@@ -27,10 +67,11 @@
       opacity: 1;
     }
 
-    .nav-item:hover > a{
+    .nav-item:hover > a {
       color: $white;
       opacity: 1;
     }
+
   }
 
   .navbar-brand {

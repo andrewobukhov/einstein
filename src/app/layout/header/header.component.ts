@@ -8,6 +8,7 @@ import {CommonService} from '../../common/common-service';
   encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent implements OnInit {
+  isCollapsed = true;
 
   constructor() { }
 

@@ -27,6 +27,7 @@ import {RouterModule} from '@angular/router';
 import { TreeTableViewComponent } from './components/tree-table-view/tree-table-view.component';
 import {FormsModule} from '@angular/forms';
 import { TreeContextComponent } from './components/tree-context/tree-context.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { TreeContextComponent } from './components/tree-context/tree-context.com
     SharedModule,
     DragulaModule.forRoot(),
     AngularSplitModule.forRoot(),
+    CollapseModule.forRoot(),
     RouterModule.forRoot([]),
     FormsModule
   ],
