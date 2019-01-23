@@ -28,6 +28,9 @@ export class SummernoteEditorComponent extends BaseComponent implements OnInit, 
   @Input()
   public simpleMode: boolean;
 
+  @Input()
+  public placeholder: string;
+
   @Output() htmlContentChange = new EventEmitter();
 
   public config: any;
@@ -125,6 +128,9 @@ export class SummernoteEditorComponent extends BaseComponent implements OnInit, 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.simpleMode) {
       this.config.toolbar =  [];
+    }
+    if (changes.placeholder) {
+      this.config.placeholder = changes.placeholder.currentValue;
     }
   }
 

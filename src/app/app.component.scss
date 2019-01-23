@@ -74,15 +74,12 @@ as-split {
   margin-right: 0;
 }
 
-
 .left-split-area {
   height: initial!important;
   overflow-x: hidden!important;
+  box-shadow: 1px 0 0 0 $light-grey;
 }
 
-.right-split-area {
-
-}
 .no-wrap {
   overflow: visible;
   white-space: nowrap;

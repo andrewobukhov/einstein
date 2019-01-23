@@ -4,7 +4,7 @@
       <h4 *ngIf="model.summary">Summary</h4>
       <div class="panel panel-default">
         <div [ngClass]="{'panel-body': true, 'placeholder-summary': !model.summary}">
-          <app-summernote-editor [htmlContent]="model.summary"></app-summernote-editor>
+          <app-summernote-editor [(htmlContent)]="model.summary" [placeholder]="'Summary'" [editMode]="true"></app-summernote-editor>
         </div>
       </div>
     </div>
@@ -14,7 +14,7 @@
       <h4 *ngIf="model.preconditions">Preconditions</h4>
       <div class="panel panel-default">
         <div [ngClass]="{'panel-body': true, 'placeholder-preconditions': !model.preconditions}">
-          <app-summernote-editor [htmlContent]="model.preconditions"></app-summernote-editor>
+          <app-summernote-editor [(htmlContent)]="model.preconditions" [placeholder]="'Preconditions'" [editMode]="true"></app-summernote-editor>
         </div>
       </div>
     </div>

@@ -36,18 +36,23 @@
       background-color: $right-sidebar-active-item;
     }
 
-    //TODO ring-icon
     .ring-icon {
       font-size: 24px;
     }
 
-    span.glyphicon {
+    span.ring-icon {
       font-size: 24px;
 
       color: $dark-blue;
+    }
 
-      &.inactive {
+    &.inactive {
+      .ring-icon {
         color: $grey;
+        &:before,
+        &:after {
+          color: $grey;
+        }
       }
     }
 
@@ -77,8 +82,20 @@
           color: $grey;
         }
 
-        > span.glyphicon {
+        > span.ring-icon {
           color: $grey;
+          &:before,
+          &:after {
+            color: $grey;
+          }
+        }
+
+        > span.badge {
+          background-color: $grey;
+          &:before,
+          &:after {
+            background-color: $grey;
+          }
         }
       }
     }
@@ -105,14 +122,10 @@
       border-radius: 50%;
       background-color: $dark-blue;
 
-      > span.glyphicon {
+      > span.ring-icon {
         font-size: 9px;
 
         color: $white;
-      }
-
-      &.inactive {
-        background-color: $grey;
       }
     }
   }

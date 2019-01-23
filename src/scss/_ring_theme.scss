@@ -102,7 +102,7 @@ h4 {
 .dropdown-menu {
   padding: 0;
 
-  &>li {
+  & > li {
     a {
       padding: 17px;
       color: $table-color;
@@ -110,7 +110,7 @@ h4 {
       display: block;
     }
 
-    &>a {
+    & > a {
 
       &:hover,
       &:focus {
@@ -125,9 +125,9 @@ h4 {
     }
   }
 
-  >.active>a,
-  >.active>a:hover,
-  >.active>a:focus {
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
     background-color: darken($dropdown-link-active-bg, 5%);
     @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
   }
@@ -185,10 +185,14 @@ h4 {
 
   &:active,
   &:focus,
+  &:focus:active,
   &:hover {
     background-image: none;
     outline: none !important;
     box-shadow: none !important;
+    border-color: $btn-default-active-bg;
+    background-color: $btn-default-active-bg;
+
   }
 
   background-color: $white;
@@ -200,11 +204,17 @@ h4 {
   text-shadow: none;
   box-shadow: none;
 
-  &:not(:disabled):not(.disabled).active {
-    font-weight: normal;
-    color: #000;
-    border-color: transparent;
-    background-color: $btn-group-border;
+  &:not(:disabled):not(.disabled) {
+    &.active {
+      font-weight: normal;
+      color: #000;
+      border-color: transparent;
+      background-color: $tree-active-grey;
+    }
+    &:active {
+      border-color: $btn-default-active-bg;
+      background-color: $btn-default-active-bg;
+    }
   }
 }
 
@@ -270,7 +280,7 @@ h4 {
   }
 }
 
-.btn-group>.btn+.dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle {
   padding-top: 4px;
 }
 
@@ -281,7 +291,6 @@ h4 {
 
 
 .btn-default {
-
   &:hover,
   &:focus {
     color: $dark-blue;
@@ -375,7 +384,7 @@ h4 {
 }
 
 @media (min-width: 768px) {
-  .navbar-nav>li>a.user-name {
+  .navbar-nav > li > a.user-name {
     padding-top: 15px;
     padding-bottom: 15px;
   }
