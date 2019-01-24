@@ -1,4 +1,4 @@
-import {Component, HostListener, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {CommonService} from '../../common/common-service';
 
 @Component({

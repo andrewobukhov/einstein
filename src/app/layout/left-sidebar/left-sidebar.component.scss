@@ -5,6 +5,7 @@
   z-index: 1000;
   top: 0;
   max-height: 100vh;
+  position: sticky;
 }
 
 .sidebar-left-container {
@@ -13,6 +14,7 @@
   flex-direction: column;
   padding-left: 19px;
   background-color: $sidebar-bg;
+  border-right: 1px solid $light-grey;
 
   .sidebar-left {
     height: 100%;

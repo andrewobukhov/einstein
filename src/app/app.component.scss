@@ -16,34 +16,11 @@
   top: 0;
 }
 
-.as-split-gutter-icon {
-  width: 18px!important;
-  height: 100vh!important;
-  position: fixed;
-  top: 0;
-  background-image: none!important;
-  z-index: 10000;
-}
-
-.as-split-gutter:after {
-  @include font-icons();
-
-  font-size: 24px;
-  position: fixed;
-  top: 42%;
-  display: block;
-  width: 18px;
-  height: 24px;
-  content: '\e90d';
-  color: $right-sidebar-active-item;
-}
-
 .dotted {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-position: under;
 }
-
 
 .btn-xs {
   min-width: 80px;
@@ -62,23 +39,9 @@
 }
 
 
-// -----------------------
-
-.as-split-area,
-as-split {
-  overflow: visible !important;
-}
-
 .page-row {
   min-height: 100%;
   margin-right: 0;
-}
-
-.left-split-area {
-  height: initial!important;
-  overflow-x: hidden!important;
-  box-shadow: 1px 0 0 0 $light-grey;
-  overflow-y: hidden !important;
 }
 
 .no-wrap {

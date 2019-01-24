@@ -1,17 +1,13 @@
 <app-header></app-header>
 <div class="container-fluid content-container">
   <div class="row page-row resizable-row">
-    <as-split [direction]="'horizontal'" [gutterSize]="18" (gutterClick)="onCloseSideBar()">
-      <as-split-area [size]="splitterSizes.first" class="left-split-area">
-          <app-left-sidebar></app-left-sidebar>
-      </as-split-area>
-      <as-split-area [size]="splitterSizes.second" class="right-split-area">
-        <div class="col-md-12 col-sm-12 col-xs-12 col-xl-12 content">
-          <div class="scroll-wrap">
-            <app-project-item></app-project-item>
-          </div>
-        </div>
-      </as-split-area>
-    </as-split>
+    <app-splitter [leftAreaClosed]="!sideBarOpen" (leftAreaClosedChange)="onCloseSideBar()">
+      <div firstArea>
+        <app-left-sidebar></app-left-sidebar>
+      </div>
+      <div secondArea>
+        <app-project-item></app-project-item>
+      </div>
+    </app-splitter>
   </div>
 </div>

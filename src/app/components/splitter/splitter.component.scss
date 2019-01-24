@@ -1,0 +1,63 @@
+@import "../scss/_override-variables";
+@import "../scss/custom-variables";
+
+:host {
+  display: block;
+}
+
+.splitter-container {
+  display: flex;
+  background: white;
+
+  .overlaying {
+    display: none;
+  }
+
+  &.resizing {
+    .overlaying {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 10000;
+    }
+  }
+
+  .first-area {
+    width: 408px;
+    float: left;
+    height: 100%;
+
+    top: 0;
+    position: sticky;
+
+    &.closed {
+      display: none;
+    }
+  }
+
+  .second-area {
+    width: 100%;
+    float: left;
+    height: 100%;
+  }
+
+  .splitter-box {
+    width: 18px;
+    height: 100%;
+    position: fixed;
+    cursor: col-resize;
+    z-index: 1001;
+
+    &:after {
+      @include font-icons();
+      font-size: 24px;
+      position: fixed;
+      top: 42%;
+      display: block;
+      content: '\e90d';
+      color: $right-sidebar-active-item;
+    }
+  }
+
+}

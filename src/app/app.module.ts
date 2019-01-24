@@ -28,6 +28,8 @@ import { TreeTableViewComponent } from './components/tree-table-view/tree-table-
 import {FormsModule} from '@angular/forms';
 import { TreeContextComponent } from './components/tree-context/tree-context.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { SplitterComponent } from './components/splitter/splitter.component';
+import { SplitAreaComponent } from './components/split-area/split-area.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     VersionDropdownComponent,
     AddDropdownComponent,
     TreeTableViewComponent,
-    TreeContextComponent
+    TreeContextComponent,
+    SplitterComponent,
+    SplitAreaComponent
   ],
   imports: [
     BrowserModule,

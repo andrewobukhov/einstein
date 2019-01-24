@@ -1,7 +1,6 @@
 <div class="sidebar-left-container" [ngClass]="{closed: isClosed}">
-  <div class="sidebar-left container-fluid" [style.height]="'calc(100vh - ' +  getHeightOffset() + 'px)'"
-
-       [style.marginTop.px]="getTopOffset()">
+  <div class="sidebar-left container-fluid" #sidebar
+       [style.height]="'calc(100vh - ' +  (sidebar.getBoundingClientRect().y || 0) + 'px)'">
     <div class="row filters">
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">search</a>

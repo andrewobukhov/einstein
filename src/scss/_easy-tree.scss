@@ -1,7 +1,7 @@
 .easy-tree {
 
   .angular-tree-component {
-    overflow: unset;
+    overflow: auto;
   }
 
   tree-viewport {
@@ -26,6 +26,7 @@
       font-size: 13px;
       color: $tree-title-dark;
       max-width: 100%;
+      white-space: nowrap;
 
       &.hovered {
         font-size: 13px;
@@ -88,20 +89,18 @@
 
   tree-node-children {
     .node-content-wrapper {
+
+      span.items-count {
+        font-size: 12px;
+        position: absolute;
+        top: 1px;
+        right: 4px;
+        padding: 2px 12px 4px 15px;
+        color: $tree-base-grey;
+        background-color: $sidebar-bg;
+      }
+
       a {
-
-        span.items-count {
-          font-size: 12px;
-
-
-          padding-left: 10px;
-
-          text-align: right;
-
-          color: $tree-base-grey;
-          background-color: $sidebar-bg;
-        }
-
         .name {
           color: $tree-name-grey;
 
@@ -137,22 +136,21 @@
   }
 
   tree-node-content {
+    span.items-count {
+      font-size: 12px;
+      position: absolute;
+      top: 1px;
+      right: 4px;
+      padding: 2px 12px 4px 15px;
+      color: $tree-base-grey;
+      background-color: $sidebar-bg;
+    }
+
     a {
       display: flex;
       justify-content: space-between;
       width: 100%;
       text-decoration: none;
-
-      span.items-count {
-        font-size: 12px;
-
-        padding-left: 10px;
-
-        text-align: right;
-
-        color: $tree-base-grey;
-        background-color: $sidebar-bg;
-      }
 
       &:hover {
         .name {
