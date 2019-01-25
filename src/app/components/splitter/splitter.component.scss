@@ -8,6 +8,7 @@
 .splitter-container {
   display: flex;
   background: white;
+  max-width: 100vw;
 
   .overlaying {
     display: none;

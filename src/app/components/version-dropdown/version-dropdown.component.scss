@@ -3,6 +3,9 @@
 .version-dropdown {
   .btn {
     min-width: auto;
+    font-size: 12px;
+    font-weight: normal;
+    color: $table-color;
 
     &[dropdownToggle] {
       padding-left: 36px;
@@ -43,6 +46,21 @@
       &:first-child {
         overflow-y: auto;
         max-height: calc(35vh - 60px);
+
+        &::-webkit-scrollbar-track {
+          background-color: $tree-input-grey;
+        }
+
+        &::-webkit-scrollbar {
+          width: 7px;
+          height: 7px;
+          background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 3.5px;
+          background-color: $btn-default-focused-color;
+        }
       }
 
       &.version-controls {

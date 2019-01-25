@@ -94,6 +94,11 @@
       margin-left: 6px;
     }
 
+    .btn {
+        color: $table-color;
+        font-size: 12px;
+        font-weight: normal;
+    }
     .dropdown-menu {
       > li.open {
         a {

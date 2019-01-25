@@ -1,11 +1,33 @@
 .easy-tree {
+  margin-bottom: 10px;
+  padding-right: 0;
 
   .angular-tree-component {
-    overflow: auto;
+    overflow: visible;
   }
 
   tree-viewport {
-    overflow: visible;
+    overflow-y: visible;
+    overflow-x: auto;
+
+
+    &::-webkit-scrollbar-track
+    {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar
+    {
+      width: 5px;
+      height: 5px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+      border-radius: 3px;
+      background-color: $right-sidebar-active-item;
+    }
   }
 
   .tree-node-level-1 {

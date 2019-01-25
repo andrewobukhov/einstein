@@ -29,7 +29,7 @@
 
   &:focus {
     background-image: none;
-    outline: none!important;
+    outline: none !important;
     box-shadow: none;
   }
 }
@@ -71,3 +71,16 @@
   padding-right: 0;
 }
 
+.gu-mirror {
+  box-shadow: 0px 3px 10px 1px $table-border-grey;
+  background-color: $white;
+  opacity: 1;
+
+  > *{
+    cursor: grabbing;
+  }
+}
+
+.gu-transit {
+  opacity: 0;
+}

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-splitter',
@@ -27,13 +27,13 @@ export class SplitterComponent implements AfterViewInit {
     this.window_width = this.elementRef.nativeElement.clientWidth;
     this.window_half_width = Math.ceil(this.window_width / 2);
 
-    let dx = this.firstArea.nativeElement.clientWidth;
-
-    this.splitter.nativeElement.style.marginLeft = this.leftBound + this.gutterSize / 2 + 'px';
+    let dx = this.leftBound;
+    this.firstArea.nativeElement.style.minWidth = dx + 'px';
+     this.splitter.nativeElement.style.marginLeft = dx + 'px';
     this.secondArea.nativeElement.style.marginLeft = this.gutterSize + 'px';
 
-    dx = this.window_width - dx;
-    this.secondArea.nativeElement.style.width = dx + 'px';
+    // dx = this.window_width - dx - this.gutterSize;
+    // this.secondArea.nativeElement.style.width = dx + 'px';
     this.splitter.nativeElement.addEventListener('mousedown', this.spMouseDown);
   }
 
@@ -72,10 +72,12 @@ export class SplitterComponent implements AfterViewInit {
       return;
     }
 
-    this.firstArea.nativeElement.style.width = dx + 'px';
+    this.firstArea.nativeElement.style.minWidth = dx + 'px';
     this.splitter.nativeElement.style.marginLeft = dx + 'px';
-    dx = this.window_width - dx;
-    this.secondArea.nativeElement.style.width = dx + 'px';
+
+    // dx = this.window_width - dx  - this.gutterSize;
+    // this.secondArea.nativeElement.style.width = dx + 'px';
+
     this.last_x = nowX;
   };
 
@@ -102,4 +104,22 @@ export class SplitterComponent implements AfterViewInit {
     }
   }
 
+  @HostListener('window:resize', [])
+  onResize() {
+    this.window_width = this.elementRef.nativeElement.clientWidth;
+    this.window_half_width = Math.ceil(this.window_width / 2);
+
+    let dx = this.firstArea.nativeElement.clientWidth;
+    if (dx > this.window_half_width) {
+      dx = this.window_half_width;
+      this.last_x = dx;
+      this.firstArea.nativeElement.style.minWidth = dx + 'px';
+    }
+
+    this.splitter.nativeElement.style.marginLeft = dx + 'px';
+    // this.secondArea.nativeElement.style.marginLeft = this.gutterSize + 'px';
+
+    // dx = this.window_width - dx - this.gutterSize;
+    // this.secondArea.nativeElement.style.width = dx + 'px';
+  }
 }

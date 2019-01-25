@@ -25,6 +25,7 @@
         color: $tree-title-dark;
         display: flex;
         align-items: center;
+        white-space: nowrap;
 
 
         .node-separator {
@@ -45,6 +46,7 @@
     .node-items {
       display: flex;
       flex-direction: column;
+      white-space: nowrap;
 
       .node-item {
         font-size: 13px;

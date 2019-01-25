@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {AfterContentInit, Component, HostListener, OnInit} from '@angular/core';
 import {CommonService} from '../../common/common-service';
 
 @Component({
@@ -6,7 +6,7 @@ import {CommonService} from '../../common/common-service';
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.scss']
 })
-export class LeftSidebarComponent implements OnInit {
+export class LeftSidebarComponent implements OnInit, AfterContentInit {
 
   scrollPosition = 0;
 
@@ -33,7 +33,7 @@ export class LeftSidebarComponent implements OnInit {
             children: [
               {
                 id: 99,
-                name: 'UBP-961511: Mobile Web: Add Extension',
+                name: 'UBP-961511: Mobile Web: Add Extension Very Very Very Very Very Very Very Very Very Very Long Long Long Long Long Long',
                 key: 'UBP-961511',
               }, {
                 id: 98,
@@ -136,11 +136,13 @@ export class LeftSidebarComponent implements OnInit {
               {
                 id: 67,
                 name: 'child1',
-                count: 23
+                count: 23,
+                selectable: true
               }, {
                 id: 54,
                 name: 'child2',
-                count: 18
+                count: 18,
+                selectable: true
               }
             ]
           },
@@ -151,17 +153,20 @@ export class LeftSidebarComponent implements OnInit {
             children: [
               {
                 id: 34,
-                name: 'UBP-961545: Check 1st level pages'
+                name: 'UBP-961545: Check 1st level pages',
+                selectable: true
               }, {
                 id: 76,
                 name: 'Case in case',
                 children: [
                   {
                     id: 23,
-                    name: 'UBP-961545: Check more pages'
+                    name: 'UBP-961545: Check more pages',
+                    selectable: true
                   }, {
                     id: 110,
                     name: 'UBP-961545: Check more and more pages',
+                    selectable: true
                   }
                 ]
               }
@@ -182,11 +187,39 @@ export class LeftSidebarComponent implements OnInit {
     this.scrollPosition = window.scrollY;
   }
 
-  getHeightOffset() {
-    return this.scrollPosition < 64 ? 64 - this.scrollPosition : 0;
+  @HostListener('scroll', ['$event'])
+  onHostScroll(event) {
+    event.stopPropagation();
   }
 
-  getTopOffset() {
-    return this.scrollPosition > 64 ? this.scrollPosition - 64 : 0;
+  customScroll(e, element) {
+    const delta = e.deltaY || e.detail || e.wheelDelta;
+
+
+    if (delta < 0 && element.scrollTop === 0) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.returnValue = false;
+      return;
+    }
+
+    if (delta > 0 && element.scrollHeight - element.clientHeight - element.scrollTop <= 1) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.returnValue = false;
+      return;
+    }
+  }
+
+  ngAfterContentInit(): void {
+    const treeViewElement = document.getElementsByTagName('tree-viewport')[0];
+    treeViewElement['onmousewheel'] = e => {
+      this.customScroll(e, treeViewElement);
+    };
+
+    const treeTableViewElement = document.getElementsByClassName('tree-table')[0];
+    treeTableViewElement['onmousewheel'] = e => {
+      this.customScroll(e, treeTableViewElement);
+    };
   }
 }

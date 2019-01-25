@@ -1,7 +1,13 @@
 <div class="tree-context-dropdown">	
 	<div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown" [autoClose]="false" (mouseleave)="dp.hide()">
 	  <a title="select" data-toggle="dropdown" dropdownToggle>
-	    <span class="name" [ngClass]="{hovered: dp.isOpen}">{{ nodeData.name }}</span>
+
+      <span class="checkbox" *ngIf="nodeData.selectable">
+         <input type="checkbox" class="checkbox-btn" [id]="'radio' + nodeData.id"/>
+         <label [for]="'radio' + nodeData.id" class="label"></label>
+      </span>
+
+      <span class="name" [ngClass]="{hovered: dp.isOpen}">{{ nodeData.name }}</span>
 	  </a>
     <span class="items-count">{{ nodeData.count }}</span>
 	  <ul class="dropdown-menu" *dropdownMenu >
