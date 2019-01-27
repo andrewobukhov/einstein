@@ -1,33 +1,14 @@
 .easy-tree {
   margin-bottom: 10px;
   padding-right: 0;
+  overflow: auto;
 
   .angular-tree-component {
     overflow: visible;
   }
 
   tree-viewport {
-    overflow-y: visible;
-    overflow-x: auto;
-
-
-    &::-webkit-scrollbar-track
-    {
-      background-color: transparent;
-    }
-
-    &::-webkit-scrollbar
-    {
-      width: 5px;
-      height: 5px;
-      background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb
-    {
-      border-radius: 3px;
-      background-color: $right-sidebar-active-item;
-    }
+    overflow: visible;
   }
 
   .tree-node-level-1 {
@@ -115,11 +96,14 @@
       span.items-count {
         font-size: 12px;
         position: absolute;
-        top: 1px;
-        right: 4px;
-        padding: 2px 12px 4px 15px;
+        top: -1px;
+        padding: 5px 9px 5px 10px;
         color: $tree-base-grey;
         background-color: $sidebar-bg;
+        min-width: 60px;
+        display: block;
+        text-align: right;
+        box-shadow: 0px 0 0px 1px  $sidebar-bg;
       }
 
       a {
@@ -161,11 +145,14 @@
     span.items-count {
       font-size: 12px;
       position: absolute;
-      top: 1px;
-      right: 4px;
-      padding: 2px 12px 4px 15px;
+      top: -1px;
+      padding: 5px 9px 5px 10px;
       color: $tree-base-grey;
       background-color: $sidebar-bg;
+      min-width: 60px;
+      display: block;
+      text-align: right;
+      box-shadow: 0px 0 0px 1px  $sidebar-bg;
     }
 
     a {
@@ -244,5 +231,23 @@
 
   .open>.dropdown-menu.show {
     top: calc(100% - 12px) !important;
+  }
+
+  &::-webkit-scrollbar-track
+  {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 5px;
+    height: 5px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    border-radius: 3px;
+    background-color: $right-sidebar-active-item;
   }
 }

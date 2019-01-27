@@ -134,6 +134,8 @@ h4 {
       color: $table-color;
       text-decoration: none;
       display: block;
+      font-size: 14px;
+      font-weight: normal;
     }
 
     & > a {
@@ -153,6 +155,20 @@ h4 {
   > .active > a:hover,
   > .active > a:focus {
     background-color: $sidebar-bg;
+  }
+
+  &.default {
+    li > a {
+      padding: 18px 30px 18px 30px;
+    }
+  }
+  &.context-menu {
+    li > a {
+      padding: 14px 20px;
+    }
+  }
+  &.multi-select {
+    padding: 22px 22px 0;
   }
 }
 

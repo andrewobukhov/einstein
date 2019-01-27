@@ -13,11 +13,9 @@
   }
 
   .dropdown-menu {
-    font-size: 14px;
     min-width: 336px;
     max-height: 435px;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.04);
-    padding: 22px 22px 0;
 
     &.show {
       display: flex;
@@ -90,6 +88,8 @@
           margin: auto 0 auto 30px;
           width: 100%;
           cursor: pointer;
+          font-size: 14px;
+          font-weight: normal;
 
           &:before {
             position: absolute;

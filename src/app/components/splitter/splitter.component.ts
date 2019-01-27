@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {CommonService} from '../../common/common-service';
 
 @Component({
   selector: 'app-splitter',
@@ -55,6 +56,7 @@ export class SplitterComponent implements AfterViewInit {
   spMouseMove = (e) => {
     this.isInProgress = true;
     this.resetPosition(e.clientX);
+    CommonService.splitterActivity.next(e.clientX);
   };
 
   resetPosition = (nowX: number) => {
@@ -102,6 +104,7 @@ export class SplitterComponent implements AfterViewInit {
     } else {
       this.resetPosition(this.leftBound + this.last_x);
     }
+    CommonService.splitterActivity.next(0);
   }
 
   @HostListener('window:resize', [])
@@ -117,9 +120,5 @@ export class SplitterComponent implements AfterViewInit {
     }
 
     this.splitter.nativeElement.style.marginLeft = dx + 'px';
-    // this.secondArea.nativeElement.style.marginLeft = this.gutterSize + 'px';
-
-    // dx = this.window_width - dx - this.gutterSize;
-    // this.secondArea.nativeElement.style.width = dx + 'px';
   }
 }

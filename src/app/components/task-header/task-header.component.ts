@@ -11,12 +11,12 @@ export class TaskHeaderComponent implements OnInit {
 
   @Input()
   public model: any;
-  public sideBarClosed = true;
+  public sideBarOpened = true;
   public keys = [];
   public isShowAdd = false;
 
   constructor() {
-    CommonService.leftSideBarState.subscribe(sideBarClosed => this.sideBarClosed = sideBarClosed);
+    CommonService.leftSideBarState.subscribe(sideBarClosed => this.sideBarOpened = !sideBarClosed);
   }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, HostListener, OnInit} from '@angular/core';
+import {AfterContentInit, AfterViewInit, ChangeDetectionStrategy, Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {CommonService} from '../../common/common-service';
 
 @Component({
@@ -6,18 +6,20 @@ import {CommonService} from '../../common/common-service';
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.scss']
 })
-export class LeftSidebarComponent implements OnInit, AfterContentInit {
-
-  scrollPosition = 0;
-
-  constructor() {
-  }
+export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterViewInit {
 
   public nodes = [];
   public options = {};
   public isClosed: boolean;
-
   public treeViewMode = true;
+
+  public treeViewElement: any;
+  public treeTableViewElement: any;
+  public treeItemsOffset: number;
+  @ViewChild('treeContainer') treeContainerElement;
+
+  constructor() {
+  }
 
   ngOnInit() {
     const nodes = [
@@ -35,6 +37,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
                 id: 99,
                 name: 'UBP-961511: Mobile Web: Add Extension Very Very Very Very Very Very Very Very Very Very Long Long Long Long Long Long',
                 key: 'UBP-961511',
+                count: 12
               }, {
                 id: 98,
                 name: 'UBP-961512: Transfer from paid to trial',
@@ -79,16 +82,20 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
                 id: 95,
                 name: 'UBP-961545: Check 1st level pages',
                 key: 'UBP-961511',
+                count: 84
               }, {
                 id: 94,
                 name: 'Case in case',
+                count: 84,
                 children: [
                   {
                     id: 93,
-                    name: 'UBP-961545: Check more pages'
+                    name: 'UBP-961545: Check more pages',
+                    count: 8
                   }, {
                     id: 92,
                     name: 'UBP-961545: Check more and more pages',
+                    count: 4
                   }
                 ]
               }
@@ -162,11 +169,15 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
                   {
                     id: 23,
                     name: 'UBP-961545: Check more pages',
-                    selectable: true
+                    selectable: true,
+                    count: 84
+
+
                   }, {
                     id: 110,
                     name: 'UBP-961545: Check more and more pages',
-                    selectable: true
+                    selectable: true,
+                    count: 84
                   }
                 ]
               }
@@ -179,17 +190,28 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
     this.nodes = nodes;
 
     CommonService.leftSideBarState.subscribe(sideBarOpen => this.isClosed = !sideBarOpen);
+    CommonService.splitterActivity.subscribe(() => this.onScrollTree());
+  }
+
+  ngAfterContentInit(): void {
+    this.treeViewElement = document.getElementsByClassName('easy-tree')[0];
+    this.treeViewElement['onmousewheel'] = e => {
+      this.customScroll(e, this.treeViewElement);
+    };
+
+    this.treeTableViewElement = document.getElementsByClassName('tree-table')[0];
+    this.treeTableViewElement['onmousewheel'] = e => {
+      this.customScroll(e, this.treeTableViewElement);
+    };
+  }
+
+  ngAfterViewInit(): void {
+    this.treeItemsOffset = 300 + this.treeContainerElement.nativeElement.scrollLeft;
   }
 
   // workarounds for update host element height style
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.scrollPosition = window.scrollY;
-  }
-
-  @HostListener('scroll', ['$event'])
-  onHostScroll(event) {
-    event.stopPropagation();
   }
 
   customScroll(e, element) {
@@ -211,15 +233,8 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
     }
   }
 
-  ngAfterContentInit(): void {
-    const treeViewElement = document.getElementsByTagName('tree-viewport')[0];
-    treeViewElement['onmousewheel'] = e => {
-      this.customScroll(e, treeViewElement);
-    };
 
-    const treeTableViewElement = document.getElementsByClassName('tree-table')[0];
-    treeTableViewElement['onmousewheel'] = e => {
-      this.customScroll(e, treeTableViewElement);
-    };
+  onScrollTree() {
+    this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 95 + this.treeContainerElement.nativeElement.scrollLeft;
   }
 }

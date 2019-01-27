@@ -1,5 +1,6 @@
 <div class="tree-context-dropdown">	
-	<div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown" [autoClose]="false" (mouseleave)="dp.hide()">
+	<div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown"
+       [autoClose]="false" (mouseleave)="dp.hide()" placement="right">
 	  <a title="select" data-toggle="dropdown" dropdownToggle>
 
       <span class="checkbox" *ngIf="nodeData.selectable">
@@ -9,8 +10,8 @@
 
       <span class="name" [ngClass]="{hovered: dp.isOpen}">{{ nodeData.name }}</span>
 	  </a>
-    <span class="items-count">{{ nodeData.count }}</span>
-	  <ul class="dropdown-menu" *dropdownMenu >
+    <span class="items-count"[style.left.px]="parentWidth">{{ nodeData.count }}
+      <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu >
 	    <li>
 	      <tabset>
 	        <tab active="false" heading="Add" class="ic-add" id="tab1"></tab>
@@ -29,5 +30,7 @@
 	      </tabset>
 	    </li>
 	  </ul>
+    </span>
+
 	</div>
 </div>

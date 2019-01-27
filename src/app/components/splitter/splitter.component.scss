@@ -12,15 +12,15 @@
 
   .overlaying {
     display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10000;
   }
 
   &.resizing {
     .overlaying {
       display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      z-index: 10000;
     }
   }
 
@@ -48,7 +48,7 @@
     height: 100%;
     position: fixed;
     cursor: col-resize;
-    z-index: 1001;
+    z-index: 10001;
 
     &:after {
       @include font-icons();

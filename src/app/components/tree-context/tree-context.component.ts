@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, Input, ViewEncapsulation, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-tree-context',
@@ -10,9 +10,16 @@ export class TreeContextComponent implements OnInit {
 
   @Input()
   public nodeData: any;
+  @Input()
+  public parentWidth: any;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  // workarounds for update host element height style
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+  }
 }

@@ -38,10 +38,13 @@
       </div>
     </div>
     <div [hidden]="!treeViewMode" class="row tree">
-      <div class="col-12 easy-tree">
-        <tree-root [nodes]="nodes" [options]="options">
+      <div class="col-12 easy-tree" #treeContainer (scroll)="onScrollTree(treeContainer)">
+        <tree-root [nodes]="nodes" [options]="{scrollContainer: treeContainer}">
           <ng-template #treeNodeTemplate let-node let-index="index">
-            <app-tree-context [nodeData]="node.data"></app-tree-context>
+            <app-tree-context [nodeData]="node.data"
+                              [parentWidth]="treeItemsOffset - (node.level - 1) * (node.isLeaf ? 11.5 : 10)">
+
+            </app-tree-context>
           </ng-template>
         </tree-root>
       </div>

@@ -22,6 +22,7 @@
     width: auto !important;
     min-width: 465px;
     display: none;
+    z-index: 1000;
   }
 
   .note-statusbar, .note-status-output {

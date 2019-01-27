@@ -8,6 +8,7 @@
 
     .dropdown-menu.show {
       top: calc(100% - 24px) !important;
+      box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.16);
     }
   }
 
@@ -63,8 +64,8 @@
         &:last-child:before {
           font-family: 'icomoon' !important;
           position: absolute;
-          top: 6px;
-          left: 8px;
+          top: 4px;
+          left: 4px;
           z-index: 888;
           color: $dark-blue;
         }

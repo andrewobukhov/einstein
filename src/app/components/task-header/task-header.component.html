@@ -1,17 +1,18 @@
 <div class="header row normal-content-header sticky" #header [ngClass]="{'shadowed': isSticked(header)}">
 
   <div class="col-sm">
-    <div class="small-row bcrumb" *ngIf="!sideBarClosed">
+    <div class="small-row bcrumb" [hidden]="sideBarOpened">
       <ul class="breadcrumb">
         <li><a href="#">RC UPB ALL</a></li>
         <li><a href="#">Telephony (black box)</a></li>
       </ul>
     </div>
-    <div class="current-task-name" [ngClass]="{'single': sideBarClosed}">
+    <div class="current-task-name" [ngClass]="{'single': sideBarOpened}">
       <div class="d-flex">
         <div class="task-number"><h4 class="dotted">{{model.key}}</h4><h4>:</h4></div>
         <div class="task-name name">
-          <app-summernote-editor [htmlContent]="model.name" [simpleMode]="true"></app-summernote-editor>
+          <span contenteditable="true" class="editable" spellcheck="false"
+               [textContent]="model.name" (blur)="model.name=$event.target.textContent"></span>
           <div [ngClass]="{'fading': isSticked(header) }"></div>
         </div>
       </div>
@@ -22,7 +23,7 @@
       <div dropdown placement="bottom right">
         <input type="button" dropdownToggle class="btn btn-light" [ngClass]="{'no-selected': true, 'selected': false}"
                [value]="'Execution type'">
-        <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+        <ul class="dropdown-menu dropdown-menu-right context-menu" *dropdownMenu>
           <li><a href="#">Manual</a></li>
           <li><a href="#">Automatic</a></li>
           <li><a href="#">Semi-Automatic</a></li>
@@ -33,7 +34,7 @@
         <input type="button" dropdownToggle class="btn btn-light selected" [ngClass]="{'no-selected': false}"
                [value]="'P2'">
 
-        <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
+        <ul class="dropdown-menu dropdown-menu-right context-menu" *dropdownMenu
             role="menu">
           <li><a href="#">P1</a></li>
           <li class="selected"><a href="#">P2</a></li>
@@ -46,9 +47,9 @@
       <button type="button" class="btn btn-default dropdown-toggle" dropdownToggle>More <span
         class="ring-icon icon-ico-listopen"></span></button>
 
-      <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu [ngClass]="{'unwrapped': isShowAdd}">
+      <ul class="dropdown-menu dropdown-menu-right context-menu" *dropdownMenu [ngClass]="{'unwrapped': isShowAdd}">
         <li [ngClass]="{'open': isShowAdd}"><a href="#" (click)="isShowAdd = true">Add to Test Plan</a>
-          <ul class="dropdown-sub-menu dropdown-menu-right" [ngClass]="{'inner': isShowAdd}">
+          <ul class="dropdown-sub-menu dropdown-menu-right context-menu" [ngClass]="{'inner': isShowAdd}">
             <li class="filter-block">
               <div class="input-group">
                 <input type="text" class="form-control search" id="search" placeholder="Find">

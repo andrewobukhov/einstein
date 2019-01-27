@@ -21,35 +21,16 @@
     box-shadow: 4px 1px 15px 0 rgba(0, 0, 0, 0.08);
     height: 64px;
 
-    .current-task-name {
-      &.single {
-        .fading {
-          top: -7px;
-        }
-      }
-    }
-
     .task-name {
-      app-summernote-editor {
-        .note-editor.note-frame .note-editing-area .note-editable, .smrnote-view {
-          height: 1.4em !important;
-          overflow: hidden;
-          word-break: break-all;
-          min-height: unset;
-
-          p {
-            display: inline;
-            br {
-              display: none;
-            }
-          }
-        }
+      .editable {
+        height: 1.4em;
+        overflow: hidden;
       }
     }
 
     .fading {
       position: absolute;
-      top: 0;
+      top: -8px;
       right: 0;
       width: 60px;
       height: 60px;
@@ -279,11 +260,14 @@
     width: 100%;
     white-space: normal;
 
-    app-summernote-editor {
-      width: 100%;
+    .editable {
+      outline: none;
+      word-break: break-all;
+      display: block;
 
-      .note-editor.note-frame .note-editing-area .note-editable, .smrnote-view {
-        padding: 2px;
+      &:focus {
+        outline: 1px solid $light-grey;
+        outline-offset: 2px;
       }
     }
   }

@@ -3,7 +3,7 @@
   <div #firstArea class="first-area" [ngClass]="{closed: leftAreaClosed}">
     <ng-content select="[firstArea]"></ng-content>
   </div>
-  <div #splitter class="splitter-box" (click)="onToggle()"></div>
+  <div #splitter class="splitter-box" (dblclick)="onToggle()"></div>
   <div #secondArea class="second-area">
     <ng-content select="[secondArea]"></ng-content>
   </div>
