@@ -22,129 +22,24 @@
       flex-direction: column;
     }
 
-    > li {
-      &:nth-child(2) {
-        overflow: auto;
-        margin-bottom: 19px;
-      }
+
+    .filter-block {
+
     }
-  }
 
-  .filter-block {
-    padding-bottom: 6px;
+    .list-block {
 
-    input.search {
-      font-size: 14px;
-      font-weight: normal;
-      background-color: $tree-input-grey;
-      width: 100%;
-      color: $black;
-      border: none;
-      box-shadow: none;
-    }
-  }
+      .list-group {
 
-  .list-block {
-    padding-right: 15px;
-    margin-right: -22px;
-
-    .list-group {
-      margin-bottom: 22px;
-
-      .list-group-item {
-        position: relative;
-        display: flex;
-        border: none;
-        height: 20px;
-        margin: 5px 0;
-        padding: 0;
-
-        &:hover {
-          background-color: $sidebar-bg !important;
-        }
-
-        .checkbox-btn {
-          position: absolute;
-          visibility: hidden;
-          opacity: 0;
-          height: 100%;
-
-          &:checked {
-            + .label {
-              color: $dark-blue;
-            }
-
-            + .label::before {
-              background: $dark-blue;
-            }
-
-            + .label::after {
-              display: block;
-            }
-          }
-        }
-
-        .label {
-          margin: auto 0 auto 30px;
-          width: 100%;
-          cursor: pointer;
-          font-size: 14px;
-          font-weight: normal;
-
-          &:before {
-            position: absolute;
-            left: 0;
-            top: calc(50% - 10px);
-            width: 20px;
-            height: 20px;
-            content: '';
-            border: 2px solid $dark-blue;
-            border-radius: $border-radius-base;
-
-          }
-
-          &:after {
-            content: '';
-            display: none;
-            width: 7px;
-            height: 12px;
-            -webkit-transform: rotate(45deg);
-            transform: rotate(41deg);
-            border-bottom: 3px solid $white;
-            border-right: 3px solid $white;
-            position: absolute;
-            left: 6px;
-            top: calc(50% - 7px);
-          }
+        .list-group-item {
 
         }
       }
+
+
     }
 
-    &::-webkit-scrollbar-track {
-      background-color: $tree-input-grey;
+    .add-controls {
     }
-
-    &::-webkit-scrollbar {
-      width: 7px;
-      height: 7px;
-      background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 3.5px;
-      background-color: $btn-default-focused-color;
-    }
-  }
-
-  .add-controls {
-    margin-left: -22px;
-    margin-right: -22px;
-    padding-left: 22px;
-    padding-right: 22px;
-    border-top: 1px solid $light-grey;
-    height: 64px;
-    display: flex;
-    align-items: center;
   }
 }

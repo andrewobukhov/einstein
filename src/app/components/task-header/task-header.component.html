@@ -23,7 +23,7 @@
       <div dropdown placement="bottom right">
         <input type="button" dropdownToggle class="btn btn-light" [ngClass]="{'no-selected': true, 'selected': false}"
                [value]="'Execution type'">
-        <ul class="dropdown-menu dropdown-menu-right context-menu" *dropdownMenu>
+        <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
           <li><a href="#">Manual</a></li>
           <li><a href="#">Automatic</a></li>
           <li><a href="#">Semi-Automatic</a></li>
@@ -34,7 +34,7 @@
         <input type="button" dropdownToggle class="btn btn-light selected" [ngClass]="{'no-selected': false}"
                [value]="'P2'">
 
-        <ul class="dropdown-menu dropdown-menu-right context-menu" *dropdownMenu
+        <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
             role="menu">
           <li><a href="#">P1</a></li>
           <li class="selected"><a href="#">P2</a></li>
@@ -44,12 +44,12 @@
     </div>
     <app-version-dropdown></app-version-dropdown>
     <div class="btn-group" dropdown placement="bottom right" [insideClick]="true" (onHidden)="isShowAdd = false">
-      <button type="button" class="btn btn-default dropdown-toggle" dropdownToggle>More <span
+      <button type="button" class="btn btn-default btn-more dropdown-toggle" dropdownToggle>More <span
         class="ring-icon icon-ico-listopen"></span></button>
 
-      <ul class="dropdown-menu dropdown-menu-right context-menu" *dropdownMenu [ngClass]="{'unwrapped': isShowAdd}">
+      <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu [ngClass]="{'unwrapped': isShowAdd}">
         <li [ngClass]="{'open': isShowAdd}"><a href="#" (click)="isShowAdd = true">Add to Test Plan</a>
-          <ul class="dropdown-sub-menu dropdown-menu-right context-menu" [ngClass]="{'inner': isShowAdd}">
+          <ul class="dropdown-sub-menu dropdown-menu-right multi-select-dropdown" [ngClass]="{'inner': isShowAdd}">
             <li class="filter-block">
               <div class="input-group">
                 <input type="text" class="form-control search" id="search" placeholder="Find">

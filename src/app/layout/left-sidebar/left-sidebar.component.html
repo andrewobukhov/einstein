@@ -37,8 +37,8 @@
         </div>
       </div>
     </div>
-    <div [hidden]="!treeViewMode" class="row tree">
-      <div class="col-12 easy-tree" #treeContainer (scroll)="onScrollTree(treeContainer)">
+    <div [hidden]="!treeViewMode" class="row tree" #treeContainer>
+      <div class="col-12 easy-tree" >
         <tree-root [nodes]="nodes" [options]="{scrollContainer: treeContainer}">
           <ng-template #treeNodeTemplate let-node let-index="index">
             <app-tree-context [nodeData]="node.data"
@@ -48,6 +48,7 @@
           </ng-template>
         </tree-root>
       </div>
+      <div class="fading" [style.left.px]="treeContainer.offsetWidth - 60 + treeContainer.scrollLeft"></div>
     </div>
     <div [hidden]="treeViewMode" class="row tree-table">
 

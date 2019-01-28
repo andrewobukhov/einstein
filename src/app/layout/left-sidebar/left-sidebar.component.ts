@@ -1,12 +1,22 @@
-import {AfterContentInit, AfterViewInit, ChangeDetectionStrategy, Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import {CommonService} from '../../common/common-service';
+import {throttle} from 'lodash';
 
 @Component({
   selector: 'app-left-sidebar',
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.scss']
 })
-export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterViewInit {
+export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterViewInit, AfterViewChecked {
 
   public nodes = [];
   public options = {};
@@ -136,7 +146,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
         count: 12,
         children: [
           {
-            id: 8,
+            id: 8123,
             name: 'Core team main (UPartitioning SWAT)',
             count: 23,
             children: [
@@ -190,12 +200,15 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
     this.nodes = nodes;
 
     CommonService.leftSideBarState.subscribe(sideBarOpen => this.isClosed = !sideBarOpen);
-    CommonService.splitterActivity.subscribe(() => this.onScrollTree());
+
   }
 
   ngAfterContentInit(): void {
-    this.treeViewElement = document.getElementsByClassName('easy-tree')[0];
+    this.treeViewElement = document.getElementsByClassName('tree')[0];
     this.treeViewElement['onmousewheel'] = e => {
+      this.customScroll(e, this.treeViewElement);
+    };
+    this.treeViewElement['onwheel'] = e => {
       this.customScroll(e, this.treeViewElement);
     };
 
@@ -203,16 +216,22 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
     this.treeTableViewElement['onmousewheel'] = e => {
       this.customScroll(e, this.treeTableViewElement);
     };
+    this.treeTableViewElement['onwheel'] = e => {
+      this.customScroll(e, this.treeTableViewElement);
+    };
+
   }
 
   ngAfterViewInit(): void {
     this.treeItemsOffset = 300 + this.treeContainerElement.nativeElement.scrollLeft;
   }
 
-  // workarounds for update host element height style
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
+  ngAfterViewChecked(): void {
+    throttle(() =>
+      this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 95 +
+        this.treeContainerElement.nativeElement.scrollLeft, 1000, {trailing: false})();
   }
+
 
   customScroll(e, element) {
     const delta = e.deltaY || e.detail || e.wheelDelta;
@@ -231,10 +250,5 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
       e.returnValue = false;
       return;
     }
-  }
-
-
-  onScrollTree() {
-    this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 95 + this.treeContainerElement.nativeElement.scrollLeft;
   }
 }

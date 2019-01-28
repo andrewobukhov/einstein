@@ -3,7 +3,7 @@
        #dropdown="bs-dropdown">
     <span dropdownToggle><ng-content></ng-content></span>
     <ng-container *ngIf="rightPosition">
-      <ul class="dropdown-menu dropdown-menu-right multi-select" *dropdownMenu>
+      <ul class="dropdown-menu dropdown-menu-right multi-select-dropdown" *dropdownMenu>
         <li class="filter-block">
           <div class="input-group">
             <input type="text" class="form-control search" placeholder="Find">
@@ -25,7 +25,7 @@
       </ul>
     </ng-container>
     <ng-container *ngIf="!rightPosition">
-      <ul class="dropdown-menu  multi-select" *dropdownMenu>
+      <ul class="dropdown-menu  multi-select-dropdown" *dropdownMenu>
         <li class="filter-block">
           <div class="input-group">
             <input type="text" class="form-control search" placeholder="Find">

@@ -15,20 +15,17 @@ body {
   color: $black;
   overflow-x: hidden;
 
-  &::-webkit-scrollbar-track
-  {
+  &::-webkit-scrollbar-track {
     background-color: transparent;
   }
 
-  &::-webkit-scrollbar
-  {
+  &::-webkit-scrollbar {
     width: 5px;
     height: 5px;
     background-color: transparent;
   }
 
-  &::-webkit-scrollbar-thumb
-  {
+  &::-webkit-scrollbar-thumb {
     border-radius: 3px;
     background-color: $right-sidebar-active-item;
   }
@@ -130,12 +127,12 @@ h4 {
 
   & > li {
     a {
-      padding: 17px;
       color: $table-color;
       text-decoration: none;
       display: block;
       font-size: 14px;
       font-weight: normal;
+      padding: 10px 20px;
     }
 
     & > a {
@@ -157,20 +154,119 @@ h4 {
     background-color: $sidebar-bg;
   }
 
-  &.default {
-    li > a {
-      padding: 18px 30px 18px 30px;
+}
+
+.multi-select-dropdown {
+  padding: 0;
+
+  .filter-block {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding-bottom: 6px;
+
+    input.search {
+      font-size: 14px;
+      font-weight: normal;
+      background-color: $tree-input-grey;
+      width: 100%;
+      color: $black;
+      border: none;
+      box-shadow: none;
     }
   }
-  &.context-menu {
-    li > a {
-      padding: 14px 20px;
+
+  .list-block {
+    overflow: auto;
+    margin-bottom: 19px;
+    margin-right: 6px;
+
+    .list-group {
+      margin-bottom: 20px;
+
+      .list-group-item {
+        position: relative;
+        display: flex;
+        border: none;
+        padding: 10px 20px;
+
+        &:hover {
+          background-color: $sidebar-bg !important;
+        }
+
+        .checkbox-btn {
+          position: absolute;
+          visibility: hidden;
+          opacity: 0;
+          height: 100%;
+
+          &:checked {
+            + .label {
+              color: $dark-blue;
+            }
+
+            + .label::before {
+              background: $dark-blue;
+            }
+
+            + .label::after {
+              display: block;
+            }
+          }
+        }
+
+        .label {
+          margin: auto 0 auto 30px;
+          width: 100%;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: normal;
+
+          &:before {
+            position: absolute;
+            left: 20px;
+            top: calc(50% - 10px);
+            width: 20px;
+            height: 20px;
+            content: '';
+            border: 2px solid $dark-blue;
+            border-radius: $border-radius-base;
+
+          }
+
+          &:after {
+            content: '';
+            display: none;
+            width: 7px;
+            height: 12px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(41deg);
+            border-bottom: 3px solid $white;
+            border-right: 3px solid $white;
+            position: absolute;
+            left: 26.5px;
+            top: calc(50% - 7px);
+          }
+
+        }
+      }
     }
+
+    @include webkit-scrollbar(7px, $tree-input-grey, $btn-default-focused-color)
   }
-  &.multi-select {
-    padding: 22px 22px 0;
+
+  .add-controls {
+    border-top: 1px solid $light-grey;
+    height: 64px;
+    text-align: left;
+
+    .btn {
+      min-width: auto;
+      height: 100%;
+    }
   }
 }
+
 
 .ring-icon {
   @include font-icons();
@@ -221,7 +317,6 @@ h4 {
 }
 
 .btn-light {
-
   &:active,
   &:focus,
   &:focus:active,
@@ -250,6 +345,7 @@ h4 {
       border-color: transparent;
       background-color: $tree-active-grey;
     }
+
     &:active {
       border-color: $btn-default-active-bg;
       background-color: $btn-default-active-bg;
