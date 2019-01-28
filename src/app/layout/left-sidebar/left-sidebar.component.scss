@@ -151,6 +151,8 @@
     .tree-table {
       overflow-x: auto;
       margin-bottom: 5px;
+      padding-right: 15px;
+      padding-left: 15px;
 
       &::-webkit-scrollbar-track
       {
