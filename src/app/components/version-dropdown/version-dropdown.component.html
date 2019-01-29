@@ -13,7 +13,7 @@
     <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
       <li>
         <div class="list-group">
-          <a href="#" class="list-group-item" [ngClass]="{selected: idx === selectedItem}"
+          <a href="javascript:void(0)" class="list-group-item" [ngClass]="{selected: idx === selectedItem}"
              *ngFor="let version of versions; index as idx;">
             <div class="radio-button-container">
               <input type="radio" class="radio-btn" name="choice" [id]="'radio' + idx"

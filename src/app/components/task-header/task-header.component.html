@@ -3,8 +3,8 @@
   <div class="col-sm">
     <div class="small-row bcrumb" [hidden]="sideBarOpened">
       <ul class="breadcrumb">
-        <li><a href="#">RC UPB ALL</a></li>
-        <li><a href="#">Telephony (black box)</a></li>
+        <li><a href="javascript:void(0)">RC UPB ALL</a></li>
+        <li><a href="javascript:void(0)">Telephony (black box)</a></li>
       </ul>
     </div>
     <div class="current-task-name" [ngClass]="{'single': sideBarOpened}">
@@ -24,9 +24,9 @@
         <input type="button" dropdownToggle class="btn btn-light" [ngClass]="{'no-selected': true, 'selected': false}"
                [value]="'Execution type'">
         <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-          <li><a href="#">Manual</a></li>
-          <li><a href="#">Automatic</a></li>
-          <li><a href="#">Semi-Automatic</a></li>
+          <li><a href="javascript:void(0)">Manual</a></li>
+          <li><a href="javascript:void(0)">Automatic</a></li>
+          <li><a href="javascript:void(0)">Semi-Automatic</a></li>
         </ul>
       </div>
 
@@ -36,9 +36,9 @@
 
         <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
             role="menu">
-          <li><a href="#">P1</a></li>
-          <li class="selected"><a href="#">P2</a></li>
-          <li><a href="#">P3</a></li>
+          <li><a href="javascript:void(0)">P1</a></li>
+          <li class="selected"><a href="javascript:void(0)">P2</a></li>
+          <li><a href="javascript:void(0)">P3</a></li>
         </ul>
       </div>
     </div>
@@ -48,7 +48,7 @@
         class="ring-icon icon-ico-listopen"></span></button>
 
       <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu [ngClass]="{'unwrapped': isShowAdd}">
-        <li [ngClass]="{'open': isShowAdd}"><a href="#" (click)="isShowAdd = true">Add to Test Plan</a>
+        <li [ngClass]="{'open': isShowAdd}"><a href="javascript:void(0)" (click)="isShowAdd = true">Add to Test Plan</a>
           <ul class="dropdown-sub-menu dropdown-menu-right multi-select-dropdown" [ngClass]="{'inner': isShowAdd}">
             <li class="filter-block">
               <div class="input-group">
@@ -57,7 +57,7 @@
             </li>
             <li class="list-block">
               <div class="list-group">
-                <a href="#" class="list-group-item" *ngFor="let key of keys; index as idx;">
+                <a href="javascript:void(0)" class="list-group-item" *ngFor="let key of keys; index as idx;">
                   <input type="checkbox" class="checkbox-btn" [id]="'radio' + idx"/>
                   <label [for]="'radio' + idx" class="label">{{key}}</label>
                 </a>
@@ -68,7 +68,7 @@
             </li>
           </ul>
         </li>
-        <li><a href="#">Delete</a></li>
+        <li><a href="javascript:void(0)">Delete</a></li>
       </ul>
     </div>
 
