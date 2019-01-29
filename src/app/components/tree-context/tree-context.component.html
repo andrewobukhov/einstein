@@ -1,4 +1,4 @@
-<div class="tree-context-dropdown">
+<div class="tree-context-dropdown" #item>
   <div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown"
        [autoClose]="false" (mouseleave)="dp.hide()" placement="right">
     <a title="select" data-toggle="dropdown" dropdownToggle>
@@ -10,7 +10,7 @@
 
       <span class="name" [ngClass]="{hovered: dp.isOpen}">{{ nodeData.name }}</span>
     </a>
-    <span class="items-count" [style.left.px]="parentWidth">{{ nodeData.count }}
+    <span class="items-count" [style.left.px]="parentWidth - item.getBoundingClientRect().x">{{ nodeData.count }}
       <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
 	    <li>
 	      <tabset>

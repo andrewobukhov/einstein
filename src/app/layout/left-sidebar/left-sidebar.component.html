@@ -42,13 +42,13 @@
         <tree-root [nodes]="nodes" [options]="{scrollContainer: treeContainer}">
           <ng-template #treeNodeTemplate let-node let-index="index">
             <app-tree-context [nodeData]="node.data"
-                              [parentWidth]="treeItemsOffset - (node.level - 1) * (node.isLeaf ? 11.5 : 10)">
+                              [parentWidth]="treeItemsOffset">
 
             </app-tree-context>
           </ng-template>
         </tree-root>
       </div>
-      <div class="fading" [style.left.px]="treeContainer.offsetWidth - 60 + treeContainer.scrollLeft"></div>
+<!--      <div class="fading" [style.left.px]="treeContainer.offsetWidth - 66 + treeContainer.scrollLeft"></div>-->
     </div>
     <div [hidden]="treeViewMode" class="row tree-table">
 

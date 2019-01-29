@@ -1,4 +1,5 @@
 import {
+  AfterContentChecked,
   AfterContentInit,
   AfterViewChecked,
   AfterViewInit,
@@ -16,7 +17,7 @@ import {throttle} from 'lodash';
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.scss']
 })
-export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterViewInit, AfterViewChecked {
+export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterViewInit, AfterContentChecked {
 
   public nodes = [];
   public options = {};
@@ -223,13 +224,12 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
   }
 
   ngAfterViewInit(): void {
-    this.treeItemsOffset = 300 + this.treeContainerElement.nativeElement.scrollLeft;
+    this.treeItemsOffset = 395 - 55 + this.treeContainerElement.nativeElement.scrollLeft;
   }
 
-  ngAfterViewChecked(): void {
+  ngAfterContentChecked(): void {
     throttle(() =>
-      this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 95 +
-        this.treeContainerElement.nativeElement.scrollLeft, 1000, {trailing: false})();
+      this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 55, 100, {trailing: false})();
   }
 
 

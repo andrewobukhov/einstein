@@ -98,10 +98,11 @@
         top: -1px;
         padding: 5px 9px 5px 10px;
         color: $tree-base-grey;
+        background-color: $sidebar-bg;
         min-width: 60px;
         display: block;
         text-align: right;
-        z-index: 3;
+        box-shadow: 0px 0 0px 1px $sidebar-bg;
       }
 
       a {
@@ -146,10 +147,11 @@
       top: -1px;
       padding: 5px 9px 5px 10px;
       color: $tree-base-grey;
+      background-color: $sidebar-bg;
       min-width: 60px;
       display: block;
       text-align: right;
-      z-index: 3;
+      box-shadow: 0px 0 0px 1px $sidebar-bg;
     }
 
     a {
