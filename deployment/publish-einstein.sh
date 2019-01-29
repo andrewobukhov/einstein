@@ -11,7 +11,7 @@ npm install --silent
 
 rm -rf dist && \
 
-ng build --prod  && \
+ng build --prod --configuration=production  && \
 
 cd deployment && \
 
