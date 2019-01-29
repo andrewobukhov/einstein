@@ -2,11 +2,13 @@
 @import "../../../scss/custom-variables";
 
 :host {
-  display: block;
-  width: 100%;
+  display: flex;
+  flex-basis: 100%;
 }
 
 .tree-table-container {
+  width: 100%;
+
   .node-block {
     margin-bottom: 20px;
 
