@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   @ViewChild(SplitComponent) splitter;
   public model: any;
-  private sideBarOpen = true;
+  public sideBarOpen = true;
 
   constructor() {
   }
