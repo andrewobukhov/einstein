@@ -75,23 +75,50 @@
   box-shadow: 0px 3px 10px 1px $table-border-grey;
   background-color: $white;
   opacity: 1;
-  display: inline-table;
-
   > * {
     cursor: grabbing;
   }
 
-
   td {
-    .order {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 12px 19px 12px 12px;
+    color: $black;
+
+    &.order {
+      color: $table-order-grey;
       padding-top: 24px;
       padding-left: 0px;
+      min-width: 35px;
+      width: 1%;
+    }
+
+    .btn-dropdown {
+      position: relative;
+
+      .btn {
+        font-family: 'Roboto Mono';
+        font-size: 12px;
+        margin-top: 5px;
+        padding: 0;
+        color: $table-order-grey;
+      }
+    }
+
+    .icon-ico-drag {
+      font-size: 24px;
+    }
+
+    &:first-child {
+      width: 1%;
     }
 
     &:last-child {
       width: 50%;
+      margin-left: auto;
     }
   }
+
 }
 
 .gu-transit {
