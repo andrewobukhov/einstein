@@ -14,6 +14,8 @@ rm -rf dist && \
 ng build --prod  && \
 
 cd deployment && \
+
+rm -rf ./docker/einstein-ui/dist && \
 rm -rf ./docker/einstein/dist && \
 mkdir ./docker/einstein/dist && \
 
