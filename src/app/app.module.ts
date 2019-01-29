@@ -30,6 +30,7 @@ import { TreeContextComponent } from './components/tree-context/tree-context.com
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { SplitterComponent } from './components/splitter/splitter.component';
 import { SplitAreaComponent } from './components/split-area/split-area.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { SplitAreaComponent } from './components/split-area/split-area.component
     AngularSplitModule.forRoot(),
     CollapseModule.forRoot(),
     RouterModule.forRoot([]),
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     DragulaService

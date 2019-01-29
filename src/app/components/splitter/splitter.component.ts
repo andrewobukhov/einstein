@@ -17,7 +17,7 @@ export class SplitterComponent implements AfterViewInit {
   private last_x: number;
   private window_width: number;
   private window_half_width: number;
-  private isInProgress = false;
+  public isInProgress = false;
   private leftBound = 400;
   private gutterSize = 18;
 
