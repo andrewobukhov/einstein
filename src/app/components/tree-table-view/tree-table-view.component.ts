@@ -1,4 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {CommonService} from '../../common/common-service';
 
 @Component({
   selector: 'app-tree-table-view',
@@ -29,7 +30,7 @@ export class TreeTableViewComponent implements OnInit, OnChanges {
     const handleNode = (node, captions) => {
       const value = {captions: captions, items: []};
 
-      if (node.children) {
+      if (node.children && node.children.length > 0) {
 
         node.children.forEach(innerNode => {
           handleNode(innerNode, captions.concat({id: node.id, name: node.name}));
