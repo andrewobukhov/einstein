@@ -22,11 +22,12 @@
     <div class="btn-group">
       <div dropdown placement="bottom right">
         <input type="button" dropdownToggle class="btn btn-light" [ngClass]="{'no-selected': true, 'selected': false}"
-               [value]="'Execution type'">
+               [value]="'Manual'">
         <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
           <li><a href="javascript:void(0)">Manual</a></li>
           <li><a href="javascript:void(0)">Automatic</a></li>
           <li><a href="javascript:void(0)">Semi-Automatic</a></li>
+          <li><a href="javascript:void(0)">Ready for Automation</a></li>
         </ul>
       </div>
 
