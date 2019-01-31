@@ -11,7 +11,7 @@
 
       <span class="name" [ngClass]="{hovered: dp.isOpen}">{{ nodeData.name }}</span>
     </a>
-    <span class="items-count" [style.left.px]="parentWidth - item.getBoundingClientRect().x">{{ nodeData.count }}
+    <span class="items-count" [style.left.px]="parentWidth - item.getBoundingClientRect().x">{{ nodeData.count || ' ' }}
       <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
           id="dropdown-context" aria-labelledby="btn-dropdown-context">
 	    <li>

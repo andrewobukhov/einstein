@@ -56,7 +56,7 @@ export class SplitterComponent implements AfterViewInit {
   spMouseMove = (e) => {
     this.isInProgress = true;
     this.resetPosition(e.clientX);
-    CommonService.splitterActivity.next(e.clientX);
+    //CommonService.splitterActivity.next(e.clientX);
   };
 
   resetPosition = (nowX: number) => {
@@ -104,7 +104,7 @@ export class SplitterComponent implements AfterViewInit {
     } else {
       this.resetPosition(this.leftBound + this.last_x);
     }
-    CommonService.splitterActivity.next(0);
+    // CommonService.splitterActivity.next(0);
   }
 
   @HostListener('window:resize', [])

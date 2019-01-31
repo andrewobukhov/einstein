@@ -100,6 +100,7 @@
         color: $tree-base-grey;
         background-color: $sidebar-bg;
         min-width: 60px;
+        min-height: 50px;
         display: block;
         text-align: right;
         box-shadow: 0px 0 0px 1px $sidebar-bg;
@@ -149,6 +150,7 @@
       color: $tree-base-grey;
       background-color: $sidebar-bg;
       min-width: 60px;
+      min-height: 50px;
       display: block;
       text-align: right;
       box-shadow: 0px 0 0px 1px $sidebar-bg;
@@ -232,7 +234,7 @@
       [dropdown].open.show {
 
         .dropdown-menu.show {
-          top: calc(100% - 4px) !important;
+          top: calc(100% - 32px) !important;
           box-shadow: 0 -69px 10px 0px rgba(0, 0, 0, 0.16);
         }
 
