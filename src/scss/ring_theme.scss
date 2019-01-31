@@ -53,6 +53,21 @@ h4 {
   margin-bottom: 16px;
 }
 
+
+a {
+  &:not([href]):not([tabindex]) {
+    text-decoration: none;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+}
+
 //
 // Dropdowns
 // --------------------------------------------------
@@ -133,6 +148,7 @@ h4 {
       font-size: 14px;
       font-weight: normal;
       padding: 10px 20px;
+      cursor: pointer;
     }
 
     & > a {

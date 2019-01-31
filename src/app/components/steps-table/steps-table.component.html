@@ -17,13 +17,15 @@
           <td>
             <div class="btn-dropdown" dropdown>
               <button type="button" dropdownToggle class="btn btn-clear dropdown-toggle"
+                      id="btn-dropdown-steps" aria-controls="dropdown-steps"
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
                 class="ring-icon icon-ico-drag"></span></button>
-              <ul class="dropdown-menu" *dropdownMenu>
-                <li><a href="javascript:void(0)">Clone</a></li>
-                <li><a href="javascript:void(0)">Delete</a></li>
-                <li><a href="javascript:void(0)">Move up</a></li>
-                <li><a href="javascript:void(0)">Move down</a></li>
+              <ul class="dropdown-menu" *dropdownMenu
+                  id="dropdown-steps" aria-labelledby="btn-dropdown-steps">
+                <li><a >Clone</a></li>
+                <li><a >Delete</a></li>
+                <li><a >Move up</a></li>
+                <li><a >Move down</a></li>
               </ul>
             </div>
           </td>

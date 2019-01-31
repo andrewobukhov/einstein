@@ -1,6 +1,7 @@
 <div class="version-dropdown">
   <div class="btn-group" dropdown placement="bottom right" [insideClick]="true" #dropdown="bs-dropdown">
-    <button type="button" dropdownToggle class="btn btn-default">
+    <button type="button" dropdownToggle class="btn btn-default"
+            id="btn-dropdown-version" aria-controls="dropdown-version">
       <span class="version-check">
          <div class="radio-button-container">
            <input type="radio" class="radio-btn" name="header-choice" id="radio-selected" disabled
@@ -10,15 +11,16 @@
       </span> {{currentVersion.name}}
     </button>
 
-    <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+    <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
+        id="dropdown-version" aria-labelledby="btn-dropdown-version">
       <li>
         <div class="list-group">
-          <a href="javascript:void(0)" class="list-group-item" [ngClass]="{selected: idx === selectedItem}"
+          <a  class="list-group-item" [ngClass]="{selected: idx === selectedItem}"
              *ngFor="let version of versions; index as idx;">
-            <div class="radio-button-container">
-              <input type="radio" class="radio-btn" name="choice" [id]="'radio' + idx"
+            <div class="radio-button-container" (click)="$event.stopPropagation()">
+              <input type="radio" class="radio-btn" name="choice" [id]="'radio-version-' + idx"
                      [checked]="idx === selectedCheckboxIndex" (change)="onSelectVersion(idx)"/>
-              <label [for]="'radio' + idx" class="label radio"></label>
+              <label [for]="'radio-version-' + idx" class="label radio"></label>
             </div>
 
             <label class="label version-name" (click)="onSelectVersionItem(idx)">

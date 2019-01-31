@@ -7,16 +7,17 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class AddDropdownComponent implements OnInit {
 
-  public keys = [];
+  instanceId: any;
+  keys = [];
 
   @Input()
   rightPosition = false;
 
   constructor() {
+   this.instanceId = Math.random().toString(36).substring(7);
+    this.keys = ['Functionality', 'Accepted_ODS', 'Admin', 'Directory Integration', 'Summary', 'Custom', 'RBS_Aplicable', 'Any', 'Some value', 'Some Value 2' ];
   }
 
   ngOnInit() {
-
-    this.keys = ['Functionality', 'Accepted_ODS', 'Admin', 'Directory Integration', 'Summary', 'Custom', 'RBS_Aplicable', 'Any', 'Some value', 'Some Value 2' ];
   }
 }
