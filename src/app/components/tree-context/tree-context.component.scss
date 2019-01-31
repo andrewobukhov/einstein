@@ -57,11 +57,12 @@
       height: auto;
       border: none;
       border-radius: 3px;
+      flex-wrap: nowrap;
 
       li {
         position: relative;
         padding-left: 10px;
-        min-width: auto;
+        width: 100%;
         height: auto;
         text-align: center;
         border: none;
