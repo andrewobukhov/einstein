@@ -1,4 +1,5 @@
-<div class="tree-context-dropdown" #item [ngClass]="{'root-node': nodeData.children && nodeData.selectable}">
+<div class="tree-context-dropdown" #item [ngClass]="{'root-node': nodeData.children && nodeData.selectable}"
+     (click)="$event.stopPropagation()" (mouseenter)="$event.stopPropagation()">
   <div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown"
        [autoClose]="false" (mouseleave)="dp.hide()" placement="right">
     <a title="select" data-toggle="dropdown" dropdownToggle  id="btn-dropdown-context" aria-controls="dropdown-context">
@@ -14,10 +15,10 @@
       <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
           id="dropdown-context" aria-labelledby="btn-dropdown-context">
 	    <li>
-	      <tabset>
+	      <tabset [justified]="true">
 	        <tab active="false" heading="Add" class="ic-add" id="tab1"></tab>
 	        <tab active="false" heading="Move" class="ic-move"></tab>
-	        <tab active="false" heading="Edit" class="ic-ed">
+	        <tab active="false" heading="Edit" class="ic-ed active">
 	          <div class="block">
 	            <p><span class="ring-icon icon-ico-actions-copy"></span><br>Copy</p>
 	          </div>
