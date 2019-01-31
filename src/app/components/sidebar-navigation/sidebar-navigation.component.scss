@@ -48,11 +48,7 @@
 
     &.inactive {
       .ring-icon {
-        color: $grey;
-        &:before,
-        &:after {
-          color: $grey;
-        }
+        opacity: 0.3;
       }
     }
 
