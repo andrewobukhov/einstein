@@ -1,4 +1,4 @@
-<div class="tree-context-dropdown" #item>
+<div class="tree-context-dropdown" #item [ngClass]="{'root-node': nodeData.children && nodeData.selectable}">
   <div dropdown class="mini-tabs tree-item" triggers="mouseover" #dp="bs-dropdown"
        [autoClose]="false" (mouseleave)="dp.hide()" placement="right">
     <a title="select" data-toggle="dropdown" dropdownToggle>

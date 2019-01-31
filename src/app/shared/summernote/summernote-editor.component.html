@@ -1,8 +1,10 @@
-<ng-container *ngIf="editMode">
-  <div  [ngxSummernote]="config" [summernoteModel]="htmlContent" (summernoteModelChange)="onContentChange($event)">
-  </div>
-</ng-container>
+<div class="smrnote-container">
+  <ng-container *ngIf="editMode">
+    <div [ngxSummernote]="config" [summernoteModel]="htmlContent" (summernoteModelChange)="onContentChange($event)">
+    </div>
+  </ng-container>
 
-<ng-container *ngIf="!editMode">
-  <div  [ngxSummernoteView]="htmlContent" (click)="initEditMode()" class="smrnote-view"></div>
-</ng-container>
+  <ng-container *ngIf="!editMode">
+    <div [ngxSummernoteView]="htmlContent" (click)="initEditMode()" class="smrnote-view"></div>
+  </ng-container>
+</div>

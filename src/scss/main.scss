@@ -2,7 +2,8 @@
 
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";
-
+@import "../../node_modules/summernote/dist/summernote-lite.css";
+@import "../../node_modules/dragula/dist/dragula.min.css";
 
 @import "app.layout";
 @import '~angular-tree-component/dist/angular-tree-component.css';
@@ -11,5 +12,5 @@
 @import "bootstrap-custom";
 @import "ring_theme";
 @import "easy-tree";
-
 @import 'summernote-custom';
+

@@ -169,6 +169,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
             id: '89',
             name: 'Security',
             count: 854,
+            selectable: true,
             children: [
               {
                 id: '34',

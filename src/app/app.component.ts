@@ -9,7 +9,7 @@ import {CommonService} from './common/common-service';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  // title = 'app';
 
   @ViewChild(SplitComponent) splitter;
   public model: any;

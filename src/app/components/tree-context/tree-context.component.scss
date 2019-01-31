@@ -12,6 +12,17 @@
     }
   }
 
+  &.root-node {
+    padding-left: 14px;
+
+    .tree-item {
+      .checkbox {
+        left: -4px;
+      }
+    }
+
+  }
+
   .mini-tabs {
     .block {
       margin-top: 5px;
