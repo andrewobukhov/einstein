@@ -1,11 +1,7 @@
 import {
-  AfterContentChecked,
   AfterContentInit,
-  AfterViewChecked,
   AfterViewInit,
-  ChangeDetectionStrategy,
   Component,
-  HostListener,
   OnInit,
   ViewChild
 } from '@angular/core';
@@ -18,7 +14,7 @@ import {TreeData} from './tree-data';
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.scss']
 })
-export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterViewInit, AfterContentChecked {
+export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterViewInit {
 
   public nodes = [];
   public options = {};
@@ -229,9 +225,9 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
     this.treeItemsOffset = 395 - 55 + this.treeContainerElement.nativeElement.scrollLeft;
   }
 
-  ngAfterContentChecked(): void {
+  onScroll() {
     throttle(() =>
-      this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 55, 100, {trailing: false})();
+      this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 55, 50, {trailing: false})();
   }
 
 
