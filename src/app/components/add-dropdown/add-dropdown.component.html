@@ -2,51 +2,39 @@
   <div dropdown placement="bottom right" [insideClick]="true" #dropdown="bs-dropdown">
     <span dropdownToggle  id="btn-dropdown-add-{{instanceId}}" [attr.aria-controls]="'dropdown-add-' + instanceId"><ng-content></ng-content></span>
     <ng-container *ngIf="rightPosition">
-      <ul class="dropdown-menu dropdown-menu-right multi-select-dropdown" *dropdownMenu
-          id="dropdown-add-{{instanceId}}" [attr.aria-labelledby]="'btn-dropdown-add-' + instanceId">
-        <li class="filter-block">
-          <div class="input-group">
-            <input type="text" class="form-control search" placeholder="Find">
-          </div>
-        </li>
-        <li class="list-block">
-          <div class="list-group">
-            <a  class="list-group-item" *ngFor="let key of keys; index as idx;" (click)="$event.stopPropagation()">
-              <input type="checkbox" class="checkbox-btn" [id]="'radio-' + instanceId + '-' + idx"/>
-              <label [for]="'radio-' + instanceId + '-' + idx" class="label">{{key}}</label>
-            </a>
-          </div>
-        </li>
-        <li class="add-controls">
-          <button type="button" class="btn btn-default no-border btn-link text-uppercase" (click)="dropdown.hide()">Done</button>
-          <button type="button" class="btn btn-default no-border btn-link text-uppercase" (click)="dropdown.hide()">Cancel
-          </button>
-        </li>
+      <ul class="dropdown-menu dropdown-menu-right multi-select-dropdown" *dropdownMenu id="dropdown-add-{{instanceId}}"
+          [attr.aria-labelledby]="'btn-dropdown-add-' + instanceId">
+        <ng-container *ngTemplateOutlet="itemsTemplate"></ng-container>
       </ul>
     </ng-container>
     <ng-container *ngIf="!rightPosition">
       <ul class="dropdown-menu  multi-select-dropdown" *dropdownMenu
           id="dropdown-add-{{instanceId}}" [attr.aria-labelledby]="'btn-dropdown-add-' + instanceId">
-        <li class="filter-block">
-          <div class="input-group">
-            <input type="text" class="form-control search" placeholder="Find">
-          </div>
-        </li>
-        <li class="list-block">
-          <div class="list-group">
-            <a  class="list-group-item" *ngFor="let key of keys; index as idx;" (click)="$event.stopPropagation()">
-              <input type="checkbox" class="checkbox-btn" [id]="'radio-' + instanceId + '-' + idx"/>
-              <label [for]="'radio-' + instanceId + '-' + idx" class="label">{{key}}</label>
-            </a>
-          </div>
-        </li>
-        <li class="add-controls">
-          <button type="button" class="btn btn-default no-border btn-link text-uppercase" (click)="dropdown.hide()">Done</button>
-          <button type="button" class="btn btn-default no-border btn-link text-uppercase" (click)="dropdown.hide()">Cancel
-          </button>
-        </li>
+        <ng-container *ngTemplateOutlet="itemsTemplate"></ng-container>
       </ul>
     </ng-container>
   </div>
 
 </div>
+
+
+<ng-template #itemsTemplate>
+  <li class="filter-block">
+    <div class="input-group">
+      <input type="text" class="form-control search" placeholder="Find">
+    </div>
+  </li>
+  <li class="list-block">
+    <div class="list-group">
+      <a  class="list-group-item" *ngFor="let key of keys; index as idx;" (click)="$event.stopPropagation()">
+        <input type="checkbox" class="checkbox-btn" [id]="'radio-' + instanceId + '-' + idx"/>
+        <label [for]="'radio-' + instanceId + '-' + idx" class="label">{{key}}</label>
+      </a>
+    </div>
+  </li>
+  <li class="add-controls">
+    <button type="button" class="btn btn-default no-border btn-link text-uppercase" (click)="dropdown.hide()">Done</button>
+    <button type="button" class="btn btn-default no-border btn-link text-uppercase" (click)="dropdown.hide()">Cancel
+    </button>
+  </li>
+</ng-template>
