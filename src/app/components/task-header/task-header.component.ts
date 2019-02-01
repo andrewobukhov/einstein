@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {CommonService} from '../../common/common-service';
+import {sideBarState} from '../../constants';
 
 @Component({
   selector: 'app-task-header',
@@ -11,12 +12,12 @@ export class TaskHeaderComponent implements OnInit {
 
   @Input()
   public model: any;
-  public sideBarOpened = true;
+  public sideBarState = sideBarState.OPENED;
   public keys = [];
   public isShowAdd = false;
 
   constructor() {
-    CommonService.leftSideBarState.subscribe(sideBarClosed => this.sideBarOpened = !sideBarClosed);
+    CommonService.leftSideBarState.subscribe(state => this.sideBarState = state);
   }
 
   ngOnInit() {

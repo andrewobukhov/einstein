@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {CommonService} from '../../common/common-service';
+import {sideBarState} from '../../constants';
 
 @Component({
   selector: 'app-splitter',
@@ -11,7 +12,7 @@ export class SplitterComponent implements AfterViewInit {
   @ViewChild('secondArea') secondArea: any;
   @ViewChild('splitter') splitter: any;
   @Input() direction = 'horizontal';
-  @Input() leftAreaClosed: boolean;
+  @Input() leftSideBarState: any;
   @Output() leftAreaClosedChange = new EventEmitter();
 
   private last_x: number;
@@ -56,7 +57,7 @@ export class SplitterComponent implements AfterViewInit {
   spMouseMove = (e) => {
     this.isInProgress = true;
     this.resetPosition(e.clientX);
-    //CommonService.splitterActivity.next(e.clientX);
+    CommonService.splitterActivity.next(e.clientX);
   };
 
   resetPosition = (nowX: number) => {
@@ -76,10 +77,6 @@ export class SplitterComponent implements AfterViewInit {
 
     this.firstArea.nativeElement.style.minWidth = dx + 'px';
     this.splitter.nativeElement.style.marginLeft = dx + 'px';
-
-    // dx = this.window_width - dx  - this.gutterSize;
-    // this.secondArea.nativeElement.style.width = dx + 'px';
-
     this.last_x = nowX;
   };
 
@@ -96,15 +93,17 @@ export class SplitterComponent implements AfterViewInit {
     if (this.isInProgress) {
       return;
     }
-    this.leftAreaClosed = !this.leftAreaClosed;
-    this.leftAreaClosedChange.emit(this.leftAreaClosed);
 
-    if (this.leftAreaClosed) {
+    if (this.leftSideBarState === sideBarState.OPENED) {
       this.closeLeftArea();
+      CommonService.splitterActivity.next(0);
+      this.leftSideBarState = sideBarState.CLOSED;
     } else {
       this.resetPosition(this.leftBound + this.last_x);
+      this.leftSideBarState = sideBarState.OPENED;
     }
-    // CommonService.splitterActivity.next(0);
+
+    this.leftAreaClosedChange.emit(this.leftSideBarState);
   }
 
   @HostListener('window:resize', [])

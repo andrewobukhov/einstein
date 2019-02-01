@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container-fluid content-container">
   <div class="row page-row resizable-row">
-    <app-splitter [leftAreaClosed]="!sideBarOpen" (leftAreaClosedChange)="onCloseSideBar($event)">
+    <app-splitter [leftSideBarState]="sideBarState" (leftAreaClosedChange)="onCloseSideBar($event)">
       <div firstArea>
         <app-left-sidebar></app-left-sidebar>
       </div>

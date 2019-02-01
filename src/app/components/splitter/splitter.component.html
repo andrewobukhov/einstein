@@ -1,6 +1,6 @@
 <div class="splitter-container {{direction}}" [ngClass]="{resizing: isInProgress}">
   <div class="overlaying"></div>
-  <div #firstArea class="first-area" [ngClass]="{closed: leftAreaClosed}">
+  <div #firstArea class="first-area" [ngClass]="{closed: leftSideBarState === 'closed'}">
     <ng-content select="[firstArea]"></ng-content>
   </div>
   <div #splitter class="splitter-box" (dblclick)="onToggle()"></div>

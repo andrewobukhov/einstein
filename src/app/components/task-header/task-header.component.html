@@ -1,13 +1,13 @@
 <div class="header row normal-content-header sticky" #header [ngClass]="{'shadowed': isSticked(header)}">
 
   <div class="col-sm">
-    <div class="small-row bcrumb" [hidden]="sideBarOpened">
+    <div class="small-row bcrumb" [hidden]="sideBarState === 'opened'">
       <ul class="breadcrumb">
         <li><a >RC UPB ALL</a></li>
         <li><a >Telephony (black box)</a></li>
       </ul>
     </div>
-    <div class="current-task-name" [ngClass]="{'single': sideBarOpened}">
+    <div class="current-task-name" [ngClass]="{'single': sideBarState === 'opened'}">
       <div class="d-flex">
         <div class="task-number"><h4 class="dotted">{{model.key}}</h4><h4>:</h4></div>
         <div class="task-name name">
