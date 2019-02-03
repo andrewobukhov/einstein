@@ -1,5 +1,4 @@
-<div class="tree-node-container" #item [ngClass]="{'root-node': nodeData.children && nodeData.selectable}"
-     (click)="$event.stopPropagation()">
+<div class="tree-node-container" #item [ngClass]="{'root-node': nodeData.children && nodeData.selectable}">
   <div class="tree-item" (mouseover)="dropdownContext.open(nodeData, item)">
     <a title="select" >
       <span class="checkbox" [hidden]="!nodeData.selectable" (click)="$event.stopPropagation()">

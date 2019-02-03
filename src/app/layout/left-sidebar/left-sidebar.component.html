@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="row tree-controls">
+    <div class="row tree-controls" (mouseover)="dropdownContext.hide()">
       <div class="col-12 controls">
         <div class="btn-group actions">
           <button type="button" class="btn btn-light btn-sm" [hidden]="!treeViewMode">Expand all</button>
@@ -58,7 +58,7 @@
     <div [hidden]="treeViewMode" class="row tree-table">
       <app-tree-table-view [model]="nodes"></app-tree-table-view>
     </div>
-    <div class="row bottom-controls">
+    <div class="row bottom-controls" (mouseover)="dropdownContext.hide()">
       <span class="pull-right">
         <input class="btn btn-default btn-action" type="button" value="Bulk Update">
       </span>
