@@ -45,6 +45,10 @@ export class SplitterComponent implements AfterViewInit {
     this.last_x = e.clientX;
     window.addEventListener('mousemove', this.spMouseMove);
     window.addEventListener('mouseup', this.spMouseUp);
+    e.stopPropagation();
+    e.preventDefault();
+    e.returnValue = false;
+    return false;
   };
 
   spMouseUp = e => {
