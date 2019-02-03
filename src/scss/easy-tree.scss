@@ -21,6 +21,7 @@
     position: relative;
     width: 100%;
     padding: 2px;
+    vertical-align: top;
   }
 
   a {
@@ -117,6 +118,15 @@
             color: $tree-hover-grey;
           }
         }
+
+        &.selected {
+          color: $dark-blue;
+          font-weight: 500;
+        }
+
+        &:hover:not(.selected) {
+          color: $tree-hover-grey;
+        }
       }
     }
   }
@@ -134,8 +144,6 @@
 
 
   .node-wrapper {
-    //display: flex;
-    //align-items: flex-start;
     display: block;
     white-space: nowrap;
 
