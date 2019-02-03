@@ -6,8 +6,7 @@
   z-index: 1000;
   position: relative;
   width: 64px;
-  height: calc(100% - 58px);
-  min-height: calc(100% - 58px);
+  height: 100%;
   background-color: $sidebar-bg;
 
   ul {
