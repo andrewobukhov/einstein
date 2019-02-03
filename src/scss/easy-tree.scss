@@ -134,8 +134,10 @@
 
 
   .node-wrapper {
-    display: flex;
-    align-items: flex-start;
+    //display: flex;
+    //align-items: flex-start;
+    display: block;
+    white-space: nowrap;
 
     .toggle-children-wrapper {
       vertical-align: middle;

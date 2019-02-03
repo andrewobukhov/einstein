@@ -246,9 +246,8 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
 
 
   onScroll() {
-    // throttle(() =>
-      this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 55;
-        // , 50, {trailing: false})();
+    throttle(() =>
+      this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 55, 100, {trailing: false})();
   }
 
   // workarounds for update host element height style
