@@ -1,7 +1,7 @@
 import {
   AfterContentInit,
   AfterViewInit,
-  Component,
+  Component, HostListener,
   OnInit,
   ViewChild
 } from '@angular/core';
@@ -196,7 +196,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
       }
     ];
 
-    this.nodes =  nodes.concat(TreeData.nodes);
+    this.nodes = nodes.concat(TreeData.nodes);
 
     CommonService.leftSideBarState.subscribe(sideBarOpen => this.isClosed = !sideBarOpen);
 
@@ -225,12 +225,6 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
     this.treeItemsOffset = 395 - 55 + this.treeContainerElement.nativeElement.scrollLeft;
   }
 
-  onScroll() {
-    throttle(() =>
-      this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 55, 50, {trailing: false})();
-  }
-
-
   customScroll(e, element) {
     const delta = e.deltaY || e.detail || e.wheelDelta;
 
@@ -248,5 +242,21 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
       e.returnValue = false;
       return;
     }
+  }
+
+
+  onScroll() {
+    // throttle(() =>
+      this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 55;
+        // , 50, {trailing: false})();
+  }
+
+  // workarounds for update host element height style
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+  }
+
+  getGlobalHeaderOffset(element) {
+    return element.getBoundingClientRect().y || 0;
   }
 }

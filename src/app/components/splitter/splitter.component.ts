@@ -29,8 +29,9 @@ export class SplitterComponent implements AfterViewInit {
     this.window_width = this.elementRef.nativeElement.clientWidth;
     this.window_half_width = Math.ceil(this.window_width / 2);
 
-    let dx = this.leftBound;
+    const dx = this.leftBound;
     this.firstArea.nativeElement.style.minWidth = dx + 'px';
+    this.firstArea.nativeElement.style.width = dx + 'px';
      this.splitter.nativeElement.style.marginLeft = dx + 'px';
     this.secondArea.nativeElement.style.marginLeft = this.gutterSize + 'px';
 
@@ -76,6 +77,7 @@ export class SplitterComponent implements AfterViewInit {
     }
 
     this.firstArea.nativeElement.style.minWidth = dx + 'px';
+    this.firstArea.nativeElement.style.width = dx + 'px';
     this.splitter.nativeElement.style.marginLeft = dx + 'px';
     this.last_x = nowX;
   };
@@ -116,6 +118,7 @@ export class SplitterComponent implements AfterViewInit {
       dx = this.window_half_width;
       this.last_x = dx;
       this.firstArea.nativeElement.style.minWidth = dx + 'px';
+      this.firstArea.nativeElement.style.width = dx + 'px';
     }
 
     this.splitter.nativeElement.style.marginLeft = dx + 'px';

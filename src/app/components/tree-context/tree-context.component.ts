@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, ViewEncapsulation, HostListener} from '@angular/core';
+import {Component, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-tree-context',
@@ -8,18 +8,46 @@ import {Component, OnInit, Input, ViewEncapsulation, HostListener} from '@angula
 })
 export class TreeContextComponent implements OnInit {
 
+  @ViewChild('contextDropdown') contextDropdown: any;
   @Input()
-  public nodeData: any;
+  globalHeaderOffset: any;
   @Input()
-  public parentWidth: any;
+  scrollRedirectionElement: any;
 
-  constructor() { }
+  nodeData: any;
+  contextTarget: any;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  // workarounds for update host element height style
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
+  getOffset() {
+    return this.contextTarget ? this.contextTarget.getBoundingClientRect().y - (this.globalHeaderOffset || 0) : 0;
   }
+
+  redirectScroll(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    event.returnValue = false;
+    // this.scrollRedirectionElement.scrollTo(event.scrollX, event.scrollY);
+    return false;
+  }
+
+  open(nodeData: any, contextTarget: any) {
+    this.contextDropdown.hide();
+    this.contextDropdown.show();
+    this.nodeData = nodeData;
+    this.contextTarget = contextTarget;
+  }
+
+  hide() {
+    this.contextDropdown.hide();
+  }
+
+  isOpen(node) {
+    return this.contextDropdown.isOpen && node.id === this.nodeData.id;
+  }
+
 }
