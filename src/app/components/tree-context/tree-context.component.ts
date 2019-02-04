@@ -1,4 +1,16 @@
-import {Component, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
+import {TabsetComponent} from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-tree-context',
@@ -9,13 +21,14 @@ import {Component, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@a
 export class TreeContextComponent implements OnInit {
 
   @ViewChild('contextDropdown') contextDropdown: any;
+  @ViewChild('contextTabs') contextTabs: TabsetComponent;
+
   @Input()
   globalHeaderOffset: any;
-  @Input()
-  scrollRedirectionElement: any;
 
   nodeData: any;
   contextTarget: any;
+  lastChangedIds = new Array<any>();
 
   constructor() {
   }
@@ -23,16 +36,23 @@ export class TreeContextComponent implements OnInit {
   ngOnInit() {
   }
 
+  onMove(event) {
+    this.lastChangedIds = [];
+    if (event.active === true) {
+      this.lastChangedIds.push(this.nodeData.id);
+    }
+  }
+
+  onCancel() {
+    this.lastChangedIds = [];
+  }
+
   getOffset() {
     return this.contextTarget ? this.contextTarget.getBoundingClientRect().y - (this.globalHeaderOffset || 0) : 0;
   }
 
-  redirectScroll(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    event.returnValue = false;
-    // this.scrollRedirectionElement.scrollTo(event.scrollX, event.scrollY);
-    return false;
+  isCancelAction() {
+    return this.lastChangedIds.findIndex(item => item === this.nodeData.id) > -1;
   }
 
   open(nodeData: any, contextTarget: any) {
@@ -49,5 +69,4 @@ export class TreeContextComponent implements OnInit {
   isOpen(node) {
     return this.contextDropdown.isOpen && node.id === this.nodeData.id;
   }
-
 }

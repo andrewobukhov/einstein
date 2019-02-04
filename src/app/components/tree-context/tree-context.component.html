@@ -1,16 +1,14 @@
 <div class="tree-context-container" [ngClass]="{open: contextDropdown.isOpen}"
-     (wheel)="redirectScroll($event)"
-     (mousewheel)="redirectScroll($event)"
      [style.top.px]="getOffset()"
      (mouseleave)="contextDropdown.hide()">
   <div dropdown class="mini-tabs" #contextDropdown="bs-dropdown"
        [autoClose]="false" (mouseleave)="contextDropdown.hide()" placement="right">
     <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-      <li>
-        <tabset [justified]="true">
-          <tab active="false" heading="Add" class="ic-add" id="tab1"></tab>
-          <tab active="false" heading="Move" class="ic-move"></tab>
-          <tab active="false" heading="Edit" class="ic-ed active">
+      <li [hidden]="isCancelAction()">
+        <tabset [justified]="true" #contextTabs>
+          <tab heading="Add" class="ic-add"></tab>
+          <tab heading="Move" class="ic-move" (select)="onMove($event)"></tab>
+          <tab [active]="true" heading="Edit" class="ic-ed active">
             <div class="block">
               <p><span class="ring-icon icon-ico-actions-copy"></span><br>Copy</p>
             </div>
@@ -23,6 +21,13 @@
           </tab>
         </tabset>
       </li>
+      <li *ngIf="isCancelAction()">
+        <div class="cancel-action" (click)="onCancel()">
+          <span class="cancel-icon"></span>
+          <span>Cancel</span>
+        </div>
+      </li>
+
     </ul>
   </div>
 </div>

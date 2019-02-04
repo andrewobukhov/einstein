@@ -41,9 +41,9 @@
         </div>
       </div>
     </div>
-    <div [hidden]="!treeViewMode" class="row tree" #treeContainer (scroll)="onScroll()">
+    <div [hidden]="!treeViewMode" class="row tree" #treeContainer (scroll)="onScroll(); dropdownContext.hide()">
       <div class="col-12 easy-tree">
-        <tree-root [nodes]="nodes" [options]="{scrollContainer: treeContainer}">
+        <tree-root [nodes]="nodes" [options]="{animateExpand: false, scrollContainer: treeContainer}">
           <ng-template #treeNodeTemplate let-node let-index="index">
             <app-tree-node-context [nodeData]="node.data"
                                    [parentWidth]="(treeContainer.clientWidth || 395) - 55"
@@ -63,7 +63,6 @@
         <input class="btn btn-default btn-action" type="button" value="Bulk Update">
       </span>
     </div>
-    <app-tree-context #dropdownContext [globalHeaderOffset]="getGlobalHeaderOffset(sidebar)"
-                      [scrollRedirectionElement]="treeContainer"></app-tree-context>
+    <app-tree-context #dropdownContext [globalHeaderOffset]="getGlobalHeaderOffset(sidebar)"></app-tree-context>
   </div>
 </div>

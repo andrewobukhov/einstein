@@ -146,6 +146,7 @@
   .node-wrapper {
     display: block;
     white-space: nowrap;
+    overflow: hidden;
 
     .toggle-children-wrapper {
       vertical-align: middle;

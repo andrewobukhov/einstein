@@ -15,6 +15,7 @@
     }
 
     .dropdown-menu.show {
+      min-width: auto;
       top: -5px !important;
       box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.16);
     }
@@ -129,6 +130,32 @@
     .tab-content {
       padding: 0px;
       border: none;
+    }
+  }
+
+  .cancel-action {
+    padding: 3px 6px;
+    border-radius: 3px;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.16);
+    background-color: $white;
+    color: $dark-blue;
+    font-size: 11px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+
+    .cancel-icon {
+      width: 14px;
+
+      &:before {
+        content: "\ea0e";
+        font-family: 'icomoon' !important;
+        color: $dark-blue;
+        font-size: 11px;
+        vertical-align: top;
+      }
     }
   }
 }
