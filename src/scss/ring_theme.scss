@@ -15,20 +15,7 @@ body {
   color: $black;
   overflow-x: hidden;
 
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    background-color: $right-sidebar-active-item;
-  }
+  @include custom-scrollbar(5px, transparent, $right-sidebar-active-item)
 }
 
 hr {

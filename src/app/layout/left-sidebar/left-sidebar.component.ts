@@ -196,7 +196,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
       }
     ];
 
-    this.nodes = nodes.concat(TreeData.nodes);
+   this.nodes = nodes.concat(TreeData.nodes);
 
     CommonService.leftSideBarState.subscribe(sideBarOpen => this.isClosed = !sideBarOpen);
 

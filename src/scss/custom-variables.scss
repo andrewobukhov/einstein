@@ -34,17 +34,23 @@
   }
 
   &::-webkit-scrollbar {
-    width: $width;
-    height: $width;
+    width: $width + 4px;
+    height: $width + 4px;
     background-color: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: 3.5px;
+    border-radius: 5.5px;
     background-color: $track-color;
+    border: 2px solid transparent;
+    background-clip: content-box;
   }
 
   ::-webkit-resizer,
   ::-webkit-scrollbar-button,
   ::-webkit-scrollbar-corner {display:none}
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $track-color;
+  }
 }
