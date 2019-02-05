@@ -48,7 +48,7 @@
         overflow-y: auto;
         max-height: calc(35vh - 60px);
 
-        @include webkit-scrollbar(7px, $tree-input-grey, $btn-default-focused-color);
+        @include custom-scrollbar(7px, $tree-input-grey, $btn-default-focused-color);
       }
 
       &.version-controls {

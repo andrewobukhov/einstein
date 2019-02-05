@@ -24,7 +24,10 @@
 }
 
 
-@mixin webkit-scrollbar($width, $bg-color, $track-color) {
+@mixin custom-scrollbar($width, $bg-color, $track-color) {
+
+  scrollbar-color: $track-color $bg-color;
+  scrollbar-width: thin;
 
   &::-webkit-scrollbar-track {
     background-color: $bg-color;

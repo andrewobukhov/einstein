@@ -269,7 +269,7 @@ a {
       }
     }
 
-    @include webkit-scrollbar(7px, $tree-input-grey, $btn-default-focused-color)
+    @include custom-scrollbar(7px, $tree-input-grey, $btn-default-focused-color)
   }
 
   .add-controls {
