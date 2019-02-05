@@ -1,9 +1,13 @@
 <div class="add-dropdown">
-  <div dropdown placement="bottom right" [insideClick]="true" #dropdown="bs-dropdown">
+  <div dropdown placement="bottom right" [insideClick]="true"
+       #dropdown="bs-dropdown"
+       (onHidden)="onClose()"
+       (onShown)="onOpen()"
+       #dropdownMenu class="{{determinePositionClass(dropdown.isOpen)}}">
     <span dropdownToggle  id="btn-dropdown-add-{{instanceId}}" [attr.aria-controls]="'dropdown-add-' + instanceId"><ng-content></ng-content></span>
     <ng-container *ngIf="rightPosition">
-      <ul class="dropdown-menu dropdown-menu-right multi-select-dropdown" *dropdownMenu id="dropdown-add-{{instanceId}}"
-          [attr.aria-labelledby]="'btn-dropdown-add-' + instanceId">
+      <ul class="dropdown-menu dropdown-menu-right multi-select-dropdown" *dropdownMenu
+          id="dropdown-add-{{instanceId}}" [attr.aria-labelledby]="'btn-dropdown-add-' + instanceId">
         <ng-container *ngTemplateOutlet="itemsTemplate"></ng-container>
       </ul>
     </ng-container>
