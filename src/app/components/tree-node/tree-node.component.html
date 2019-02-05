@@ -7,8 +7,7 @@
       </span>
       <span class="name" [ngClass]="{hovered: dropdownContext.isOpen(nodeData)}">{{ nodeData.name }}</span>
     </a>
-    <span class="items-count" (mouseover)="dropdownContext.hide()" (mouseenter)="dropdownContext.hide()"
-          [style.left.px]="parentWidth - item.getBoundingClientRect().x">{{ nodeData.count || ' ' }}    </span>
+    <span class="items-count" (mouseover)="dropdownContext.hide()" (mouseenter)="dropdownContext.hide()">{{ nodeData.count || ' ' }}    </span>
 
   </div>
 </div>

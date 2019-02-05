@@ -6,7 +6,6 @@ import {
   ViewChild
 } from '@angular/core';
 import {CommonService} from '../../common/common-service';
-import {throttle} from 'lodash';
 import {TreeData} from './tree-data';
 
 @Component({
@@ -203,7 +202,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
   }
 
   ngAfterContentInit(): void {
-    this.treeViewElement = document.getElementsByClassName('tree')[0];
+    this.treeViewElement = document.getElementsByClassName('easy-tree')[0];
     this.treeViewElement['onmousewheel'] = e => {
       this.customScroll(e, this.treeViewElement);
     };
@@ -222,7 +221,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
   }
 
   ngAfterViewInit(): void {
-    this.treeItemsOffset = 395 - 55 + this.treeContainerElement.nativeElement.scrollLeft;
+
   }
 
   customScroll(e, element) {
@@ -246,8 +245,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
 
 
   onScroll() {
-    throttle(() =>
-      this.treeItemsOffset = (this.treeContainerElement.nativeElement.clientWidth || 395) - 55, 100, {trailing: false})();
+
   }
 
   // workarounds for update host element height style

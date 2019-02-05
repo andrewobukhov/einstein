@@ -41,8 +41,8 @@
         </div>
       </div>
     </div>
-    <div [hidden]="!treeViewMode" class="row tree" #treeContainer (scroll)="onScroll(); dropdownContext.hide()">
-      <div class="col-12 easy-tree">
+    <div [hidden]="!treeViewMode" class="row tree" >
+      <div class="col-12 easy-tree" #treeContainer (scroll)="onScroll(); dropdownContext.hide()">
         <tree-root [nodes]="nodes" [options]="{animateExpand: false, scrollContainer: treeContainer}">
           <ng-template #treeNodeTemplate let-node let-index="index">
             <app-tree-node-context [nodeData]="node.data"

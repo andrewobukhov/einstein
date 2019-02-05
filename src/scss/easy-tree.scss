@@ -3,9 +3,14 @@
 .easy-tree {
   margin-bottom: 10px;
   padding-right: 0;
+  position: static;
+  overflow: auto;
+  height: 100%;
+  @include custom-scrollbar(5px, transparent, $right-sidebar-active-item)
 
   .angular-tree-component {
     overflow: visible;
+    position: static;
   }
 
   tree-viewport {
@@ -18,7 +23,7 @@
   }
 
   .node-content-wrapper {
-    position: relative;
+/*    position: relative;*/
     width: 100%;
     padding: 2px;
     vertical-align: top;
@@ -96,7 +101,9 @@
       span.items-count {
         font-size: 12px;
         position: absolute;
-        top: -1px;
+        top: auto;
+        margin-top: -14px;
+        right: 9px;
         padding: 5px 9px 5px 10px;
         color: $tree-base-grey;
         background-color: $sidebar-bg;
@@ -157,7 +164,9 @@
     span.items-count {
       font-size: 12px;
       position: absolute;
-      top: -1px;
+      top: auto;
+      margin-top: -14px;
+      right: 9px;
       padding: 5px 9px 5px 10px;
       color: $tree-base-grey;
       background-color: $sidebar-bg;
