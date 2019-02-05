@@ -3,17 +3,11 @@
 .tree-node-container {
   &.root-node {
     padding-left: 14px;
-
-    .tree-item {
-      .checkbox {
-        left: -4px;
-      }
-    }
   }
   .tree-item {
     .checkbox {
       position: absolute;
-      left: -18px;
+      left: -20px;
 
       .label {
         margin: auto 0 auto 30px;
