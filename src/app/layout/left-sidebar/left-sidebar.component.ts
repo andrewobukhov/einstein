@@ -42,7 +42,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
             children: [
               {
                 id: '99',
-                name: 'UBP-961511: Mobile Web: Add Extension Very Very Very Very Very Very Very Very Very Very Long Long Long Long Long Long',
+                name: 'UBP-961511: Mobile Web: Add Extension Very Very Very Very Very Very Very Very Very Very Long Long Long Long Long Long Name',
                 key: 'UBP-961511',
                 count: 12
               }, {
