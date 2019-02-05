@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {DragulaService} from 'ng2-dragula';
 
 @Component({
   selector: 'app-steps-table',
@@ -15,7 +16,13 @@ export class StepsTableComponent implements OnInit {
     return this.model.children;
   }
 
-  constructor() { }
+  constructor(private dragulaService: DragulaService) {
+    dragulaService.createGroup('STEPS', {
+      moves: (el, container, handle) => {
+        return handle.className === 'handle';
+      }
+    });
+  }
 
   ngOnInit() {
   }
