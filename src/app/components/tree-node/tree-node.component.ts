@@ -12,7 +12,7 @@ export class TreeNodeComponent implements OnInit {
   @Input()
   public nodeData: any;
   @Input()
-  public parentWidth: any;
+  public parent: any;
   @Input()
   public dropdownContext: TreeContextComponent;
 

@@ -145,13 +145,12 @@
       overflow: auto;
       flex: 1;
       margin-left: -30px;
-      @include custom-scrollbar(5px, transparent, $right-sidebar-active-item)
+      @include custom-scrollbar(5px, $sidebar-bg, $right-sidebar-active-item)
     }
 
     .tree {
       position: relative;
       margin-bottom: 10px;
-      overflow: hidden;
 
       .fading {
         content: '';

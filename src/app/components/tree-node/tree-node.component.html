@@ -1,13 +1,13 @@
 <div class="tree-node-container" #item [ngClass]="{'root-node': nodeData.children && nodeData.selectable}">
   <div class="tree-item" (mouseover)="dropdownContext.open(nodeData, item)">
-    <a title="select" >
+    <a title="select">
       <span class="checkbox" [hidden]="!nodeData.selectable" (click)="$event.stopPropagation()">
          <input type="checkbox" class="checkbox-btn" [id]="'radio' + nodeData.id"/>
          <label [for]="'radio' + nodeData.id" class="label"></label>
       </span>
       <span class="name" [ngClass]="{hovered: dropdownContext.isOpen(nodeData)}">{{ nodeData.name }}</span>
     </a>
-    <span class="items-count" (mouseover)="dropdownContext.hide()" (mouseenter)="dropdownContext.hide()">{{ nodeData.count || ' ' }}    </span>
+    <span class="items-count" (mouseover)="dropdownContext.hide()" (mouseenter)="dropdownContext.hide()" [style.left.px]="parent.clientWidth - 55">{{ nodeData.count || ' ' }}    </span>
 
   </div>
 </div>

@@ -1,11 +1,11 @@
 import {
   AfterContentInit,
-  AfterViewInit,
   Component, HostListener,
   OnInit,
   ViewChild
 } from '@angular/core';
 import {CommonService} from '../../common/common-service';
+import {throttle} from 'lodash';
 import {TreeData} from './tree-data';
 
 @Component({
@@ -13,7 +13,7 @@ import {TreeData} from './tree-data';
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.scss']
 })
-export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterViewInit {
+export class LeftSidebarComponent implements OnInit, AfterContentInit {
 
   public nodes = [];
   public options = {};
@@ -202,7 +202,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
   }
 
   ngAfterContentInit(): void {
-    this.treeViewElement = document.getElementsByClassName('easy-tree')[0];
+    this.treeViewElement = document.getElementsByClassName('tree')[0];
     this.treeViewElement['onmousewheel'] = e => {
       this.customScroll(e, this.treeViewElement);
     };
@@ -217,10 +217,6 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
     this.treeTableViewElement['onwheel'] = e => {
       this.customScroll(e, this.treeTableViewElement);
     };
-
-  }
-
-  ngAfterViewInit(): void {
 
   }
 
@@ -243,10 +239,6 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit, AfterView
     }
   }
 
-
-  onScroll() {
-
-  }
 
   // workarounds for update host element height style
   @HostListener('window:scroll', [])
