@@ -24,6 +24,7 @@
     width: 100%;
     padding: 2px;
     vertical-align: top;
+    height: 15px;
   }
 
   a {
@@ -79,9 +80,12 @@
   }
 
   .toggle-children-placeholder {
-    margin-right: 10px;
-
     color: $btn-group-border;
+    width: 20px;
+
+    @supports ( -moz-appearance:none ){
+      top: -3px;
+    }
 
     &:before {
       font-size: 24px;
@@ -152,6 +156,9 @@
     display: block;
     white-space: nowrap;
     width: calc(100% - 20px);
+    height: 15px;
+    margin-bottom: 3px;
+    margin-top: 3px;
 
     .toggle-children-wrapper {
       vertical-align: middle;
@@ -215,7 +222,6 @@
   }
 
   .tree-node-leaf {
-    height: 27px;
 
     .node-content-wrapper-focused,
     .node-content-wrapper-active {
