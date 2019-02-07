@@ -62,7 +62,7 @@ export class SplitterComponent implements AfterViewInit {
   spMouseMove = (e) => {
     this.isInProgress = true;
     this.resetPosition(e.clientX);
-    CommonService.splitterActivity.next(e.clientX);
+    CommonService.splitterActivityStart.next();
   };
 
   resetPosition = (nowX: number) => {
@@ -80,10 +80,13 @@ export class SplitterComponent implements AfterViewInit {
       return;
     }
 
+    CommonService.splitterActivityDelta.next(nowX - this.last_x);
+
     this.firstArea.nativeElement.style.minWidth = dx + 'px';
     this.firstArea.nativeElement.style.width = dx + 'px';
     this.splitter.nativeElement.style.marginLeft = dx + 'px';
     this.last_x = nowX;
+
   };
 
   closeLeftArea() {
@@ -102,7 +105,7 @@ export class SplitterComponent implements AfterViewInit {
 
     if (this.leftSideBarState === sideBarState.OPENED) {
       this.closeLeftArea();
-      CommonService.splitterActivity.next(0);
+      CommonService.splitterActivityDelta.next(0);
       this.leftSideBarState = sideBarState.CLOSED;
     } else {
       this.resetPosition(this.leftBound + this.last_x);

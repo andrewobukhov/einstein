@@ -44,7 +44,7 @@ export class TextTableComponent implements OnInit, AfterViewInit {
       });
     });
 
-    CommonService.splitterActivity.subscribe(() => {
+    CommonService.splitterActivityDelta.subscribe(() => {
       setTimeout(() => {
         element.css({'height': 'auto'});
         element.css({'height': this.textArea.nativeElement.scrollHeight + 'px', padding: 0});

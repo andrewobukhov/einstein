@@ -3,11 +3,7 @@
 .easy-tree {
   margin-bottom: 10px;
   padding-right: 0;
-  /*   position: static;
-*  overflow: auto;
-    height: 100%;
-
-    @include custom-scrollbar(5px, $sidebar-bg, $right-sidebar-active-item);*/
+  display: table;
 
   .angular-tree-component {
     overflow: visible;

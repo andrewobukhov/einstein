@@ -201,25 +201,34 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit(): void {
+    // prevent global scroll (scroll event does not have bubble effect)
     this.treeViewElement = document.getElementsByClassName('tree')[0];
     this.treeViewElement['onmousewheel'] = e => {
-      this.customScroll(e, this.treeViewElement);
+      this.sideBarSeparateScroll(e, this.treeViewElement);
     };
     this.treeViewElement['onwheel'] = e => {
-      this.customScroll(e, this.treeViewElement);
+      this.sideBarSeparateScroll(e, this.treeViewElement);
     };
 
     this.treeTableViewElement = document.getElementsByClassName('tree-table')[0];
     this.treeTableViewElement['onmousewheel'] = e => {
-      this.customScroll(e, this.treeTableViewElement);
+      this.sideBarSeparateScroll(e, this.treeTableViewElement);
     };
     this.treeTableViewElement['onwheel'] = e => {
-      this.customScroll(e, this.treeTableViewElement);
+      this.sideBarSeparateScroll(e, this.treeTableViewElement);
     };
 
+    // adjust tree width( tree does not have fixed width)
+    const tree = document.getElementsByClassName('easy-tree')[0];
+    CommonService.splitterActivityStart.subscribe(() => {
+      tree['style'].minWidth = tree.clientWidth + 'px';
+    });
+    CommonService.splitterActivityDelta.subscribe((delta) => {
+      tree['style'].minWidth = tree.clientWidth + delta + 'px';
+    });
   }
 
-  customScroll(e, element) {
+  sideBarSeparateScroll(e, element) {
     const delta = e.deltaY || e.detail || e.wheelDelta;
 
 
@@ -235,6 +244,17 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
       e.stopPropagation();
       e.returnValue = false;
       return;
+    }
+  }
+
+  treeScrollRestrictions(event) {
+    const element = this.treeContainerElement.nativeElement;
+    const maxScroll =  element.scrollWidth - element.clientWidth;
+    if ( maxScroll - element.scrollLeft < 10) {
+      event.stopPropagation();
+      event.preventDefault();
+      event.returnValue = false;
+     // element.scrollBy(-10, 0);
     }
   }
 
