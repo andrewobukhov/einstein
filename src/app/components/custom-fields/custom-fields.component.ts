@@ -25,7 +25,7 @@ export class CustomFieldsComponent implements OnInit {
 
   ngOnInit() {
     this.keywords = ['Functionality', 'Accepted_ODS', 'Admin Web', 'Directory Integration', 'RBS_Aplicable',
-      'Functionality', 'Accepted_ODS', 'Admin Web', 'Directory Integration', 'RBS_Aplicable',
+      'Functionality', 'Accepted_ODS', 'Admin Web', 'Directory Integration', 'RBS_Aplicable', 'Directory Integration', 'RBS_Aplicable',
       'Functionality', 'Accepted_ODS', 'Admin Web', 'Directory Integration', 'RBS_Aplicable'];
     this.tags = ['9.1_FT2_XMN', 'Angular 4.0'];
     this.quantity = ['one in release', 'two in release'];
