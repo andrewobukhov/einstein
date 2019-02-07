@@ -49,10 +49,10 @@
           content: '';
           background-color: $white;
           height: 100%;
-          width: 2px;
+          width: 5px;
           position: absolute;
           z-index: 10000;
-          left: -1px;
+          left: -2px;
           border-top: 1px solid $border2;
           border-bottom: 1px solid $border2;
         }

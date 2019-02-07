@@ -31,6 +31,8 @@ export class AddDropdownComponent implements OnInit {
   onClose() {
     this.windowHeight = document.body.scrollHeight;
     this.positioningClasses = ' open show ';
+    this.dropdownMenuElement.nativeElement.getElementsByTagName('ul')[0].style.marginTop = 'inherit';
+
   }
   onOpen() {
     this.windowHeight = document.body.scrollHeight;
