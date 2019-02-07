@@ -51,9 +51,11 @@
             </app-tree-node-context>
           </ng-template>
         </tree-root>
-
       </div>
-      <!--      <div class="fading" [style.left.px]="treeContainer.offsetWidth - 66 + treeContainer.scrollLeft"></div>-->
+
+      <div class="fading" [style.right.px]="-treeContainer.scrollLeft"
+           [style.top.px]="treeContainer.scrollTop"></div>
+
     </div>
     <div [hidden]="treeViewMode" class="row tree-table">
       <app-tree-table-view [model]="nodes"></app-tree-table-view>

@@ -158,10 +158,12 @@
         position: absolute;
         right: 0;
         top: 0;
-        width: 60px;
-        background: #fafafa;
+        width: 10px;
+        margin-left: 0;
+        background: $sidebar-bg;
         height: 100%;
         z-index: 2;
+        float: right;
       }
 
       .context-over-hiding {

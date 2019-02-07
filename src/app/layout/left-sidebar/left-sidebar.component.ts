@@ -5,7 +5,6 @@ import {
   ViewChild
 } from '@angular/core';
 import {CommonService} from '../../common/common-service';
-import {throttle} from 'lodash';
 import {TreeData} from './tree-data';
 
 @Component({
