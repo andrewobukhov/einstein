@@ -194,7 +194,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
       }
     ];
 
-   //this.nodes = nodes.concat(TreeData.nodes);
+    //this.nodes = nodes.concat(TreeData.nodes);
     this.nodes = TreeData.nodes;
     CommonService.leftSideBarState.subscribe(sideBarOpen => this.isClosed = !sideBarOpen);
 
@@ -218,13 +218,10 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
       this.sideBarSeparateScroll(e, this.treeTableViewElement);
     };
 
-    // adjust tree width( tree does not have fixed width)
-    const tree = document.getElementsByClassName('easy-tree')[0];
-    CommonService.splitterActivityStart.subscribe(() => {
-     tree['style'].minWidth = tree.clientWidth + 'px';
-    });
     CommonService.splitterActivityDelta.subscribe((delta) => {
-      tree['style'].minWidth = tree.clientWidth + delta + 'px';
+      if (delta > 0) {
+        this.treeViewElement.scrollBy(-delta, 0);
+      }
     });
   }
 
