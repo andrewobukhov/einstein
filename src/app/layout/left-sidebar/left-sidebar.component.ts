@@ -221,7 +221,7 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
     // adjust tree width( tree does not have fixed width)
     const tree = document.getElementsByClassName('easy-tree')[0];
     CommonService.splitterActivityStart.subscribe(() => {
-      tree['style'].minWidth = tree.clientWidth + 'px';
+     tree['style'].minWidth = tree.clientWidth + 'px';
     });
     CommonService.splitterActivityDelta.subscribe((delta) => {
       tree['style'].minWidth = tree.clientWidth + delta + 'px';
@@ -246,18 +246,6 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
       return;
     }
   }
-
-  treeScrollRestrictions(event) {
-    const element = this.treeContainerElement.nativeElement;
-    const maxScroll =  element.scrollWidth - element.clientWidth;
-    if ( maxScroll - element.scrollLeft < 10) {
-      event.stopPropagation();
-      event.preventDefault();
-      event.returnValue = false;
-     // element.scrollBy(-10, 0);
-    }
-  }
-
 
   // workarounds for update host element height style
   @HostListener('window:scroll', [])
