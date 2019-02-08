@@ -42,8 +42,9 @@
       </div>
     </div>
     <div [hidden]="!treeViewMode" class="row tree" #treeContainer (scroll)="dropdownContext.hide()">
-
+      <div class="fading"></div>
       <div class="col-12 easy-tree" [style.minWidth.px]="treeContainer.clientWidth + treeContainer.scrollLeft">
+
         <tree-root [nodes]="nodes" [options]="{allowDrag: true, allowDrop: true}">
           <ng-template #treeNodeTemplate let-node let-index="index">
             <app-tree-node-context [nodeData]="node.data"
@@ -53,10 +54,6 @@
           </ng-template>
         </tree-root>
       </div>
-
-      <div class="fading" [style.right.px]="-treeContainer.scrollLeft"
-           [style.top.px]="treeContainer.scrollTop"></div>
-
     </div>
     <div [hidden]="treeViewMode" class="row tree-table">
       <app-tree-table-view [model]="nodes"></app-tree-table-view>

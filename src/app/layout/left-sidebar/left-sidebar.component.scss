@@ -149,19 +149,18 @@
     }
 
     .tree {
-      position: relative;
       margin-bottom: 10px;
 
       .fading {
         content: '';
         display: block;
         position: absolute;
-        right: 0;
+        right: 1px;
         top: 0;
-        width: 10px;
+        width: 15px;
         margin-left: 0;
         background: $sidebar-bg;
-        height: 100%;
+        height: calc(100% - 84px);
         z-index: 1;
         float: right;
       }
