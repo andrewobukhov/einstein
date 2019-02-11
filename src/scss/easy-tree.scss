@@ -3,7 +3,11 @@
 .easy-tree {
   margin-bottom: 10px;
   padding-right: 0;
-  display: block;
+  display: table;
+
+  @supports ( -moz-appearance:none ){
+    display: block;
+  }
 
   .angular-tree-component {
     overflow: visible;

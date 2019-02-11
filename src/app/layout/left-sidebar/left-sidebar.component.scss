@@ -155,12 +155,12 @@
         content: '';
         display: block;
         position: absolute;
-        right: 1px;
+        right: 0;
         top: 0;
         width: 15px;
         margin-left: 0;
         background: $sidebar-bg;
-        height: calc(100% - 84px);
+        height: 100%;
         z-index: 1;
         float: right;
       }
