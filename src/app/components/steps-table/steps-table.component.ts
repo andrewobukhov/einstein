@@ -17,13 +17,16 @@ export class StepsTableComponent implements OnInit {
   }
 
   constructor(private dragulaService: DragulaService) {
-    dragulaService.createGroup('STEPS', {
-      moves: (el, container, handle) => {
-        return handle.className === 'handle';
-      }
-    });
+
   }
 
   ngOnInit() {
+    if (!this.dragulaService.find('STEPS')) {
+      this.dragulaService.createGroup('STEPS', {
+        moves: (el, container, handle) => {
+          return handle.className === 'handle';
+        }
+      });
+    }
   }
 }
