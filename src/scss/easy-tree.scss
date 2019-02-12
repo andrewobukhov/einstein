@@ -41,7 +41,6 @@
 
       &.hovered {
         font-size: 13px;
-        font-weight: normal;
         color: $tree-hover-grey;
       }
     }
@@ -127,7 +126,6 @@
 
           &.hovered {
             font-size: 13px;
-            font-weight: normal;
             color: $tree-hover-grey;
           }
         }
@@ -196,7 +194,6 @@
       &:hover {
         .name {
           font-size: 13px;
-          font-weight: normal;
           color: $tree-hover-grey;
         }
       }
@@ -236,14 +233,8 @@
       background: none;
 
       a {
-        .name {
+        .name , .name.hovered {
           color: $dark-blue;
-
-          &:hover {
-            font-size: 13px;
-            font-weight: 500;
-            color: $dark-blue;
-          }
         }
 
       }
