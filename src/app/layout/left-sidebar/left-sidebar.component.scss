@@ -151,6 +151,10 @@
     .tree {
       margin-bottom: 10px;
 
+      @supports ( -moz-appearance:none ){
+        scroll-behavior: smooth;
+      }
+
       .fading {
         content: '';
         display: block;

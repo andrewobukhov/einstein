@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {TestCasesData} from './test-data/test-cases-data';
 import {SplitComponent} from 'angular-split';
 import {CommonService} from './common/common-service';
@@ -27,5 +27,4 @@ export class AppComponent implements OnInit {
     this.sideBarState = state;
     CommonService.leftSideBarState.next(this.sideBarState);
   }
-
 }

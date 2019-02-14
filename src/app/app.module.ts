@@ -32,6 +32,7 @@ import {SplitterComponent} from './components/splitter/splitter.component';
 import {SplitAreaComponent} from './components/split-area/split-area.component';
 import {AppRoutingModule} from './app-routing.module';
 import {TreeContextComponent} from './components/tree-context/tree-context.component';
+import { InternalScrollDirective } from './common/internal-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {TreeContextComponent} from './components/tree-context/tree-context.compo
     TreeNodeComponent,
     SplitterComponent,
     SplitAreaComponent,
-    TreeContextComponent
+    TreeContextComponent,
+    InternalScrollDirective
   ],
   imports: [
     BrowserModule,

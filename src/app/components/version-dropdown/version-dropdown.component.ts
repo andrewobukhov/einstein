@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-version-dropdown',
@@ -12,7 +12,7 @@ export class VersionDropdownComponent implements OnInit {
   public selectedCheckboxIndex = 3;
   public currentVersion = {name: 'Ver. 3', isChecked: false};
 
-  constructor() {
+  constructor(private ref: ElementRef) {
   }
 
   ngOnInit() {

@@ -28,8 +28,8 @@
       <input type="text" class="form-control search" placeholder="Find">
     </div>
   </li>
-  <li class="list-block">
-    <div class="list-group">
+  <li class="list-block" #scrollContainer>
+    <div class="list-group" appInternalScroll [scrollAreaContainer]="scrollContainer">
       <a  class="list-group-item" *ngFor="let key of keys; index as idx;" (click)="$event.stopPropagation()">
         <input type="checkbox" class="checkbox-btn" [id]="'radio-' + instanceId + '-' + idx"/>
         <label [for]="'radio-' + instanceId + '-' + idx" class="label">{{key}}</label>

@@ -24,7 +24,7 @@
         <input type="button" dropdownToggle class="btn btn-light" [ngClass]="{'no-selected': true, 'selected': false}"
                id="btn-dropdown-type" aria-controls="dropdown-type"
                [value]="'Manual'">
-        <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
+        <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu appInternalScroll
             id="dropdown-type" aria-labelledby="btn-dropdown-type">
           <li><a >Manual</a></li>
           <li><a >Automatic</a></li>
@@ -37,7 +37,7 @@
         <input type="button" dropdownToggle class="btn btn-light selected" [ngClass]="{'no-selected': false}"
                [value]="'P2'" id="btn-dropdown-priority" aria-controls="dropdown-priority">
 
-        <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
+        <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu appInternalScroll
             id="dropdown-priority" aria-labelledby="btn-dropdown-priority"
             role="menu">
           <li><a >P1</a></li>
@@ -52,7 +52,7 @@
               id="btn-dropdown-more" aria-controls="dropdown-more">More <span
         class="ring-icon icon-ico-listopen"></span></button>
 
-      <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu [ngClass]="{'unwrapped': isShowAdd}"
+      <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu [ngClass]="{'unwrapped': isShowAdd}" appInternalScroll [internalScrollDisabled]="isShowAdd"
           id="dropdown-more" aria-labelledby="btn-dropdown-more">
         <li [ngClass]="{'open': isShowAdd}"><a  (click)="isShowAdd = true">Add to Test Plan</a>
           <ul class="dropdown-sub-menu dropdown-menu-right multi-select-dropdown" [ngClass]="{'inner': isShowAdd}">
@@ -61,8 +61,8 @@
                 <input type="text" class="form-control search" id="search" placeholder="Find">
               </div>
             </li>
-            <li class="list-block">
-              <div class="list-group">
+            <li class="list-block" #scrollContainer>
+              <div class="list-group" appInternalScroll [scrollAreaContainer]="scrollContainer">
                 <a  class="list-group-item" *ngFor="let key of keys; index as idx;" (click)="$event.stopPropagation()">
                   <input type="checkbox" class="checkbox-btn" [id]="'radio-test-plan-' + idx"/>
                   <label [for]="'radio-test-plan-' + idx" class="label">{{key}}</label>

@@ -21,7 +21,6 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
 
   public treeViewElement: any;
   public treeTableViewElement: any;
-  public treeItemsOffset: number;
   @ViewChild('treeContainer') treeContainerElement;
 
   constructor() {
@@ -201,47 +200,11 @@ export class LeftSidebarComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    // prevent global scroll (scroll event does not have bubble effect)
-    this.treeViewElement = document.getElementsByClassName('tree')[0];
-    this.treeViewElement['onmousewheel'] = e => {
-      this.sideBarSeparateScroll(e, this.treeViewElement);
-    };
-    this.treeViewElement['onwheel'] = e => {
-      this.sideBarSeparateScroll(e, this.treeViewElement);
-    };
-
-    this.treeTableViewElement = document.getElementsByClassName('tree-table')[0];
-    this.treeTableViewElement['onmousewheel'] = e => {
-      this.sideBarSeparateScroll(e, this.treeTableViewElement);
-    };
-    this.treeTableViewElement['onwheel'] = e => {
-      this.sideBarSeparateScroll(e, this.treeTableViewElement);
-    };
-
     CommonService.splitterActivityDelta.subscribe((delta) => {
       if (delta > 0) {
         this.treeViewElement.scrollBy(-delta, 0);
       }
     });
-  }
-
-  sideBarSeparateScroll(e, element) {
-    const delta = e.deltaY || e.detail || e.wheelDelta;
-
-
-    if (delta < 0 && element.scrollTop === 0) {
-      e.preventDefault();
-      e.stopPropagation();
-      e.returnValue = false;
-      return;
-    }
-
-    if (delta > 0 && element.scrollHeight - element.clientHeight - element.scrollTop <= 1) {
-      e.preventDefault();
-      e.stopPropagation();
-      e.returnValue = false;
-      return;
-    }
   }
 
   // workarounds for update host element height style

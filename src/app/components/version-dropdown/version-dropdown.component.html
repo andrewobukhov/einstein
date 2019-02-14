@@ -13,8 +13,8 @@
 
     <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu
         id="dropdown-version" aria-labelledby="btn-dropdown-version">
-      <li>
-        <div class="list-group">
+      <li #scrollContainer>
+        <div class="list-group" appInternalScroll [scrollAreaContainer]="scrollContainer">
           <a  class="list-group-item" [ngClass]="{selected: idx === selectedItem}"
              *ngFor="let version of versions; index as idx;">
             <div class="radio-button-container" (click)="$event.stopPropagation()">
@@ -28,7 +28,6 @@
               <div class="list-group-item-text">{{version.description}}</div>
             </label>
           </a>
-
         </div>
       </li>
       <li class="version-controls">
