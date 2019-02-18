@@ -5,10 +5,12 @@
          <input type="checkbox" class="checkbox-btn" [id]="'radio' + nodeData.id"/>
          <label [for]="'radio' + nodeData.id" class="label"></label>
       </span>
-      <span class="name" [ngClass]="{hovered: dropdownContext.isOpen(nodeData)}">{{ nodeData.name }}</span>
+      <span class="name" [ngClass]="{hovered: dropdownContext.isOpen(nodeData)}">
+        {{ nodeData.name }}
+      </span>
     </a>
     <span class="items-count" (mouseover)="dropdownContext.hide()" (mouseenter)="dropdownContext.hide()"
           [style.left.px]="parent.clientWidth - 66">{{ nodeData.count || ' ' }}    </span>
-
+    <span class="fading" (mouseenter)="dropdownContext.hide()"></span>
   </div>
 </div>

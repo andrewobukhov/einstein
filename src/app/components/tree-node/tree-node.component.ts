@@ -2,7 +2,7 @@ import {Component, OnInit, Input, ViewEncapsulation, HostListener} from '@angula
 import {TreeContextComponent} from '../tree-context/tree-context.component';
 
 @Component({
-  selector: 'app-tree-node-context',
+  selector: 'app-tree-node-content',
   templateUrl: './tree-node.component.html',
   styleUrls: ['./tree-node.component.scss'],
   encapsulation: ViewEncapsulation.None
@@ -13,6 +13,8 @@ export class TreeNodeComponent implements OnInit {
   public nodeData: any;
   @Input()
   public parent: any;
+  @Input()
+  public overflowWidth: any;
   @Input()
   public dropdownContext: TreeContextComponent;
 

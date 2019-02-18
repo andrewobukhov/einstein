@@ -123,6 +123,7 @@
           color: $tree-name-grey;
           display: table;
           padding-right: 65px;
+          overflow: hidden;
 
           &.hovered {
             font-size: 13px;

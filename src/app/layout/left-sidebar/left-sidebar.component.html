@@ -43,13 +43,13 @@
     </div>
     <div [hidden]="!treeViewMode" class="row tree" #treeContainer (scroll)="dropdownContext.hide()">
       <div class="col-12 easy-tree" [style.minWidth.px]="treeContainer.clientWidth + treeContainer.scrollLeft" appInternalScroll [scrollAreaContainer]="treeContainer">
-        <div class="fading"></div>
         <tree-root [nodes]="nodes" [options]="{allowDrag: true, allowDrop: true}">
           <ng-template #treeNodeTemplate let-node let-index="index">
-            <app-tree-node-context [nodeData]="node.data"
+            <app-tree-node-content [nodeData]="node.data"
                                    [parent]="treeContainer"
+                                   [overflowWidth]="treeContainer.clientWidth + treeContainer.scrollLeft"
                                    [dropdownContext]="dropdownContext">
-            </app-tree-node-context>
+            </app-tree-node-content>
           </ng-template>
         </tree-root>
       </div>
